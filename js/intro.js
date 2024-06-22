@@ -13,7 +13,7 @@ prevDom.addEventListener("click", () => {
 });
 
 let timeRunning = 3000;
-let timeAutoNext = 7000;
+let timeAutoNext = 10000;
 let runTimeout;
 let runAutoRun = setTimeout(() => {
 	nextDom.click();
@@ -34,11 +34,14 @@ function showSlider(type) {
 		carouselDom.classList.add("prev");
 	}
 
-	clearTimeout(runTimeout);
+	clearTimeout(timeRunning);
 	runTimeout = setTimeout(() => {
 		carouselDom.classList.remove("next");
 		carouselDom.classList.remove("prev");
 	}, timeRunning);
 
 	clearTimeout(runAutoRun);
+	runAutoRun = setTimeout(() => {
+		nextDom.click();
+	}, timeAutoNext);
 }

@@ -26,13 +26,13 @@
 	font-weight: var(--font-bold);
 }
 .back-top div {
-	animation: slide-up 2.5s ease infinite;
+	animation: slide-up 3s ease infinite;
 }
 
 @keyframes slide-up {
 	0% {
 		opacity: 0;
-		transform: translateY(0.8rem);
+		transform: translateY(0.8rem) scale(0.6);
 	}
 	50% {
 		opacity: 1;
@@ -40,7 +40,7 @@
 	}
 	100% {
 		opacity: 0;
-		transform: translateY(-0.8rem);
+		transform: translateY(-0.8rem) scale(0.6);
 	}
 }
 

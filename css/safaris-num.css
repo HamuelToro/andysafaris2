@@ -1,0 +1,124 @@
+.safari-num-intro {
+	text-align: center;
+	margin-block: 2rem 1rem;
+}
+
+.safari-day-breakdown {
+	margin-block: 3rem 2rem;
+	display: grid;
+	row-gap: 4rem;
+	padding-inline: 1.5rem;
+}
+
+.safari-day {
+	display: grid;
+	row-gap: 1.5rem;
+}
+
+.safari-day-title {
+	/* text-decoration: underline; */
+	font-family: var(--secondary-style);
+	color: var(--title-color);
+	text-align: center;
+	font-size: var(--large-font-size);
+	font-weight: var(--font-bold);
+}
+
+.safari-day-card {
+	display: grid;
+}
+
+.safari-day-card-img {
+	width: 100%;
+	height: 320px;
+	object-fit: cover;
+}
+
+.safari-day-card-des {
+	margin-top: 0.5rem;
+	font-size: var(--h4-font-size);
+}
+
+.safari-num-btn {
+	margin-top: 0.5rem;
+	width: 50%;
+	justify-self: center;
+	cursor: pointer;
+	text-align: center;
+}
+
+.safari-day-accom {
+	background-color: var(--first-color);
+	margin-block: 3rem 0rem;
+	display: grid;
+	padding: 2rem 1.5rem 1rem 1.5rem;
+}
+
+.safari-num-details {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	row-gap: 2rem;
+}
+
+.safari-section-tit {
+	margin-bottom: 0;
+}
+
+.safari-num-addition div {
+	width: 100%;
+	text-align: center;
+}
+.safari-num-addition p span {
+	font-size: var(--h2-font-size);
+	font-weight: var(--font-semi-bold);
+	margin-bottom: 0.5rem;
+	color: var(--title-color);
+	text-decoration: underline;
+}
+.safari-num-addition p {
+	margin-bottom: 0.5rem;
+	margin-bottom: 2rem;
+}
+.safari-num-fees-break p,
+.safari-num-break-down p {
+	text-decoration: underline;
+	text-align: center;
+	font-size: var(--h2-font-size);
+	font-weight: var(--font-semi-bold);
+	margin-bottom: 0.5rem;
+	margin-top: 3rem;
+	color: var(--title-color);
+}
+
+.safari-section-sub {
+	color: var(--body-color);
+}
+
+.safari-div-cont {
+	display: grid;
+}
+
+.safari__list-groups,
+.list__group {
+	display: grid;
+}
+
+.safari__list-groups {
+	grid-template-columns: repeat(2, max-content);
+	column-gap: 4rem;
+	justify-content: center;
+	align-items: baseline;
+}
+
+.list__group {
+	row-gap: 0.5rem;
+}
+
+.safari-num-fees-break ul li,
+.list__group li {
+	font-weight: var(--font-semi-bold);
+}
+
+.safari-num-addition {
+	margin-top: 3rem;
+}
