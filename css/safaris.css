@@ -33,11 +33,11 @@
 
 .service-header-bg p {
 	text-align: center;
-	width: 30rem;
+	width: 70%;
 	position: absolute;
 	top: 75%;
 	left: 50%;
-	font-size: var(--larger-font-size);
+	/* font-size: 2.5rem; */
 	font-weight: var(--font-semi-bold);
 }
 
@@ -57,12 +57,17 @@
 	}
 }
 
-.safari-intro {
+/* .safari-intro {
 	margin-block: 2rem 1rem;
 	display: grid;
 	opacity: 0;
 	padding-inline: 1.5rem;
 	animation: slide-in 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+} */
+
+.animate-slide-in {
+	opacity: 0;
+	animation: slide-in 0.8s 1s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
 }
 
 @keyframes slide-in {
@@ -82,25 +87,25 @@
 	justify-self: center;
 }
 
-.safari-section-sub {
+/* .safari-section-sub {
 	margin-block: 0.25rem 0.8rem;
-}
+} */
 
-.safari-description {
+/* .safari-description {
 	font-weight: var(--font-semi-bold);
-}
+} */
 
-.safaris-grid-section {
+/* .safaris-grid-section {
 	margin-block: 4rem 1rem;
 	padding-inline: 1.5rem;
-}
+} */
 
-.days-selection {
+/* .days-selection {
 	margin-bottom: 1.5rem;
 	text-align: center;
 	font-family: var(--secondary-style);
 	font-weight: var(--font-medium);
-}
+} */
 
 .days-options {
 	width: 80%;
@@ -130,29 +135,29 @@
 	transform: scale(1.8);
 }
 
-.day-number {
+/* .day-number {
 	margin-top: 0.5rem;
 	font-size: var(--h3-font-size);
-}
+} */
 
-.show-all {
+/* .show-all {
 	width: 9rem;
 	margin: 0 auto;
 	margin-top: 4rem;
 	cursor: pointer;
-}
+} */
 
-.safaris-grid {
+/* .safaris-grid {
 	display: grid;
 	margin-block: 2rem 1rem;
 	row-gap: 2.5rem;
-}
+} */
 
-.safari-option {
+/* .safari-option {
 	text-align: center;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	box-shadow: 0 8px 24px hsla(22, 100%, 8%, 0.2);
-}
+} */
 
 .safari-image {
 	width: 100%;
@@ -160,42 +165,42 @@
 	object-fit: cover;
 }
 
-.safari-card-title {
+/* .safari-card-title {
 	font-size: var(--h1-font-size);
 	margin-bottom: 0.8rem;
 	text-transform: uppercase;
-}
-.safari-card-description {
+} */
+/* .safari-card-description {
 	text-align: start;
 	padding-inline: 0.5rem;
 	opacity: 0.6;
-}
+} */
 
-.safari-learn-more {
+/* .safari-learn-more {
 	width: 40%;
 	margin: 0 auto;
 	margin-block: 0.5rem 0.8rem;
 	cursor: pointer;
-}
+} */
 
 /* ============= Q&A ============= */
-.section-questions {
+/* .section-questions {
 	margin-block: 4rem 1rem;
 	padding-inline: 1.5rem;
 	display: grid;
-}
+} */
 
 .question-section-center {
 	display: grid;
 	row-gap: 1.25rem;
 }
 
-.question {
+/* .question {
 	padding: 0.5rem;
 	display: grid;
 	row-gap: 1rem;
 	box-shadow: 2px 8px 30px hsla(22, 100%, 8%, 0.1);
-}
+} */
 
 .question-title {
 	display: flex;
