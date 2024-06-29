@@ -1,10 +1,11 @@
 package api
 
 import (
-	"html/template"
-	"log"
-	"net/http"
+	// "html/template"
 
+	"strings"
+
+	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 )
 
@@ -23,32 +24,20 @@ func NewServer() *Server {
 func (server *Server) setRoutes() {
 	router := gin.Default()
 
-	// router.Use(func(c *gin.Context) {
-	// 	if strings.HasPrefix(c.Request.URL.Path, "/static/") {
-	// 		c.Header("Cache-Control", "public, max-age=2592000")
-	// 	}
-	// 	c.Next()
-	// })
-
-	// router.StaticFile("/favicon.ico", "./resources/favicon.ico")
-	// router.Static("/static", "./static")
-	router.LoadHTMLGlob("templates/**")
-	router.StaticFS("/static", http.Dir("./static"))
-		// router.GET("/", server.homePage)
-	router.GET("/", func(ctx *gin.Context) {
-		tmpl, err := template.ParseFiles("./templates/index.html")
-		if err != nil {
-			log.Println(err)
-			return
+	router.Use(func(c *gin.Context) {
+		if strings.HasPrefix(c.Request.URL.Path, "/static/") {
+			c.Header("Cache-Control", "public, max-age=2592000")
 		}
-
-		err = tmpl.Execute(ctx.Writer, []string{"hey", "you", "there", "mathafaka"})
-		if err != nil {
-			log.Println(err)
-			return
-		}
-		// ctx.HTML(http.StatusOK, "index.tmpl", gin.H{"title": "Posts"})
+		c.Next()
 	})
+
+	router.Use(static.Serve("/static", static.LocalFile("./static", false)))
+
+	router.GET("/", server.homePage)
+	router.GET("/safaris", server.safariPage)
+	router.GET("/safaris/:id", server.safariNumPage)
+	router.GET("/get-taxi", server.getTaxiPage)
+
 	server.router = router
 }
 

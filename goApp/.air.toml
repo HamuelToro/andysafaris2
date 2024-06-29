@@ -14,7 +14,7 @@ runner = "yellow"
 error = "red"
 
 [build]
-cmd = "go build -o ./tmp/main.exe ./main.go"
+cmd = "templ generate && go build -o ./tmp/main.exe ./main.go"
 args_bin = []
 bin = "./tmp/main.exe"
 full_bin = ""
@@ -25,7 +25,7 @@ exclude_regex = ["_test\\.go", "_templ.go"]
 exclude_unchanged = false
 follow_symlink = false
 include_dir = []
-include_ext = ["go", "tpl", "tmpl", "html", "templ"]
+include_ext = ["go", "tpl", "tmpl", "html", "templ", "js"]
 include_file = []
 kill_delays = "0s"
 log = "build-errors.log"

@@ -1,0 +1,542 @@
+package templates
+
+import "github.com/EmilioCliff/car-rental/db"
+
+// var vehicles []Vehicle{
+//         {
+//             ID: 1,
+//             Passengers: 4,
+//             Suitcases: 4,
+//             Type: "Mercedes-Benz",
+//             PricePerKM: "$4.56",
+//             Images: []string{"/static/images/car1.jpg", "/static/images/car2.jpg"},
+//             Make: db.VehicleMake{
+//                 Engine: "3000",
+//                 InteriorColor: "Black",
+//                 Power: "190",
+//                 FuelType: "Petrol",
+//                 Length: "4.5 meters",
+//                 ExteriorColor: "Phantom Black",
+//                 Transmission: "Automatic",
+//                 Extras: "Alloy Wheels, Bluetooth, Radio",
+//             },
+//         },
+//         {
+//             ID: 2,
+//             Passengers: 8,
+//             Suitcases:  10,
+//             Type:       "touristVan",
+//             PricePerKM: "$5.00",
+//             Images:     []string{"/static/images/touristVan1.jpg", "/static/images/touristVan2.jpg"},
+//             Make: VehicleMake{
+//                 Engine:        "3500",
+//                 InteriorColor: "Gray",
+//                 Power:         "210",
+//                 FuelType:      "Diesel",
+//                 Length:        "5.2 meters",
+//                 ExteriorColor: "White",
+//                 Transmission:  "Automatic",
+//                 Extras:        "Air Conditioning, GPS, Radio",
+//             },
+//         },
+//         {
+//             ID: 3,
+//             Passengers: 12,
+//             Suitcases:  15,
+//             Type:       "Van",
+//             PricePerKM: "$6.00",
+//             Images:     []string{"/static/images/van1.jpg", "/static/images/van2.jpg"},
+//             Make: VehicleMake{
+//                 Engine:        "4000",
+//                 InteriorColor: "Black",
+//                 Power:         "250",
+//                 FuelType:      "Diesel",
+//                 Length:        "6.0 meters",
+//                 ExteriorColor: "Blue",
+//                 Transmission:  "Manual",
+//                 Extras:        "Air Conditioning, GPS, Bluetooth",
+//             },
+//         },
+//         {
+//             ID: 4,
+//             Passengers: 5,
+//             Suitcases:  5,
+//             Type:       "SUV",
+//             PricePerKM: "$7.00",
+//             Images:     []string{"/static/images/suv1.jpg", "/static/images/suv2.jpg"},
+//             Make: VehicleMake{
+//                 Engine:        "3000",
+//                 InteriorColor: "Black",
+//                 Power:         "240",
+//                 FuelType:      "Petrol",
+//                 Length:        "4.8 meters",
+//                 ExteriorColor: "Red",
+//                 Transmission:  "Automatic",
+//                 Extras:        "Sunroof, GPS, Radio",
+//             },
+//         },
+//         {
+//             ID: 5,
+//             Passengers: 4,
+//             Suitcases:  4,
+//             Type:       "Mercedes-Benz",
+//             PricePerKM: "$4.56",
+//             Images:     []string{"/static/images/mercedes1.jpg", "/static/images/mercedes2.jpg"},
+//             Make: VehicleMake{
+//                 Engine:        "3000",
+//                 InteriorColor: "Black",
+//                 Power:         "190",
+//                 FuelType:      "Petrol",
+//                 Length:        "4.5 meters",
+//                 ExteriorColor: "Phantom Black",
+//                 Transmission:  "Automatic",
+//                 Extras:        "Alloy Wheels, Bluetooth, Radio",
+//             },
+//         },
+//         {
+//             ID: 6,
+//             Passengers: 5,
+//             Suitcases:  6,
+//             Type:       "fielder",
+//             PricePerKM: "$3.50",
+//             Images:     []string{"/static/images/fielder1.jpg", "/static/images/fielder2.jpg"},
+//             Make: VehicleMake{
+//                 Engine:        "1800",
+//                 InteriorColor: "Gray",
+//                 Power:         "130",
+//                 FuelType:      "Petrol",
+//                 Length:        "4.3 meters",
+//                 ExteriorColor: "White",
+//                 Transmission:  "Automatic",
+//                 Extras:        "Bluetooth, Radio",
+//             },
+//         },
+//         {
+//             ID: 7,
+//             Passengers: 4,
+//             Suitcases:  4,
+//             Type:       "toyota-corolla",
+//             PricePerKM: "$3.00",
+//             Images:     []string{"/static/images/corolla1.jpg", "/static/images/corolla2.jpg"},
+//             Make: VehicleMake{
+//                 Engine:        "1600",
+//                 InteriorColor: "Black",
+//                 Power:         "120",
+//                 FuelType:      "Petrol",
+//                 Length:        "4.2 meters",
+//                 ExteriorColor: "Silver",
+//                 Transmission:  "Manual",
+//                 Extras:        "Radio, Bluetooth",
+//             },
+//         },
+//         {
+//             ID: 8,
+//             Passengers: 7,
+//             Suitcases:  8,
+//             Type:       "Noah",
+//             PricePerKM: "$4.50",
+//             Images:     []string{"/static/images/noah1.jpg", "/static/images/noah2.jpg"},
+//             Make: VehicleMake{
+//                 Engine:        "2000",
+//                 InteriorColor: "Beige",
+//                 Power:         "150",
+//                 FuelType:      "Petrol",
+//                 Length:        "4.7 meters",
+//                 ExteriorColor: "Silver",
+//                 Transmission:  "Automatic",
+//                 Extras:        "Alloy Wheels, Bluetooth, Radio",
+//             },
+//         },
+// }
+
+// var carHireQnA = []db.QandA{
+//         {
+//             Question:    "What is required to rent a car?",
+//             Description: "To rent a car, you will need a valid driver's license, a credit card in your name, and proof of identity such as a passport or national ID. Additionally, some rental companies may have age restrictions and require drivers to be at least 21 years old.",
+//         },
+//         {
+//             Question:    "Can I rent a car if I am under 25?",
+//             Description: "Yes, you can rent a car if you are under 25. However, most car rental companies will charge an additional 'young driver' fee for drivers under the age of 25.",
+//         },
+//         {
+//             Question:    "Is insurance included in the rental price?",
+//             Description: "Basic insurance is usually included in the rental price. However, you can purchase additional coverage for extra protection, such as collision damage waiver (CDW) or theft protection.",
+//         },
+//         {
+//             Question:    "Can I add an additional driver?",
+//             Description: "Yes, you can add an additional driver to your rental agreement. The additional driver must meet the same requirements as the primary driver and there may be an extra fee for this service.",
+//         },
+//         {
+//             Question:    "What should I do if the rental car breaks down?",
+//             Description: "If the rental car breaks down, contact the car rental company's emergency roadside assistance immediately. They will provide instructions and support, and arrange for a replacement vehicle if necessary.",
+//         },
+//         {
+//             Question:    "Is it possible to rent a car for a one-way trip?",
+//             Description: "Yes, many car rental companies offer one-way rentals, allowing you to pick up the car at one location and return it to another. There may be an additional fee for this service.",
+//         },
+//         {
+//             Question:    "Are there mileage limits on rental cars?",
+//             Description: "Some car rental agreements include unlimited mileage, while others may have a daily mileage limit. Be sure to check the terms and conditions of your rental agreement to avoid additional charges.",
+//         },
+//         {
+//             Question:    "Can I use my own insurance for the rental car?",
+//             Description: "Yes, you can use your own car insurance for the rental vehicle if it covers rental cars. Check with your insurance provider to ensure you have the necessary coverage.",
+//         },
+//         {
+//             Question:    "What fuel policy should I follow?",
+//             Description: "Most car rental companies have a full-to-full fuel policy, meaning you should return the car with the same amount of fuel it had when you picked it up. Failure to do so may result in refueling charges.",
+//         },
+//         {
+//             Question:    "Can I rent a car if I have an international driver's license?",
+//             Description: "Yes, you can rent a car with an international driver's license. However, it's advisable to also carry your home country driver's license and ensure your international license is valid in the country you're visiting.",
+//         },
+// }
+
+var carHireQnA = []db.QandA{
+	{
+		Question:    "How do I book a taxi for airport pickup?",
+		Description: "You can book a taxi for airport pickup through our website or mobile app. Simply enter your pickup location, destination, and preferred time. You'll receive a confirmation once your booking is successful.",
+	},
+	{
+		Question:    "Do I need to pay a deposit for booking a taxi?",
+		Description: "Yes, we require a 30% deposit to confirm your booking. This deposit ensures that your taxi will be reserved and ready for your airport pickup.",
+	},
+	{
+		Question:    "How can I pay the deposit?",
+		Description: "You can pay the deposit online using your credit card, debit card, or through mobile payment options available on our platform. Once the payment is successful, you will receive a confirmation email.",
+	},
+	{
+		Question:    "Is the deposit refundable?",
+		Description: "The deposit is refundable if you cancel your booking at least 24 hours before the scheduled pickup time. For cancellations made within 24 hours of the pickup time, the deposit is non-refundable.",
+	},
+	{
+		Question:    "What happens if my flight is delayed?",
+		Description: "If your flight is delayed, please notify us as soon as possible. We will make the necessary adjustments to ensure that your taxi is available when you arrive. Additional waiting charges may apply depending on the duration of the delay.",
+	},
+	{
+		Question:    "Can I make changes to my booking after it is confirmed?",
+		Description: "Yes, you can make changes to your booking by contacting our customer support team. Please note that changes are subject to availability and may incur additional charges.",
+	},
+	{
+		Question:    "How will I find my taxi at the airport?",
+		Description: "Your driver will be waiting for you at the designated pickup point in the airport. You will receive detailed instructions and the driver's contact information in your booking confirmation email.",
+	},
+	{
+		Question:    "What safety measures are in place for airport pickups?",
+		Description: "Our drivers follow strict safety protocols, including wearing masks and sanitizing the vehicle regularly. We also ensure that the vehicles are clean and well-maintained for your safety and comfort.",
+	},
+	{
+		Question:    "Can I book a return trip to the airport?",
+		Description: "Yes, you can book a return trip to the airport. Simply select the return trip option when making your booking or contact our customer support team to arrange it.",
+	},
+	{
+		Question:    "What if I have special requirements or need assistance?",
+		Description: "If you have any special requirements or need assistance, please let us know at the time of booking. We will do our best to accommodate your needs and ensure a comfortable journey.",
+	},
+}
+
+templ TaxiBody() {
+    	<section class="taxi-header-bg" id="home">
+			<p class="animate-pop-in">GET A TAXI</p>
+		</section>
+		<section class="taxi-intro-sec">
+			<div class="progress-relative-cont">
+				<div class="taxi-larger-progress">
+					<div class="progress-larger progress-larger-selected">
+						<div data-progress-number="0" class="progres-cont">1</div>
+						<p>Enter Ride Details</p>
+					</div>
+					<div class="progress-larger">
+						<div data-progress-number="1" class="progres-cont">2</div>
+						<p>Choose a Vehicle</p>
+					</div>
+					<div class="progress-larger">
+						<div data-progress-number="2" class="progres-cont">3</div>
+						<p>Enter Contact Details</p>
+					</div>
+					<div class="progress-larger">
+						<div data-progress-number="3" class="progres-cont">4</div>
+						<p>Booking Summary</p>
+					</div>
+				</div>
+				<div class="backgroud-progress"></div>
+			</div>
+			<div class="taxi-book-progres">
+				<select class="select-options" name="" id="">
+					<option value="0">Enter Ride Details</option>
+					<option value="1">Choose A Taxi</option>
+					<option value="2">Enter Contract Details</option>
+					<option value="3">Booking Summary</option>
+				</select>
+			</div>
+			<div class="booking-container grid">
+				<div class="ride-details">
+					<p class="progress-title">RIDE DETAIL</p>
+					<form action="" class="ride-details-form">
+						<div class="date-input-container">
+							<label for="">
+								PICKUP DATE
+								<i class="ri-question-fill"></i>
+							</label>
+							<input type="date" name="" id="" placeholder="Enter a date" />
+						</div>
+						<div class="date-input-container">
+							<label for="">
+								PICKUP TIME
+								<i class="ri-question-fill"></i>
+							</label>
+							<input
+								type="time"
+								name=""
+								id=""
+								placeholder="Enter pick up time"
+							/>
+						</div>
+						<div class="date-input-container">
+							<label for="">
+								PICKUP LOCATION
+								<i class="ri-question-fill"></i>
+							</label>
+							<input
+								type="text"
+								name=""
+								id="pickup-location"
+								placeholder="Enter a location"
+							/>
+						</div>
+						<div class="date-input-container">
+							<label for="">
+								DROP-OFF LOCATION
+								<i class="ri-question-fill"></i>
+							</label>
+							<input
+								type="text"
+								name=""
+								id="dropoff-location"
+								placeholder="Enter a location"
+							/>
+						</div>
+						<div class="date-input-container inner-select">
+							<label for="">
+								TRANSFER TYPE
+								<i class="ri-question-fill"></i>
+							</label>
+							<select class="select-options inner-select-option" name="" id="">
+								<option value="0">ONE WAY</option>
+								<option value="0">TWO WAY</option>
+							</select>
+						</div>
+						<!-- <p class="progress-title">EXTRA OPTIONS</p>
+						<div class="date-input-container inner-select">
+							<label for="">
+								EXTRA TIME
+								<i class="ri-question-fill"></i>
+							</label>
+							<select class="select-options inner-select-option" name="" id="">
+								<option value="0">0 hour(s)</option>
+								<option value="0">1 hour(s)</option>
+								<option value="0">1 hour(s)</option>
+								<option value="0">1 hour(s)</option>
+								<option value="0">1 hour(s)</option>
+								<option value="0">1 hour(s)</option>
+								<option value="0">1 hour(s)</option>
+								<option value="0">1 hour(s)</option>
+								<option value="0">1 hour(s)</option>
+							</select>
+						</div> -->
+					</form>
+				</div>
+				<div>
+					<div class="map" id="map"></div>
+					<div class="map-details">
+						<div class="total-detail">
+							<svg
+								class="section-animal-logo"
+								viewBox="0 0 100 100"
+								xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink"
+								aria-hidden="true"
+								role="img"
+								class="iconify iconify--gis"
+								preserveAspectRatio="xMidYMid meet"
+							>
+								<path
+									d="M21 32C9.459 32 0 41.43 0 52.94c0 4.46 1.424 8.605 3.835 12.012l14.603 25.244c2.045 2.672 3.405 2.165 5.106-.14l16.106-27.41c.325-.59.58-1.216.803-1.856A20.668 20.668 0 0 0 42 52.94C42 41.43 32.544 32 21 32zm0 9.812c6.216 0 11.16 4.931 11.16 11.129c0 6.198-4.944 11.127-11.16 11.127c-6.215 0-11.16-4.93-11.16-11.127c0-6.198 4.945-11.129 11.16-11.129z"
+									fill="var(--first-color)"
+								></path>
+								<path
+									d="M87.75 0C81.018 0 75.5 5.501 75.5 12.216c0 2.601.83 5.019 2.237 7.006l8.519 14.726c1.193 1.558 1.986 1.262 2.978-.082l9.395-15.99c.19-.343.339-.708.468-1.082a12.05 12.05 0 0 0 .903-4.578C100 5.5 94.484 0 87.75 0zm0 5.724c3.626 0 6.51 2.876 6.51 6.492c0 3.615-2.884 6.49-6.51 6.49c-3.625 0-6.51-2.875-6.51-6.49c0-3.616 2.885-6.492 6.51-6.492z"
+									fill="var(--first-color)"
+								></path>
+								<path
+									d="M88.209 37.412c-2.247.05-4.5.145-6.757.312l.348 5.532a126.32 126.32 0 0 1 6.513-.303zm-11.975.82c-3.47.431-6.97 1.045-10.43 2.032l1.303 5.361c3.144-.896 6.402-1.475 9.711-1.886zM60.623 42.12a24.52 24.52 0 0 0-3.004 1.583l-.004.005l-.006.002c-1.375.866-2.824 1.965-4.007 3.562c-.857 1.157-1.558 2.62-1.722 4.35l5.095.565c.038-.406.246-.942.62-1.446h.002v-.002c.603-.816 1.507-1.557 2.582-2.235l.004-.002a19.64 19.64 0 0 1 2.388-1.256zM58 54.655l-3.303 4.235c.783.716 1.604 1.266 2.397 1.726l.01.005l.01.006c2.632 1.497 5.346 2.342 7.862 3.144l1.446-5.318c-2.515-.802-4.886-1.576-6.918-2.73c-.582-.338-1.092-.691-1.504-1.068zm13.335 5.294l-1.412 5.327l.668.208l.82.262c2.714.883 5.314 1.826 7.638 3.131l2.358-4.92c-2.81-1.579-5.727-2.611-8.538-3.525l-.008-.002l-.842-.269zm14.867 7.7l-3.623 3.92c.856.927 1.497 2.042 1.809 3.194l.002.006l.002.009c.372 1.345.373 2.927.082 4.525l5.024 1.072c.41-2.256.476-4.733-.198-7.178c-.587-2.162-1.707-4.04-3.098-5.548zM82.72 82.643a11.84 11.84 0 0 1-1.826 1.572h-.002c-1.8 1.266-3.888 2.22-6.106 3.04l1.654 5.244c2.426-.897 4.917-1.997 7.245-3.635l.006-.005l.003-.002a16.95 16.95 0 0 0 2.639-2.287zm-12.64 6.089c-3.213.864-6.497 1.522-9.821 2.08l.784 5.479c3.421-.575 6.856-1.262 10.27-2.18zm-14.822 2.836c-3.346.457-6.71.83-10.084 1.148l.442 5.522c3.426-.322 6.858-.701 10.285-1.17zm-15.155 1.583c-3.381.268-6.77.486-10.162.67l.256 5.536c3.425-.185 6.853-.406 10.28-.678zm-15.259.92c-2.033.095-4.071.173-6.114.245l.168 5.541a560.1 560.1 0 0 0 6.166-.246z"
+									fill="#000000"
+									fill-rule="evenodd"
+								></path>
+							</svg>
+							<p class="map-detail-title">TOTAL DISTANCE</p>
+							<p class="map-detail-value" id="total-distance">0 km</p>
+						</div>
+						<div class="total-detail">
+							<svg
+								class="section-animal-logo"
+								viewBox="0 0 24 24"
+								fill="var(--subtitle-color)"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+									stroke="#000000"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									d="M12 6V12"
+									stroke="#000000"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									d="M16.24 16.24L12 12"
+									stroke="#000000"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+							<p class="map-detail-title">TOTAL TIME</p>
+							<p class="map-detail-value" id="total-time">0h 0m</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="btn-sections">
+				<div class="taxi-next-btn taxi-btn taxi-btn-right">
+					CHOOSE A VEHICLE
+					<i class="ri-arrow-right-s-line"></i>
+				</div>
+			</div>
+		</section>
+		<section class="car-hire-rates grid">
+			<svg
+				class="section-animal-logo"
+				fill="var(--subtitle-color)"
+				version="1.1"
+				id="Capa_1"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				width="800px"
+				height="800px"
+				viewBox="0 0 444.103 444.103"
+				xml:space="preserve"
+			>
+				<g>
+					<path
+						d="M0,219.744v48.098c0,8.301,6.729,15.03,15.03,15.03h40.208c7.529,19.854,26.738,34.011,49.199,34.011
+		c22.462,0,41.671-14.155,49.2-34.011h144.848c7.53,19.854,26.738,34.011,49.2,34.011s41.671-14.155,49.2-34.011h15.776
+		c18.779,0,27.955-8.109,30.259-15.723c5.828-19.267-11.758-53.979-12.028-54.314c-2.421-3.013-5.909-4.977-9.74-5.485
+		l-92.863-16.828c0,0-52.394-50.088-83.468-50.088l-18.642,0.007l-4.748-8.705c-1.519-2.784-4.437-4.516-7.607-4.516h-41.212
+		c-3.172,0-6.09,1.732-7.608,4.516l-4.761,8.729l-20.136,0.007c-20.302,0-37.269,15.47-56.915,33.382
+		c-9.257,8.44-19.478,17.729-30.751,25.99l-41.981,5.583C4.395,207.361,0,213.037,0,219.744z M327.645,264.278
+		c0-11.052,8.99-20.041,20.041-20.041s20.041,8.989,20.041,20.041c0,11.051-8.99,20.041-20.041,20.041
+		S327.645,275.327,327.645,264.278z M233.752,233.877h23.4v-23.399h23.398v23.399h-23.398v23.399h-23.4V233.877z M210.352,210.477
+		h23.399v23.399h-23.399V210.477z M163.553,210.477h23.399v23.399h23.4v23.398h-23.4v-23.398h-23.399V210.477L163.553,210.477z
+		 M84.397,264.278c0-11.052,8.991-20.041,20.041-20.041c11.051,0,20.041,8.989,20.041,20.041c0,11.051-8.99,20.041-20.041,20.041
+		C93.388,284.317,84.397,275.327,84.397,264.278z"
+					/>
+				</g>
+			</svg>
+			<p class="section-subtitle">Taxi Rates</p>
+			<p class="section-title car-rates-title">
+				Transfer Rates from JKIA Airport
+			</p>
+			<div class="tables-car-container grid">
+				<div class="car-rate-cont">
+					<p></p>
+					<table class="taxi-table">
+						<thead>
+							<tr>
+								<th>AREA</th>
+								<th>Destinations(Including Adjacent Areas)</th>
+								<th>Saloon(Incl. VAT)</th>
+								<th>VAN(Incl. VAT)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Area 1(Under 30KMs)</td>
+								<td class="taxi-destination">
+									Cabanas, Pipeline, Fedha, Agri Seed, Umoja, BururBuru, Donholm
+									and SGR
+								</td>
+								<td>$24</td>
+								<td>$26</td>
+							</tr>
+							<tr>
+								<td>Area 1(Under 30KMs)</td>
+								<td>
+									Cabanas, Pipeline, Fedha, Agri Seed, Umoja, BururBuru, Donholm
+									and SGR
+								</td>
+								<td>$24</td>
+								<td>$26</td>
+							</tr>
+							<tr>
+								<td>Area 1(Under 30KMs)</td>
+								<td>
+									Cabanas, Pipeline, Fedha, Agri Seed, Umoja, BururBuru, Donholm
+									and SGR
+								</td>
+								<td>$24</td>
+								<td>$26</td>
+							</tr>
+							<tr>
+								<td>Area 1(Under 30KMs)</td>
+								<td>
+									Cabanas, Pipeline, Fedha, Agri Seed, Umoja, BururBuru, Donholm
+									and SGR
+								</td>
+								<td>$24</td>
+								<td>$26</td>
+							</tr>
+							<tr>
+								<td>Area 1(Under 30KMs)</td>
+								<td>
+									Cabanas, Pipeline, Fedha, Agri Seed, Umoja, BururBuru, Donholm
+									and SGR
+								</td>
+								<td>$24</td>
+								<td>$26</td>
+							</tr>
+							<tr>
+								<td>Area 1(Under 30KMs)</td>
+								<td>
+									Cabanas, Pipeline, Fedha, Agri Seed, Umoja, BururBuru, Donholm
+									and SGR
+								</td>
+								<td>$24</td>
+								<td>$26</td>
+							</tr>
+							<tr>
+								<td>Area 1(Under 30KMs)</td>
+								<td>
+									Cabanas, Pipeline, Fedha, Agri Seed, Umoja, BururBuru, Donholm
+									and SGR
+								</td>
+								<td>$24</td>
+								<td>$26</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+
+        @QandA(carHireQnA, "Taxi")
+}
+
+templ TaxiPage(body templ.Component) {
+    @BaseTemplate([]string{"general", "nav", "service", "safaris", "safaris-num","footer", "taxi", "intro", "car"}, []string{"q&a", "nav", "taxi", "taxi-maps", "data/vehicle", "https://maps.googleapis.com/maps/api/js?key=&libraries=places"}, body)
+}
