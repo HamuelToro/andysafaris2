@@ -23,14 +23,18 @@ type Safari struct {
 }
 
 type Vehicle struct {
-	ID         int16
-	Name       string
-	Passengers int16
-	Suitcases  int16
-	Type       string
-	PricePerKM string
-	Images     []string
-	Make       VehicleMake
+	ID                     int16
+	Name                   string
+	Passengers             int16
+	Suitcases              int16
+	Type                   string
+	PricePerKM             string
+	PricePerMonth          string // added
+	PricePerMothWithDriver string
+	PriceMonthsContract    string
+	Images                 []string
+	Make                   VehicleMake
+	ComesWith              []string // added
 }
 
 type VehicleMake struct {

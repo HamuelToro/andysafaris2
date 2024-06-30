@@ -6,6 +6,7 @@ export const vehicles = [
 		Suitcases: 4,
 		Type: "Mercedes-Benz",
 		PricePerKM: "$4.56",
+		ComesWith: [],
 		Images: ["/static/images/car1.jpg"],
 		Make: {
 			Engine: "3000",
@@ -25,6 +26,7 @@ export const vehicles = [
 		Suitcases: 10,
 		Type: "touristVan",
 		PricePerKM: "$5.00",
+		ComesWith: [],
 		Images: ["/static/images/car1.jpg", "/static/images/car1.jpg"],
 		Make: {
 			Engine: "3500",
@@ -44,6 +46,7 @@ export const vehicles = [
 		Suitcases: 15,
 		Type: "Van",
 		PricePerKM: "$6.00",
+		ComesWith: [],
 		Images: ["/static/images/car1.jpg"],
 		Make: {
 			Engine: "4000",
@@ -63,6 +66,7 @@ export const vehicles = [
 		Suitcases: 5,
 		Type: "SUV",
 		PricePerKM: "$7.00",
+		ComesWith: [],
 		Images: ["/static/images/car1.jpg"],
 		Make: {
 			Engine: "3000",
@@ -82,6 +86,7 @@ export const vehicles = [
 		Suitcases: 4,
 		Type: "Mercedes-Benz",
 		PricePerKM: "$4.56",
+		ComesWith: [],
 		Images: ["/static/images/car1.jpg"],
 		Make: {
 			Engine: "3000",
@@ -101,6 +106,7 @@ export const vehicles = [
 		Suitcases: 6,
 		Type: "fielder",
 		PricePerKM: "$3.50",
+		ComesWith: [],
 		Images: ["/static/images/car1.jpg"],
 		Make: {
 			Engine: "1800",
@@ -120,6 +126,7 @@ export const vehicles = [
 		Suitcases: 4,
 		Type: "toyota-corolla",
 		PricePerKM: "$3.00",
+		ComesWith: [],
 		Images: ["/static/images/car1.jpg"],
 		Make: {
 			Engine: "1600",
@@ -139,6 +146,7 @@ export const vehicles = [
 		Suitcases: 8,
 		Type: "Noah",
 		PricePerKM: "$4.50",
+		ComesWith: [],
 		Images: ["/static/images/car1.jpg"],
 		Make: {
 			Engine: "2000",

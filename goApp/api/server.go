@@ -37,6 +37,7 @@ func (server *Server) setRoutes() {
 	router.GET("/safaris", server.safariPage)
 	router.GET("/safaris/:id", server.safariNumPage)
 	router.GET("/get-taxi", server.getTaxiPage)
+	router.GET("/car-hire", server.carHire)
 
 	server.router = router
 }

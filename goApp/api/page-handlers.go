@@ -42,3 +42,10 @@ func (server *Server) getTaxiPage(ctx *gin.Context) {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": fmt.Sprintf("error generating template: %v", err) })
 	}
 }
+
+func (server *Server) carHire(ctx *gin.Context) {
+	tmpl := templates.CarHireBody()
+	if err := templates.CarHirePage(tmpl).Render(ctx, ctx.Writer); err != nil {
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": fmt.Sprintf("error generating template: %v", err) })
+	}
+}

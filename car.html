@@ -152,23 +152,33 @@ l-15 -73 3006 7 c1653 4 3007 8 3009 9 1 1 -8 37 -20 81 -19 67 -22 105 -22
     <p class="car-name">Audi A8</p>
     <div class="car-details">
         <div class="car-pictures grid">
-            <div>
+            <div class="selected-car">
                 <img class="car-image" src="./images/car1.jpg" alt="">
             </div>
             <div class="car-slider">
-                <div class="slider-left">
+                <div class="slider-left" id="slider-button">
                     <i class="ri-arrow-left-s-line"></i>
                 </div>
                 <div class="car-carousel">
-                    <img class="car-carousel-item car-1" src="./images/car1.jpg" alt="">
-                    <img class="car-carousel-item car-2" src="./images/car1.jpg" alt="">
-                    <img class="car-carousel-item car-3" src="./images/car1.jpg" alt="">
-                    <img class="car-carousel-item" src="./images/car1.jpg" alt="">
-                    <img class="car-carousel-item" src="./images/car1.jpg" alt="">
-                    <img class="car-carousel-item" src="./images/car1.jpg" alt="">
+                        <img class="car-carousel-item selected-car-group" src="./images/car1.jpg" alt="">
+                        <img class="car-carousel-item" src="./images/car1.jpg" alt="">
+                        <img class="car-carousel-item" src="./images/car1.jpg" alt="">
+                        <img class="car-carousel-item" src="./images/car1.jpg" alt="">
+                        <img class="car-carousel-item" src="./images/car1.jpg" alt="">
+                        <img class="car-carousel-item" src="./images/car1.jpg" alt="">
+                        <img class="car-carousel-item" src="./images/car1.jpg" alt="">
+                        <img class="car-carousel-item" src="./images/car1.jpg" alt="">
+                        <img class="car-carousel-item" src="./images/car1.jpg" alt="">
                 </div>
-                <div class="slider-left">
+                <div class="slider-right" id="slider-button">
                     <i class="ri-arrow-right-s-line"></i>
+                </div>
+            </div>
+            <div class="slider-scroll-bar">
+                <div class="slider-scroll-bar-track">
+                    <div class="slider-scroll-bar-thumb">
+
+                    </div>
                 </div>
             </div>
             <div class="car-offered-with">
@@ -771,6 +781,7 @@ l-15 -73 3006 7 c1653 4 3007 8 3009 9 1 1 -8 37 -20 81 -19 67 -22 105 -22
     </footer>
     <script src="./js/q&a.js"></script>
     <script src="./js/nav.js"></script>
+    <script src="./js/car.js"></script>
     <script>
         document.body.classList.add("js-loading");
 

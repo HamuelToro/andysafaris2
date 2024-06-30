@@ -51,23 +51,32 @@
 
 .car-pictures {
 	row-gap: 2rem;
+	position: relative;
 }
 
 .car-image {
 	width: 100%;
-	/* height: 350px; */
+	height: 21.5rem;
+	object-position: center;
 	object-fit: cover;
 }
 
 .car-slider {
+	/* position: relative; */
 	display: flex;
-	justify-content: space-between;
-	position: relative;
-	overflow: hidden;
+	/* justify-content: space-between; */
+	overflow-x: auto;
+}
+
+.car-slider::-webkit-scrollbar {
+	display: none;
 }
 
 .slider-left,
 .slider-right {
+	position: absolute;
+	color: white;
+	font-weight: var(--font-semi-bold);
 	height: 8rem;
 	width: 1.5rem;
 	background-color: #333;
@@ -75,30 +84,83 @@
 	align-items: center;
 	justify-content: center;
 	font-size: var(--large-font-size);
-	z-index: 2;
+	cursor: pointer;
+	/* z-index: 2; */
+}
+
+.slider-left:hover,
+.slider-right:hover {
+	background-color: #7a7474;
+}
+
+.slider-left {
+	display: none;
+	left: 0;
+}
+
+.slider-right {
+	right: 0;
 }
 
 .car-carousel {
 	display: flex;
-	column-gap: 1rem;
-	position: absolute;
-	left: 2rem;
-	right: 2rem;
-	top: 0;
-	bottom: 0;
-	z-index: -2;
-	/* transform: translateX(-11rem); */
+	column-gap: 0.5rem;
+	height: 8rem;
 }
 
 .car-carousel-item {
+	/* display: block; */
 	object-fit: cover;
-	opacity: 0;
+	/* opacity: 0; */
 }
 
-.car-1,
-.car-2,
-.car-3 {
-	opacity: 1;
+.car-carousel img {
+	cursor: pointer;
+}
+
+.slider-scroll-bar {
+	margin-top: -1.5rem;
+	height: 24px;
+	width: 100%;
+	/* background-color: red; */
+	display: flex;
+	align-items: center;
+}
+
+.slider-scroll-bar-track {
+	height: 2px;
+	width: 100%;
+	background-color: #ccc;
+	position: relative;
+	border-radius: 4px;
+}
+
+.slider-scroll-bar-track:hover .slider-scroll-bar-thumb {
+	height: 4px;
+}
+
+.slider-scroll-bar-thumb {
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	background-color: #000;
+	border-radius: inherit;
+	/* cursor: grab; */
+}
+
+.slider-scroll-bar .slider-scroll-bar-thumb:active {
+	/* cursor: grabbing; */
+	height: 6px;
+	top: -2px;
+}
+
+.slider-scroll-bar-thumb::after {
+	content: "";
+	position: absolute;
+	top: -8px;
+	bottom: -8px;
+	left: 0;
+	right: 0;
 }
 
 .car-offered-with p {
