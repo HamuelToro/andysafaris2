@@ -318,7 +318,7 @@ templ TaxiBody() {
 								PICKUP DATE
 								<i class="ri-question-fill"></i>
 							</label>
-							<input type="date" name="" id="" placeholder="Enter a date" />
+							<input type="date" name="" id="date" placeholder="Enter a date" />
 						</div>
 						<div class="date-input-container">
 							<label for="">
@@ -354,8 +354,39 @@ templ TaxiBody() {
 								name=""
 								id="dropoff-location"
 								placeholder="Enter a location"
+								required
 							/>
 						</div>
+						// <div class="radio-input-container" style="display: flex; flex-direction: column;">
+						// 	<div class="radio-input-label">
+						// 			DIRECTION
+						// 			<i class="ri-question-fill"></i>
+						// 	</div>
+						// 	<div>
+						// 		<input
+						// 			type="radio"
+						// 			name="direction"
+						// 			id="one-way"
+						// 			placeholder="Enter a location"
+						// 		/>
+						// 		<label for="one-way">
+						// 			One Way
+						// 			// <i class="ri-question-fill"></i>
+						// 		</label>
+						// 	</div>
+						// 	<div>
+						// 		<input
+						// 			type="radio"
+						// 			name="direction"
+						// 			id="two-way"
+						// 			placeholder="Enter a location"
+						// 		/>
+						// 		<label for="two-way">
+						// 			Two Way
+						// 			// <i class="ri-question-fill"></i>
+						// 		</label>
+						// 	</div>
+						// </div>
 						<div class="date-input-container inner-select">
 							<label for="">
 								TRANSFER TYPE
@@ -366,6 +397,7 @@ templ TaxiBody() {
 								<option value="0">TWO WAY</option>
 							</select>
 						</div>
+
 						<!-- <p class="progress-title">EXTRA OPTIONS</p>
 						<div class="date-input-container inner-select">
 							<label for="">

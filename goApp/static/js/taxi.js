@@ -1,6 +1,9 @@
 import { initMap, saveState } from "./taxi-maps.js";
 import { vehicles } from "./data/vehicle.js";
 
+const today = new Date().toISOString().split("T")[0];
+document.getElementById("date").setAttribute("min", today);
+
 const bookingCont = document.querySelector(".select-options");
 const bookingContLarge = document.querySelectorAll(".progres-cont");
 bookingContLarge.forEach(function (btn) {
@@ -693,16 +696,16 @@ function showContactDetails() {
 							<div class="date-input-container">
 								<label for=""> EMAIL ADDRESS <sup>&#x2217;</sup></label>
 								<input
-									type="text"
+									type="email"
 									name=""
 									id=""
-									placeholder="example@gmail.com"
+									placeholder="examplegmail.com"
 								/>
 							</div>
 							<div class="date-input-container">
 								<label for=""> PHONE NUMBER <sup>&#x2217;</sup> </label>
 								<input
-									type="text"
+									type="telephone"
 									name=""
 									id=""
 									placeholder="Enter a Phone Number"

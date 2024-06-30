@@ -406,6 +406,17 @@
 	.taxi-booking-summary {
 		row-gap: 2rem;
 	}
+
+	.backgroud-progress {
+		display: none;
+		position: absolute;
+		height: 2px;
+		background-color: rgba(0, 0, 0, 0.4);
+		top: 1.7rem;
+		right: 3rem;
+		left: 3rem;
+		z-index: -2;
+	}
 }
 
 .service-content.show {

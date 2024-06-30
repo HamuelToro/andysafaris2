@@ -67,7 +67,7 @@
 	position: relative;
 } */
 
-.backgroud-progress {
+/* .backgroud-progress {
 	position: absolute;
 	height: 2px;
 	background-color: rgba(0, 0, 0, 0.4);
@@ -75,7 +75,7 @@
 	right: 3rem;
 	left: 3rem;
 	z-index: -2;
-}
+} */
 
 .progress-larger {
 	display: flex;
@@ -111,6 +111,7 @@
 	opacity: 1;
 }
 
+/* .radio-input-container, */
 .date-input-container,
 .progress-title,
 .select-options {
@@ -126,10 +127,23 @@
 	cursor: pointer;
 }
 
-.select-selected {
-	/* background-color: dodgerblue; */
-	background-color: var(--subtitle-color);
+/* .select-selected { */
+/* background-color: dodgerblue; */
+/* background-color: var(--subtitle-color); */
+/* } */
+
+/* input {
+	appearance: none;
+} */
+
+select {
+	appearance: none;
+	background: url(../icons/expand-up-down-line.png) no-repeat 95% center;
 }
+
+/* ::-webkit-input-placeholder {
+	font-size: larger;
+} */
 
 /* .select-selected::after {
 	position: absolute;
@@ -151,10 +165,12 @@
 	opacity: 0.7;
 }
 
+/* .radio-input-container, */
 .date-input-container {
 	position: relative;
 }
 
+/* .radio-input-label, */
 .date-input-container label {
 	font-size: var(--smallest-font-size);
 	opacity: 0.5;
@@ -167,12 +183,46 @@
 	font-size: var(--normal-font-size);
 }
 
+.date-input-container input::placeholder {
+	font-weight: var(--font-semi-bold);
+}
+
 .date-input-container input {
 	margin-top: 1rem;
-	font-weight: var(--font-semi-bold);
+	/* font-weight: var(--font-semi-bold); */
 	font-size: var(--h3-font-size);
 	width: 100%;
 }
+
+/* .radio-input-container input[type="radio"] {
+	margin-top: 1rem;
+	font-weight: var(--font-semi-bold);
+	font-size: var(--h3-font-size);
+
+	opacity: 0;
+	width: 0;
+}
+
+.radio-input-container label[for="one-way"],
+.radio-input-container label[for="two-way"] {
+	display: inline-block;
+	padding-left: 26px;
+	background: url();
+	background-position: 0 -32px;
+	cursor: pointer;
+}
+
+.radio-input-container
+	input:checked
+	+ .radio-input-container
+	label[for="one-way"],
+.radio-input-container
+	input:checked
+	+ .radio-input-container
+	label[for="two-way"] {
+	background-position: 0 0;
+	color: #ce1010;
+} */
 
 .date-input-container textarea {
 	height: 6rem;
