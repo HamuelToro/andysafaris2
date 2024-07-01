@@ -6,6 +6,23 @@ import (
     "github.com/EmilioCliff/car-rental/db"
 )
 
+script safariFormScript(id int) {
+	window.location.href=`/safari/${id}/contact-form`
+	// // console.log(id)
+	// fetch("/safari/contact", {
+    //     method: "POST",
+    //     body: JSON.stringify({
+    //         id: id,
+    //     }),
+    //     headers: {
+    //         "Content-Type": "application/json; charset=UTF-8"
+    //     }
+    // })
+    // .catch((error) => {
+    //     console.log(error)
+    // })
+}
+
 templ SafariNumBody(safari db.Safari) {
     <section class="service-header-bg" id="home">
 			<p class="animate-pop-in">{ fmt.Sprintf("%d DAYS %s", safari.Days, safari.Title) }</p>
@@ -30,7 +47,8 @@ templ SafariNumBody(safari db.Safari) {
 					<p class="safari-day-card-des">
 						{ day.Activity }
 					</p>
-					<div class="btn safari-num-btn" data-safari-id={ fmt.Sprintf("%d",safari.ID) }>Book The Safari</div>
+					//  data-safari-id={ fmt.Sprintf("%d",safari.ID) }
+					<div class="btn safari-num-btn" onclick={ safariFormScript(int(safari.ID)) }>Book The Safari</div>
 				</div>
 			</div>
         }

@@ -48,6 +48,23 @@ var carRealHireQnA = []db.QandA{
         },
 }
 
+script carHireFormScript() {
+    let id = document.querySelector(".car-image").dataset.carSelectedId;
+    window.location.href=`/car-hire/${id}/contact-form`
+    // fetch("/car-hire/contact", {
+    //     method: "POST",
+    //     body: JSON.stringify({
+    //         id: Number(id),
+    //     }),
+    //     headers: {
+    //         "Content-Type": "application/json; charset=UTF-8"
+    //     }
+    // })
+    // .catch((error) => {
+    //     console.log(error)
+    // })
+}
+
 templ CarHireBody() {
     <section class="car-hire-header-bg" id="home">
         <p class="animate-pop-in">Experience a smooth and stress-free car rental</p>
@@ -157,7 +174,7 @@ templ CarHireBody() {
     <div class="car-details">
         <div class="car-pictures grid">
             <div class="selected-car">
-                <img class="car-image" src={ Vehicles[0].Images[0] } alt="">
+                <img class="car-image" src={ Vehicles[0].Images[0] } data-car-selected-id={ fmt.Sprintf("%d", Vehicles[0].ID) } alt="">
             </div>
             <div class="car-slider">
                 <div class="slider-left" id="slider-button">
@@ -238,7 +255,7 @@ templ CarHireBody() {
                         <p class="extra-break_down">{ Vehicles[0].Make.Extras}</p>
                     </li>
                 </ul>
-                <div class="btn car-hire-book-now">HIRE NOW</div>
+                <div class="btn car-hire-book-now" onclick={ carHireFormScript() }>HIRE NOW</div>
             </div>
         </div>
     </div>

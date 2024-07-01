@@ -10,6 +10,16 @@ import templruntime "github.com/a-h/templ/runtime"
 
 import "github.com/EmilioCliff/car-rental/db"
 
+func GetVehicle(ID int16) db.Vehicle {
+	for _, vehicle := range Vehicles {
+		if ID == vehicle.ID {
+			return vehicle
+		}
+	}
+
+	return db.Vehicle{}
+}
+
 var Vehicles = []db.Vehicle{
 	{
 		ID:                     1,

@@ -4,11 +4,11 @@
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
-	padding-block: 1.5rem;
+	padding-block: 1rem;
 }
 
 .enquiry-social-icon svg {
-	width: 3rem;
+	width: 2rem;
 }
 
 .enquery-socials p {

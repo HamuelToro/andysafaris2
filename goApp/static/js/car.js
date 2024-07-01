@@ -49,8 +49,9 @@ function fillCarDetails(vehicleID) {
 	const vehicle = getVehicleById(vehicleID);
 	document.querySelector(".car-name").innerText = vehicle.Name;
 	document.querySelector(
-		".car-image"
-	).innerHTML = `<img class="car-image" src=${vehicle.Images[0]} alt="">`;
+		".selected-car"
+	).innerHTML = `<img class="car-image" src=${vehicle.Images[0]} data-car-selected-id=${vehicle.ID} alt="">`;
+	console.log(document.querySelector(".selected-car").innerHTML);
 	document.querySelector(".car-details-visual").innerHTML = `
                 <div class="car-detail-visual">
                     <div class="car-detail-visual-cont">
