@@ -7,6 +7,37 @@ export const safaris = [
 		Description:
 			"This flying safari to Amboseli National Reserve is an excellent choice for a wildlife adventure in Kenya. Amboseli is known for its unique ecosystem and diverse wildlife, including several species not found in other parts of Kenya.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -39,6 +70,37 @@ export const safaris = [
 		Description:
 			"Experience the famous Maasai Mara, home to the Great Migration and incredible wildlife viewing opportunities.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -84,6 +146,37 @@ export const safaris = [
 		Description:
 			"Explore the vast landscapes of Tsavo East and West, known for their large elephant populations and breathtaking scenery.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -135,6 +228,37 @@ export const safaris = [
 		Description:
 			"Visit Lake Nakuru, famous for its flamingos and as a sanctuary for endangered rhinos.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -173,6 +297,37 @@ export const safaris = [
 		Description:
 			"Discover the unique wildlife and landscapes of Samburu National Reserve, including the rare Grevy's zebra and reticulated giraffe.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -217,6 +372,37 @@ export const safaris = [
 		Description:
 			"Explore the wild and unspoiled landscapes of Meru National Park, home to diverse wildlife and beautiful scenery.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -255,6 +441,37 @@ export const safaris = [
 		Description:
 			"Adventure to Mount Kenya National Park, offering stunning views and diverse wildlife at Kenya's highest peak.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -285,6 +502,37 @@ export const safaris = [
 		Description:
 			"Explore the dramatic landscapes and geothermal activity of Hell's Gate National Park, a unique destination in Kenya.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -315,6 +563,37 @@ export const safaris = [
 		Description:
 			"Relax by the serene waters of Lake Naivasha, with opportunities for boat rides and bird watching.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -352,6 +631,37 @@ export const safaris = [
 		Description:
 			"Embark on an adventure to Mount Elgon National Park, known for its ancient caves, waterfalls, and diverse wildlife.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -409,6 +719,37 @@ export const safaris = [
 		Description:
 			"Experience the wonder of the Maasai Mara, home to the Great Migration. Witness breathtaking wildlife spectacles and immerse yourself in Maasai culture on this unforgettable adventure.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -448,6 +789,37 @@ export const safaris = [
 		Description:
 			"Combine the elephant paradise of Amboseli with the rugged wilderness of Tsavo. Marvel at Mt. Kilimanjaro's snowy peak and explore diverse ecosystems teeming with wildlife.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -494,6 +866,37 @@ export const safaris = [
 		Description:
 			"Discover the pink flamingo-fringed shores of Lake Nakuru and the mystical Aberdare Forest. From open savannah to lush montane forest, experience Kenya's diverse landscapes and wildlife.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -526,6 +929,37 @@ export const safaris = [
 		Description:
 			"Journey to the rugged north for unique wildlife experiences. Encounter Samburu's 'Special Five' and get up close with rhinos in Ol Pejeta. A safari that combines conservation with unforgettable animal encounters.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -579,6 +1013,37 @@ export const safaris = [
 		Description:
 			"Explore the wild beauty of Meru National Park and the conservation success of Lewa Wildlife Conservancy. From Born Free country to a rhino sanctuary, experience unique wildlife and landscapes.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -639,6 +1104,37 @@ export const safaris = [
 		Description:
 			"Combine the wildlife wonders of the Masai Mara with the tranquil beauty of Lake Victoria. From big game encounters to fishing villages, experience the diversity of western Kenya.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,
@@ -685,6 +1181,37 @@ export const safaris = [
 		Description:
 			"Ascend the slopes of Mount Kenya and explore the wildlife-rich plains of Ol Pejeta Conservancy. From mountain forests to savannah, experience central Kenya's diverse ecosystems.",
 		Image: "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: [
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+			"Government taxes and local levies REPEAT",
+		],
+		Accomodation: {
+			Economy: [
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			],
+			Comfort: [
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			],
+			Luxury: ["Saruni Mara Camp", "Porini Mara Camp", "Mara Explorer Camp"],
+		},
 		Breakdown: [
 			{
 				Day: 1,

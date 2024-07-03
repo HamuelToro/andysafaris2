@@ -2,6 +2,7 @@ package templates
 
 import (
     "fmt"
+	"strings"
 
     "github.com/EmilioCliff/car-rental/db"
 )
@@ -63,168 +64,340 @@ templ SafariNumBody(safari db.Safari) {
 				xmlns:xlink="http://www.w3.org/1999/xlink"
 				viewBox="0 0 505.087 505.087"
 				xml:space="preserve"
-			>
+				>
 				<path
 					d="M488.909,418.392c-34.84-27.219-3.266-93.632-3.266-93.632c63.147-161.134-46.108-242.307-64.788-252.887
-c-38.033-21.541-128.497-42.648-174.166,15.319c-12.916,16.394-8.599,36.754-2.654,50.984
-c15.302,36.618,56.436,69.544,91.693,73.388c10.054,1.123,17.377-1.182,22.336-6.958c15.761-18.347,7.451-66.618,2.909-83.672
-c-1.233-4.644,1.531-9.416,6.184-10.658c1.341-0.356,2.664-0.3,3.938-0.041c3.142,0.637,5.842,2.909,6.72,6.225
-c1.905,7.179,17.956,70.998-6.532,99.501c-5.401,6.286-15.004,13.286-30.97,13.286c-2.05,0-4.21-0.119-6.473-0.366
-c-41.593-4.542-88.095-41.432-105.88-83.995c-4.475-10.708-6.707-21.065-6.948-30.835c-99.728,0-213.575,55.596-220.991,155.597
-c-0.238,3.208,1.735,6.167,4.789,7.179c3.054,1.021,6.413-0.169,8.14-2.882c6.124-9.616,13.75-20.027,21.325-26.585
-c1.087,15.749,5.871,30.796,14.136,44.532c16.552,27.508,25.39,59.098,25.39,91.198l0.158,59.253
-c0.843,7.261,17.995,13.065,39.181,13.065c21.194,0,38.346-5.804,39.19-13.065l0.158-38.455c0-10.096,4.21-19.742,11.61-26.616
-c7.4-6.873,17.316-9.628,27.413-9.628c6.263,0,19.079,0.009,19.828,0c9.688-0.101,19.019,4.337,25.899,11.159
-c6.89,6.822,10.761,16.11,10.761,25.799l0.158,37.74c0.843,7.261,17.994,13.065,39.181,13.065c21.194,0,38.346-5.804,39.19-13.065
-l0.158-33.215c0-98.599,72.254-142.598,80.839-147.814c42.606-25.886,23.68,52.557,23.68,52.557
-c-28.307,88.188,37.017,128.472,37.017,128.472l0.293-0.339c0.204,0.208,0.262,0.544,0.498,0.722
-c4.184,3.155,11.799,0.128,16.995-6.779c4.792-6.34,5.668-13.564,2.569-17.171L488.909,418.392z"
+				c-38.033-21.541-128.497-42.648-174.166,15.319c-12.916,16.394-8.599,36.754-2.654,50.984
+				c15.302,36.618,56.436,69.544,91.693,73.388c10.054,1.123,17.377-1.182,22.336-6.958c15.761-18.347,7.451-66.618,2.909-83.672
+				c-1.233-4.644,1.531-9.416,6.184-10.658c1.341-0.356,2.664-0.3,3.938-0.041c3.142,0.637,5.842,2.909,6.72,6.225
+				c1.905,7.179,17.956,70.998-6.532,99.501c-5.401,6.286-15.004,13.286-30.97,13.286c-2.05,0-4.21-0.119-6.473-0.366
+				c-41.593-4.542-88.095-41.432-105.88-83.995c-4.475-10.708-6.707-21.065-6.948-30.835c-99.728,0-213.575,55.596-220.991,155.597
+				c-0.238,3.208,1.735,6.167,4.789,7.179c3.054,1.021,6.413-0.169,8.14-2.882c6.124-9.616,13.75-20.027,21.325-26.585
+				c1.087,15.749,5.871,30.796,14.136,44.532c16.552,27.508,25.39,59.098,25.39,91.198l0.158,59.253
+				c0.843,7.261,17.995,13.065,39.181,13.065c21.194,0,38.346-5.804,39.19-13.065l0.158-38.455c0-10.096,4.21-19.742,11.61-26.616
+				c7.4-6.873,17.316-9.628,27.413-9.628c6.263,0,19.079,0.009,19.828,0c9.688-0.101,19.019,4.337,25.899,11.159
+				c6.89,6.822,10.761,16.11,10.761,25.799l0.158,37.74c0.843,7.261,17.994,13.065,39.181,13.065c21.194,0,38.346-5.804,39.19-13.065
+				l0.158-33.215c0-98.599,72.254-142.598,80.839-147.814c42.606-25.886,23.68,52.557,23.68,52.557
+				c-28.307,88.188,37.017,128.472,37.017,128.472l0.293-0.339c0.204,0.208,0.262,0.544,0.498,0.722
+				c4.184,3.155,11.799,0.128,16.995-6.779c4.792-6.34,5.668-13.564,2.569-17.171L488.909,418.392z"
 				/>
 			</svg>
 			<p class="section-subtitle safari-section-sub">Neccessities</p>
-			<p class="section-title safari-section-tit">What We Offer</p>
-			<div class="safari-num-break-down">
-				<div class="safari-div-cont">
-					<p>Price includes:</p>
-					<div class="safari-num-details">
-						<div class="safari__list-groups">
-							<ul class="list__group">
-								<li>
-									<i class="ri-check-fill"></i>
-									Professional Drive Guide
-								</li>
-								<li>
-									<i class="ri-check-fill"></i>
-									All meals full board
-								</li>
-								<li>
-									<i class="ri-check-fill"></i>
-									Game drives
-								</li>
-								<li>
-									<i class="ri-check-fill"></i>
-									Park entry fees
-								</li>
-							</ul>
-							<ul class="list__group" start="5">
-								<li>
-									<i class="ri-check-fill"></i>
-									Professional Drive Guide
-								</li>
-								<li>
-									<i class="ri-check-fill"></i>
-									All meals full board
-								</li>
-								<li>
-									<i class="ri-check-fill"></i>
-									Game drives
-								</li>
-								<li>
-									<i class="ri-check-fill"></i>
-									Park entry fees
-								</li>
-							</ul>
-						</div>
+			<p class="section-title safari-section-tit">SAFARI PRICES</p>
+			<div class="price-table-cont">
+				<h1>
+					SAFARI PRICE GUIDE BY SEASON, NUMBER OF PERSON,LODGE?CAMP CATEGORY
+				</h1>
+				<h2>
+					Safari price (in USD) is per person in a private 4x4 pop-top Tour
+					Jeep. <span>(Drag to view safari seasons)</span>
+				</h2>
+				<hr />
+				<div class="table-wrapper-car">
+					<div class="price-grab">
+					for season, value := range safari.Prices{
+						<table class="safari-price-table">
+							<thead>
+								<tr>
+									<td>
+										{ strings.ToUpper(string(season[0])) + season[1:] } Season <br />
+										switch season {
+											case "shoulder":
+												(15th Nov-31stMar)
+											case "peak":
+												(1st Jul-15th Oct)&(23rd Dec-2nd Jan)
+											case "low":
+												(1st Apr - 30th June)
+										}
+									</td>
+									<td>Economy</td>
+									<td>Comfort</td>
+									<td>Luxury</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1 Person in a private tour</td>
+									<td>{ value.One.Economy}</td>
+									<td>{ value.One.Comfort}</td>
+									<td>{ value.One.Luxury}</td>
+								</tr>
+								<tr>
+									<td>2-3 Person in a private tour</td>
+									<td>{ value.Two.Economy}</td>
+									<td>{ value.Two.Comfort}</td>
+									<td>{ value.Two.Luxury}</td>
+								</tr>
+								<tr>
+									<td>4-5 Person in a private tour</td>
+									<td>{ value.Three.Economy}</td>
+									<td>{ value.Three.Comfort}</td>
+									<td>{ value.Three.Luxury}</td>
+								</tr>
+								<tr>
+									<td>6-7 Person in a private tour</td>
+									<td>{ value.Four.Economy}</td>
+									<td>{ value.Four.Comfort}</td>
+									<td>{ value.Four.Luxury}</td>
+								</tr>
+								<tr>
+									<td>Single Room Extra</td>
+									<td>{ value.Extra.Economy}</td>
+									<td>{ value.Extra.Comfort}</td>
+									<td>{ value.Extra.Luxury}</td>
+								</tr>
+								<tr>
+									<td>Child below 3 Years <br />Child between 3-12 Years</td>
+									<td>FREE <br />75% of adult rate</td>
+									<td>FREE <br />75% of adult rate</td>
+									<td>FREE <br />75% of adult rate</td>
+								</tr>
+								<tr>
+									<td>
+										<span>NOTE:</span>Visitors staying in safari lodges and
+										tented camps shall pay an extra USD 100 per person per day
+										from 1stJuly - 31st December
+									</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					}
+						// <table class="safari-price-table">
+						// 	<thead>
+						// 		<tr>
+						// 			<td>
+						// 				Shoulder Season <br />
+						// 				(15th Nov-31stMar)
+						// 			</td>
+						// 			<td>Economy</td>
+						// 			<td>Comfort</td>
+						// 			<td>Luxury</td>
+						// 		</tr>
+						// 	</thead>
+						// 	<tbody>
+						// 		<tr>
+						// 			<td>1 Person in a private tour</td>
+						// 			<td>$1,232</td>
+						// 			<td>$1,288</td>
+						// 			<td>$1428</td>
+						// 		</tr>
+						// 		<tr>
+						// 			<td>2-3 Person in a private tour</td>
+						// 			<td>$1,232</td>
+						// 			<td>$1,288</td>
+						// 			<td>$1428</td>
+						// 		</tr>
+						// 		<tr>
+						// 			<td>4-5 Person in a private tour</td>
+						// 			<td>$1,232</td>
+						// 			<td>$1,288</td>
+						// 			<td>$1428</td>
+						// 		</tr>
+						// 		<tr>
+						// 			<td>6-7 Person in a private tour</td>
+						// 			<td>$1,232</td>
+						// 			<td>$1,288</td>
+						// 			<td>$1428</td>
+						// 		</tr>
+						// 		<tr>
+						// 			<td>Single Room Extra</td>
+						// 			<td>$90</td>
+						// 			<td>$100</td>
+						// 			<td>$110</td>
+						// 		</tr>
+						// 		<tr>
+						// 			<td>Child below 3 Years <br />Child between 3-12 Years</td>
+						// 			<td>FREE <br />75% of adult rate</td>
+						// 			<td>FREE <br />75% of adult rate</td>
+						// 			<td>FREE <br />75% of adult rate</td>
+						// 		</tr>
+						// 		<tr>
+						// 			<td>
+						// 				<span>NOTE:</span>Visitors staying in safari lodges and
+						// 				tented camps shall pay an extra USD 100 per person per day
+						// 				from 1stJuly - 31st December
+						// 			</td>
+						// 			<td></td>
+						// 			<td></td>
+						// 			<td></td>
+						// 		</tr>
+						// 	</tbody>
+						// </table>
+						// <table class="safari-price-table">
+						// 	<thead>
+						// 		<tr>
+						// 			<td>
+						// 				Shoulder Season <br />
+						// 				(15th Nov-31stMar)
+						// 			</td>
+						// 			<td>Economy</td>
+						// 			<td>Comfort</td>
+						// 			<td>Luxury</td>
+						// 		</tr>
+						// 	</thead>
+						// 	<tbody>
+						// 		<tr>
+						// 			<td>1 Person in a private tour</td>
+						// 			<td>$1,232</td>
+						// 			<td>$1,288</td>
+						// 			<td>$1428</td>
+						// 		</tr>
+						// 		<tr>
+						// 			<td>2-3 Person in a private tour</td>
+						// 			<td>$1,232</td>
+						// 			<td>$1,288</td>
+						// 			<td>$1428</td>
+						// 		</tr>
+						// 		<tr>
+						// 			<td>4-5 Person in a private tour</td>
+						// 			<td>$1,232</td>
+						// 			<td>$1,288</td>
+						// 			<td>$1428</td>
+						// 		</tr>
+						// 		<tr>
+						// 			<td>6-7 Person in a private tour</td>
+						// 			<td>$1,232</td>
+						// 			<td>$1,288</td>
+						// 			<td>$1428</td>
+						// 		</tr>
+						// 		<tr>
+						// 			<td>Single Room Extra</td>
+						// 			<td>$90</td>
+						// 			<td>$100</td>
+						// 			<td>$110</td>
+						// 		</tr>
+						// 		<tr>
+						// 			<td>Child below 3 Years <br />Child between 3-12 Years</td>
+						// 			<td>FREE <br />75% of adult rate</td>
+						// 			<td>FREE <br />75% of adult rate</td>
+						// 			<td>FREE <br />75% of adult rate</td>
+						// 		</tr>
+						// 		<tr>
+						// 			<td>
+						// 				<span>NOTE:</span>Visitors staying in safari lodges and
+						// 				tented camps shall pay an extra USD 100 per person per day
+						// 				from 1stJuly - 31st December
+						// 			</td>
+						// 			<td></td>
+						// 			<td></td>
+						// 			<td></td>
+						// 		</tr>
+						// 	</tbody>
+						// </table>
 					</div>
 				</div>
-				<div class="safari-div-cont">
-					<p>Price excludes</p>
-					<div class="safari-num-details">
-						<div class="safari__list-groups">
-							<ul class="list__group">
-								<li>
-									<i class="ri-close-fill"></i>
-									Professional Drive Guide
-								</li>
-								<li>
-									<i class="ri-close-fill"></i>
-									All meals full board
-								</li>
-								<li>
-									<i class="ri-close-fill"></i>
-									Game drives
-								</li>
-								<li>
-									<i class="ri-close-fill"></i>
-									Park entry fees
-								</li>
-							</ul>
-							<ul class="list__group" start="5">
-								<li>
-									<i class="ri-close-fill"></i>
-									Professional Drive Guide
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="safari-div-cont">
-					<p>What you need to bring</p>
-					<div class="safari-num-details">
-						<div class="safari__list-groups">
-							<ul class="list__group">
-								<li>
-									<i class="ri-play-fill"></i>
-									Professional Drive Guide
-								</li>
-								<li>
-									<i class="ri-play-fill"></i>
-									All meals full board
-								</li>
-
-								<li>
-									<i class="ri-play-fill"></i>
-									Game drives
-								</li>
-
-								<li>
-									<i class="ri-play-fill"></i>
-									Park entry fees
-								</li>
-							</ul>
-
-							<ul class="list__group" start="5">
-								<li>
-									<i class="ri-play-fill"></i>
-									Professional Drive Guid e
-								</li>
-								<li>
-									<i class="ri-play-fill"></i>
-									All meals full board
-								</li>
-								<li>
-									<i class="ri-play-fill"></i>
-									Game drives
-								</li>
-								<li>
-									<i class="ri-play-fill"></i>
-									Park entry fees
-								</li>
-							</ul>
-						</div>
-					</div>
+				<div class="table-pips">
+					<div class="table-pip active"></div>
+					<div class="table-pip"></div>
+					<div class="table-pip"></div>
 				</div>
 			</div>
-			<div class="safari-num-addition">
-				<p>
-					<span>Additional Information</span> <br />
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus
-					labore ex maiores fugiat in id porro vitae sunt quibusdam vel?
-				</p>
-				<div class="btn">Book The Safari</div>
-				<!-- <div class="safari-num-fees-break">
-					<p>Fees</p>
+		</section>
+		<section class="safari-accomodation-sec">
+			<div class="accomo-sect-1">
+				<h1>ACCOMODATION</h1>
+				<h2>Safari accommodation options for each location</h2>
+				<div class="underline">
+					<div class="above-underline"></div>
+				</div>
+				<div class="accomodation-options">
+					<div
+						class="accomodation-option option-active"
+						data-accomodate-value="economy"
+					>
+						<p>ECONOMY LEVEL</p>
+					</div>
+					<div class="accomodation-option" data-accomodate-value="comfort">
+						<p>COMFORT LEVEL</p>
+					</div>
+					<div class="accomodation-option" data-accomodate-value="luxury">
+						<p>LUXURY LEVEL</p>
+					</div>
+				</div>
+				<div class="accomodation-list" data-safari-id="1">
 					<ul>
-						<li>Park fees $80</li>
-						<li>Park fees $80</li>
-						<li>Park fees $80</li>
-						<li>Park fees $80</li>
+						for _, value := range safari.Accomodation.Economy {
+							<li>{ value }</li>
+						}
+						// <li>Elangata Olerai Camp</li>
+						// <li>Elangata Olerai Camp</li>
+						// <li>Elangata Olerai Camp</li>
+						// <li>Elangata Olerai Camp</li>
 					</ul>
-				</div> -->
+				</div>
 			</div>
+			<div class="tour-breakdown">
+				<h1>TOUR PRICE <span>INCLUDES</span></h1>
+				<div class="underline">
+					<div class="above-underline"></div>
+				</div>
+				<div class="tour-col-2">
+					<ul>
+					for i := 0; i <= len(safari.TourIncludes) / 2; i++ {
+						<li>
+							<i class="ri-edit-circle-fill"></i>
+							<p>{ safari.TourIncludes[i] }</p>
+						</li>
+					}
+						
+						// <li>
+						// 	<i class="ri-edit-circle-fill"></i>
+						// 	<p>
+						// 		Tour in our standard Customized Pop-top $WD Toyota Land cruiser
+						// 		Jeep
+						// 	</p>
+						// </li>
+						// <li>
+						// 	<i class="ri-edit-circle-fill"></i>
+						// 	<p>
+						// 		Service of an experience English / other language speaking
+						// 		safari tour guide/driver
+						// 	</p>
+						// </li>
+						// <li>
+						// 	<i class="ri-edit-circle-fill"></i>
+						// 	<p>
+						// 		Stay in Economy, Comfort and Luxury safari lodges / tented camps
+						// 	</p>
+						// </li>
+					</ul>
+					<ul>
+					for i := (len(safari.TourIncludes) / 2) + 1; i < len(safari.TourIncludes); i++ {
+						<li>
+							<i class="ri-edit-circle-fill"></i>
+							<p>{ safari.TourIncludes[i] }Here</p>
+						</li>
+					}
+						
+						// <li>
+						// 	<i class="ri-edit-circle-fill"></i>
+						// 	<p>Meals on safari</p>
+						// </li>
+						// <li>
+						// 	<i class="ri-edit-circle-fill"></i>
+						// 	<p>Bottled drinking water in safari vehicle</p>
+						// </li>
+						// <li>
+						// 	<i class="ri-edit-circle-fill"></i>
+						// 	<p>Government taxes and local levies</p>
+						// </li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="safari-not-included">
+			<h3>Not included In the Tour Price:</h3>
+			<ul>
+				<li>Bottled & Soft drinks</li>
+				<li>Items and services of a personal nature</li>
+				<li>Tips and Gratuities</li>
+			</ul>
 		</section>
 }
 
 templ SafariNumPage(body templ.Component) {
-    @BaseTemplate([]string{"general", "nav", "service", "footer", "safaris", "safaris-num", "intro"}, []string{"q&a", "nav"}, body)
+    @BaseTemplate([]string{"general", "nav", "intro", "service", "footer", "safaris", "safaris-num"}, []string{"q&a", "nav", "safari-num"}, body)
 }

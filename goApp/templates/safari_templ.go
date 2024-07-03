@@ -22,6 +22,123 @@ var safaris = []db.Safari{
 		Days:        3,
 		Description: "This flying safari to Amboseli National Reserve is an excellent choice for a wildlife adventure in Kenya. Amboseli is known for its unique ecosystem and diverse wildlife, including several species not found in other parts of Kenya.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{Day: 1, Title: "Nairobi to Amboseli National Park", Activity: "On arrival, take a game drive to your lodge. After lunch, relax before an afternoon game drive. Dinner at your lodge.", Image: "/static/images/giraffe1.jpg"},
 			{Day: 2, Title: "Full Day in Amboseli National Park", Activity: "Early morning game drive. Relax at the lodge, then an afternoon game drive searching for predators like lions and cheetahs.", Image: "/static/images/giraffe1.jpg"},
@@ -35,6 +152,123 @@ var safaris = []db.Safari{
 		Days:        5,
 		Description: "Experience the famous Maasai Mara, home to the Great Migration and incredible wildlife viewing opportunities.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{Day: 1, Title: "Nairobi to Maasai Mara", Activity: "Drive to Maasai Mara. Afternoon game drive on arrival. Dinner and overnight at the camp.", Image: "/static/images/giraffe1.jpg"},
 			{Day: 2, Title: "Exploring Maasai Mara", Activity: "Full day game drives in Maasai Mara. Search for the Big Five and witness the spectacular wildlife.", Image: "/static/images/giraffe1.jpg"},
@@ -50,6 +284,123 @@ var safaris = []db.Safari{
 		Days:        6,
 		Description: "Explore the vast landscapes of Tsavo East and West, known for their large elephant populations and breathtaking scenery.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{Day: 1, Title: "Nairobi to Tsavo East", Activity: "Drive to Tsavo East. Afternoon game drive upon arrival.", Image: "/static/images/giraffe1.jpg"},
 			{Day: 2, Title: "Tsavo East", Activity: "Full day exploring Tsavo East with morning and afternoon game drives.", Image: "/static/images/giraffe1.jpg"},
@@ -66,6 +417,123 @@ var safaris = []db.Safari{
 		Days:        4,
 		Description: "Visit Lake Nakuru, famous for its flamingos and as a sanctuary for endangered rhinos.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{Day: 1, Title: "Nairobi to Lake Nakuru", Activity: "Drive to Lake Nakuru. Afternoon game drive focusing on rhinos and flamingos.", Image: "/static/images/giraffe1.jpg"},
 			{Day: 2, Title: "Lake Nakuru National Park", Activity: "Full day exploring Lake Nakuru. Enjoy morning and afternoon game drives.", Image: "/static/images/giraffe1.jpg"},
@@ -80,6 +548,123 @@ var safaris = []db.Safari{
 		Days:        5,
 		Description: "Discover the unique wildlife and landscapes of Samburu National Reserve, including the rare Grevy's zebra and reticulated giraffe.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{Day: 1, Title: "Nairobi to Samburu", Activity: "Drive to Samburu. Afternoon game drive on arrival.", Image: "/static/images/giraffe1.jpg"},
 			{Day: 2, Title: "Samburu National Reserve", Activity: "Full day game drives in Samburu. Look for the unique wildlife such as the Grevy's zebra.", Image: "/static/images/giraffe1.jpg"},
@@ -95,6 +680,123 @@ var safaris = []db.Safari{
 		Days:        4,
 		Description: "Explore the wild and unspoiled landscapes of Meru National Park, home to diverse wildlife and beautiful scenery.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{Day: 1, Title: "Nairobi to Meru National Park", Activity: "Drive to Meru National Park. Afternoon game drive on arrival.", Image: "/static/images/giraffe1.jpg"},
 			{Day: 2, Title: "Meru National Park", Activity: "Full day of game drives in Meru, searching for lions, elephants, and rhinos.", Image: "/static/images/giraffe1.jpg"},
@@ -109,6 +811,123 @@ var safaris = []db.Safari{
 		Days:        3,
 		Description: "Adventure to Mount Kenya National Park, offering stunning views and diverse wildlife at Kenya's highest peak.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{Day: 1, Title: "Nairobi to Mount Kenya", Activity: "Drive to Mount Kenya. Afternoon nature walk to acclimatize.", Image: "/static/images/giraffe1.jpg"},
 			{Day: 2, Title: "Exploring Mount Kenya", Activity: "Full day hike on Mount Kenya with opportunities to see various flora and fauna.", Image: "/static/images/giraffe1.jpg"},
@@ -122,6 +941,123 @@ var safaris = []db.Safari{
 		Days:        3,
 		Description: "Explore the dramatic landscapes and geothermal activity of Hell's Gate National Park, a unique destination in Kenya.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{Day: 1, Title: "Nairobi to Hell's Gate", Activity: "Drive to Hell's Gate. Afternoon bike ride through the park.", Image: "/static/images/giraffe1.jpg"},
 			{Day: 2, Title: "Exploring Hell's Gate", Activity: "Full day of hiking and exploring Hell's Gate, including a visit to the geothermal spa.", Image: "/static/images/giraffe1.jpg"},
@@ -135,6 +1071,123 @@ var safaris = []db.Safari{
 		Days:        4,
 		Description: "Relax by the serene waters of Lake Naivasha, with opportunities for boat rides and bird watching.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{Day: 1, Title: "Nairobi to Lake Naivasha", Activity: "Drive to Lake Naivasha. Afternoon boat ride on the lake.", Image: "/static/images/giraffe1.jpg"},
 			{Day: 2, Title: "Lake Naivasha", Activity: "Full day exploring Lake Naivasha. Visit Crescent Island and enjoy bird watching.", Image: "/static/images/giraffe1.jpg"},
@@ -149,6 +1202,123 @@ var safaris = []db.Safari{
 		Days:        7,
 		Description: "Embark on an adventure to Mount Elgon National Park, known for its ancient caves, waterfalls, and diverse wildlife.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{Day: 1, Title: "Nairobi to Mount Elgon", Activity: "Drive to Mount Elgon. Afternoon nature walk upon arrival.", Image: "/static/images/giraffe1.jpg"},
 			{Day: 2, Title: "Exploring Mount Elgon", Activity: "Full day of hiking and exploring the park's caves and waterfalls.", Image: "/static/images/giraffe1.jpg"},
@@ -166,6 +1336,123 @@ var safaris = []db.Safari{
 		Days:        4,
 		Description: "Experience the wonder of the Maasai Mara, home to the Great Migration. Witness breathtaking wildlife spectacles and immerse yourself in Maasai culture on this unforgettable adventure.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{
 				Day:      1,
@@ -200,6 +1487,123 @@ var safaris = []db.Safari{
 		Days:        5,
 		Description: "Combine the elephant paradise of Amboseli with the rugged wilderness of Tsavo. Marvel at Mt. Kilimanjaro's snowy peak and explore diverse ecosystems teeming with wildlife.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{
 				Day:      1,
@@ -240,6 +1644,123 @@ var safaris = []db.Safari{
 		Days:        3,
 		Description: "Discover the pink flamingo-fringed shores of Lake Nakuru and the mystical Aberdare Forest. From open savannah to lush montane forest, experience Kenya's diverse landscapes and wildlife.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{
 				Day:      1,
@@ -268,6 +1789,123 @@ var safaris = []db.Safari{
 		Days:        6,
 		Description: "Journey to the rugged north for unique wildlife experiences. Encounter Samburu's 'Special Five' and get up close with rhinos in Ol Pejeta. A safari that combines conservation with unforgettable animal encounters.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{
 				Day:      1,
@@ -314,6 +1952,123 @@ var safaris = []db.Safari{
 		Days:        7,
 		Description: "Explore the wild beauty of Meru National Park and the conservation success of Lewa Wildlife Conservancy. From Born Free country to a rhino sanctuary, experience unique wildlife and landscapes.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{
 				Day:      1,
@@ -366,6 +2121,123 @@ var safaris = []db.Safari{
 		Days:        5,
 		Description: "Combine the wildlife wonders of the Masai Mara with the tranquil beauty of Lake Victoria. From big game encounters to fishing villages, experience the diversity of western Kenya.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{
 				Day:      1,
@@ -406,6 +2278,123 @@ var safaris = []db.Safari{
 		Days:        4,
 		Description: "Ascend the slopes of Mount Kenya and explore the wildlife-rich plains of Ol Pejeta Conservancy. From mountain forests to savannah, experience central Kenya's diverse ecosystems.",
 		Image:       "/static/images/giraffe1.jpg",
+		LowestPrice: "$594",
+		TourIncludes: []string{
+			"Courtesy Nairobi airport-hotel pick up/drop off transfers",
+			"Tour in our Standard Customized Pop-top 4WD Toyota Land cruiser Jeep.",
+			"Services of an experienced English / other language speaking safari tour guide/driver ",
+			"Stay in Economy, Comfort & Luxury safari lodges / tented camps ( please choose ) ",
+			"Game viewing drives",
+			"Masai Mara game reserve entrance fees",
+			"Meals on safari",
+			"Bottled drinking water in safari vehicle",
+			"Pick up /drop off at Nairobi airport/ Nairobi hotel or residence",
+			"Government taxes and local levies",
+		},
+		Prices: map[string]db.PriceStructure{
+			"shoulder": {
+				One: db.PricingSafari{
+					Economy: "$1,232",
+					Comfort: "$1,288",
+					Luxury:  "$1,428",
+				},
+				Two: db.PricingSafari{
+					Economy: "$880",
+					Comfort: "$920",
+					Luxury:  "$1,020",
+				},
+				Three: db.PricingSafari{
+					Economy: "$705",
+					Comfort: "$750",
+					Luxury:  "$840",
+				},
+				Four: db.PricingSafari{
+					Economy: "$650",
+					Comfort: "$690",
+					Luxury:  "$780",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$100",
+					Luxury:  "$110",
+				},
+			},
+			"peak": {
+				One: db.PricingSafari{
+					Economy: "$1,380",
+					Comfort: "$1,570",
+					Luxury:  "$1,900",
+				},
+				Two: db.PricingSafari{
+					Economy: "$985",
+					Comfort: "$1,120",
+					Luxury:  "$1,360",
+				},
+				Three: db.PricingSafari{
+					Economy: "$795",
+					Comfort: "$925",
+					Luxury:  "$1,165",
+				},
+				Four: db.PricingSafari{
+					Economy: "$735",
+					Comfort: "$870",
+					Luxury:  "$1,100",
+				},
+				Extra: db.PricingSafari{
+					Economy: "$90",
+					Comfort: "$140",
+					Luxury:  "$200",
+				},
+			},
+			"low": {
+				One: db.PricingSafari{
+					Economy: "$1,162",
+					Comfort: "$1,232",
+					Luxury:  "$1,302",
+				},
+				Two: db.PricingSafari{
+					Economy: "$830",
+					Comfort: "$880",
+					Luxury:  "$930",
+				},
+				Three: db.PricingSafari{
+					Economy: "$655",
+					Comfort: "$710",
+					Luxury:  "$760",
+				},
+				Four: db.PricingSafari{
+					Economy: "$594",
+					Comfort: "$650",
+					Luxury:  "$699",
+				},
+				Extra: db.PricingSafari{
+					Economy: "-",
+					Comfort: "-",
+					Luxury:  "-",
+				},
+			},
+		},
+		Accomodation: db.AccomodationSafari{
+			Economy: []string{
+				"Elangata Olerai Camp",
+				"Orng'atuny Mara King Camp",
+				"Mara Chuo Champ",
+				"Jambo Mara Safari Lodge",
+			},
+			Comfort: []string{
+				"Prideinn Mara Camp",
+				"Osero Camp",
+				"Enkorok Mara CAmp",
+				"AA Mara Lodge",
+				"Mara River Lodge",
+				"Azure Mara Haven Hotel",
+			},
+			Luxury: []string{
+				"Saruni Mara Camp",
+				"Porini Mara Camp",
+				"Mara Explorer Camp",
+			},
+		},
 		Breakdown: []db.SafariBreakDown{
 			{
 				Day:      1,
@@ -528,7 +2517,7 @@ func SafariBody() templ.Component {
 			var templ_7745c5c3_Var2 string
 			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(string(templ.URL(safari.Image)))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 558, Col: 68}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 2548, Col: 68}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 			if templ_7745c5c3_Err != nil {
@@ -541,7 +2530,7 @@ func SafariBody() templ.Component {
 			var templ_7745c5c3_Var3 string
 			templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprintf("%d Days %s", safari.Days, safari.Title))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 560, Col: 60}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 2550, Col: 60}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 			if templ_7745c5c3_Err != nil {
@@ -554,7 +2543,7 @@ func SafariBody() templ.Component {
 			var templ_7745c5c3_Var4 string
 			templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprintf("By %s", safari.Guide))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 561, Col: 71}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 2551, Col: 71}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 			if templ_7745c5c3_Err != nil {
@@ -567,13 +2556,26 @@ func SafariBody() templ.Component {
 			var templ_7745c5c3_Var5 string
 			templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(safari.Description)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 564, Col: 26}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 2554, Col: 26}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p>")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p><div class=\"safari-button-group\"><div class=\"safari-learn-more btn js-quick-view\" data-safari-id=\"")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var6 string
+			templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprintf("%d", safari.ID))
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 2557, Col: 118}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Quick View</div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -585,12 +2587,126 @@ func SafariBody() templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			var templ_7745c5c3_Var6 templ.ComponentScript = safariNumWindow(int(safari.ID))
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var6.Call)
+			var templ_7745c5c3_Var7 templ.ComponentScript = safariNumWindow(int(safari.ID))
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var7.Call)
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Learn More</div></div>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var8 = []any{fmt.Sprintf("js-overlay-%d quick-view-overlay", safari.ID)}
+			templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var8...)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var9 string
+			templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var8).String())
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 1, Col: 0}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"><div class=\"quick-view-container\"><div class=\"close-quick-view\"><i class=\"ri-close-large-line\"></i></div><div class=\"quick-view-details\"><div><img class=\"safari-image\" src=\"")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var10 string
+			templ_7745c5c3_Var10, templ_7745c5c3_Err = templ.JoinStringErrs(string(templ.URL(safari.Image)))
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 2567, Col: 99}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var10))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\" alt=\"\"></div><div class=\"quick-view-des\"><p class=\"section-title safari-card-title\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var11 string
+			templ_7745c5c3_Var11, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprintf("%d Days %s", safari.Days, safari.Title))
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 2571, Col: 94}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var11))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(" <span class=\"last-two-words\">")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var12 string
+			templ_7745c5c3_Var12, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprintf("By %s", safari.Guide))
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 2572, Col: 105}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var12))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></p><p>Tour includes:</p><ul>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			for _, value := range safari.TourIncludes {
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				var templ_7745c5c3_Var13 string
+				templ_7745c5c3_Var13, templ_7745c5c3_Err = templ.JoinStringErrs(value)
+				if templ_7745c5c3_Err != nil {
+					return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 2577, Col: 51}
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var13))
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+				_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</li>")
+				if templ_7745c5c3_Err != nil {
+					return templ_7745c5c3_Err
+				}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</ul><p>Price by season:</p><p class=\"quick-view-pricing\">Low from <span>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var14 string
+			templ_7745c5c3_Var14, templ_7745c5c3_Err = templ.JoinStringErrs(safari.LowestPrice)
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/safari.templ`, Line: 2585, Col: 101}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var14))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</span></p></div></div><div class=\"safari-button-group-modal\"><div class=\"btn\">RETURN TO PAGE</div>")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templ.RenderScriptItems(ctx, templ_7745c5c3_Buffer, safariNumWindow(int(safari.ID)))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"btn\" onclick=\"")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var15 templ.ComponentScript = safariNumWindow(int(safari.ID))
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ_7745c5c3_Var15.Call)
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">FINDOUT MORE</div></div></div></div></div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -620,9 +2736,9 @@ func SafariPage(body templ.Component) templ.Component {
 			}()
 		}
 		ctx = templ.InitializeContext(ctx)
-		templ_7745c5c3_Var7 := templ.GetChildren(ctx)
-		if templ_7745c5c3_Var7 == nil {
-			templ_7745c5c3_Var7 = templ.NopComponent
+		templ_7745c5c3_Var16 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var16 == nil {
+			templ_7745c5c3_Var16 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
 		templ_7745c5c3_Err = BaseTemplate([]string{"general", "nav", "service", "footer", "safaris", "intro"}, []string{"q&a", "nav", "safari", "data/safari"}, body).Render(ctx, templ_7745c5c3_Buffer)

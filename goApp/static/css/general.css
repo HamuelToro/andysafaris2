@@ -581,6 +581,125 @@ table {
 		left: 3rem;
 		z-index: -2;
 	}
+
+	.safari-button-group {
+		display: flex;
+		flex-direction: column;
+		margin-block: 0.8rem 0.5rem;
+		margin-inline: 0.5rem;
+		row-gap: 0.5rem;
+	}
+
+	.safari-button-group div {
+		margin: 0;
+		width: 100%;
+	}
+
+	.quick-view-overlay {
+		position: fixed;
+		top: -50rem;
+		left: 0;
+		right: 0;
+		height: 100vh;
+		padding-inline: 3rem;
+		background-color: rgba(0, 0, 0, 0.7);
+		overflow: auto;
+		z-index: 50;
+	}
+
+	.safari-button-group-modal {
+		display: flex;
+		flex-direction: column;
+		margin-top: 1.5rem;
+	}
+
+	.safari-button-group-modal div {
+		font-size: var(--h3-font-size);
+		margin-block: 0.5rem 0.8rem;
+		cursor: pointer;
+		text-align: center;
+	}
+
+	.quick-view-des .section-title {
+		font-size: var(--normal-font-size);
+		text-align: start;
+	}
+
+	.safari-day-accom {
+		background-color: var(--first-color);
+		margin-block: 3rem 0rem;
+		display: grid;
+		padding: 2rem 1.5rem 1rem 1.5rem;
+	}
+
+	.price-grab {
+		display: flex;
+		column-gap: 0.5rem;
+		width: calc(300% + 1rem);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	.price-table-cont h1 {
+		font-size: var(--h2-font-size);
+	}
+
+	.accomo-sect-1 h2,
+	.price-table-cont h2 {
+		font-size: var(--h3-font-size);
+		opacity: 0.7;
+	}
+
+	.safari-price-table tbody td {
+		border: 1px solid var(--title-color);
+		padding: 0.25rem 0.75rem;
+	}
+
+	.safari-price-table thead td {
+		border: 1px solid var(--title-color);
+		padding: 0.8rem 0.75rem;
+		text-align: center;
+	}
+
+	.accomodation-options {
+		display: flex;
+		justify-content: start;
+		column-gap: 0.5rem;
+	}
+
+	.accomodation-option {
+		background-color: rgb(145, 50, 12);
+		transform: skew(-20deg);
+		padding: 0.25rem 1.4rem;
+		color: var(--body-color);
+		font-weight: var(--font-bold);
+		font-size: var(--normal-font-size);
+		cursor: pointer;
+	}
+
+	.safari-not-included {
+		padding-inline: 1.5rem;
+		background-color: rgb(241, 230, 230);
+		padding-bottom: 0.5rem;
+	}
+
+	.safari-accomodation-sec {
+		font-weight: var(--font-semi-bold);
+		margin-top: 3rem;
+		background-image: linear-gradient(to bottom, white 10%, transparent),
+			url(../images/keyur-nandaniya-vu0gvM5he8o-unsplash.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		padding-inline: 1.5rem;
+		padding-bottom: 3rem;
+	}
+
+	.tour-breakdown li {
+		display: flex;
+		column-gap: 0.5rem;
+		align-items: center;
+		margin-bottom: 0.3rem;
+	}
 }
 
 @media screen and (min-width: 830px) and (max-width: 950px) {
@@ -1166,6 +1285,135 @@ table {
 		left: 3rem;
 		z-index: -2;
 	}
+
+	.safari-button-group {
+		display: flex;
+		flex-direction: column;
+		margin-block: 0.8rem 0.5rem;
+		margin-inline: 0.5rem;
+		row-gap: 0.5rem;
+	}
+
+	.safari-button-group div {
+		margin: 0;
+		width: 100%;
+	}
+
+	.quick-view-overlay {
+		position: fixed;
+		top: -50rem;
+		left: 0;
+		right: 0;
+		height: 100vh;
+		padding-inline: 3rem;
+		background-color: rgba(0, 0, 0, 0.7);
+		overflow: auto;
+		z-index: 50;
+	}
+
+	.quick-view-details {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 1.5rem;
+	}
+
+	.safari-button-group-modal {
+		display: flex;
+		justify-content: space-between;
+		column-gap: 2rem;
+		margin-top: 1.5rem;
+		margin-inline: 3rem;
+	}
+
+	.safari-button-group-modal div {
+		font-size: var(--h3-font-size);
+		margin-block: 0.5rem 0.8rem;
+		cursor: pointer;
+		text-align: center;
+		width: 80%;
+	}
+
+	.quick-view-des .section-title {
+		font-size: var(--large-font-size);
+		text-align: start;
+	}
+
+	.safari-day-accom {
+		background-color: var(--first-color);
+		margin-block: 3rem 0rem;
+		display: grid;
+		padding: 2rem 3rem 1rem 3rem;
+	}
+
+	.price-grab {
+		display: flex;
+		column-gap: 0.5rem;
+		width: calc(300% + 1rem);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	.price-table-cont h1 {
+		font-size: var(--h2-font-size);
+	}
+
+	.accomo-sect-1 h2,
+	.price-table-cont h2 {
+		font-size: var(--h3-font-size);
+		opacity: 0.7;
+	}
+
+	.safari-price-table tbody td {
+		border: 1px solid var(--title-color);
+		padding: 0.25rem 0.75rem;
+	}
+
+	.safari-price-table thead td {
+		border: 1px solid var(--title-color);
+		padding: 0.8rem 0.75rem;
+		text-align: center;
+		font-size: var(--h3-font-size);
+	}
+
+	.accomodation-options {
+		display: flex;
+		justify-content: start;
+		column-gap: 0.5rem;
+	}
+
+	.accomodation-option {
+		background-color: rgb(145, 50, 12);
+		transform: skew(-20deg);
+		padding: 0.5rem 1.8rem;
+		color: var(--body-color);
+		font-weight: var(--font-bold);
+		font-size: var(--normal-font-size);
+		cursor: pointer;
+	}
+
+	.safari-not-included {
+		padding-inline: 3rem;
+		background-color: rgb(241, 230, 230);
+		padding-bottom: 0.5rem;
+	}
+
+	.safari-accomodation-sec {
+		font-weight: var(--font-semi-bold);
+		margin-top: 3rem;
+		background-image: linear-gradient(to bottom, white 10%, transparent),
+			url(../images/keyur-nandaniya-vu0gvM5he8o-unsplash.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		padding-inline: 3rem;
+		padding-bottom: 3rem;
+	}
+
+	.tour-breakdown li {
+		display: flex;
+		column-gap: 0.5rem;
+		align-items: center;
+		margin-bottom: 0.5rem;
+	}
 }
 
 @media screen and (min-width: 950px) {
@@ -1734,5 +1982,158 @@ table {
 		right: 3rem;
 		left: 3rem;
 		z-index: -2;
+	}
+
+	.safari-button-group {
+		display: flex;
+		column-gap: 0.5rem;
+		/* flex-direction: column; */
+		justify-content: space-between;
+		margin-block: 0.8rem 0.5rem;
+		margin-inline: 0.5rem;
+		row-gap: 0.5rem;
+	}
+
+	.safari-button-group div {
+		margin: 0;
+		padding: 6px 8px;
+		/* width: 100%; */
+		font-size: var(--normal-font-size);
+	}
+
+	.quick-view-overlay {
+		position: fixed;
+		top: -50rem;
+		left: 0;
+		right: 0;
+		height: 100vh;
+		padding-inline: 10rem;
+		background-color: rgba(0, 0, 0, 0.7);
+		overflow: auto;
+		z-index: 50;
+	}
+
+	.quick-view-details {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 1.5rem;
+	}
+
+	.safari-button-group-modal {
+		display: flex;
+		justify-content: space-between;
+		column-gap: 2rem;
+		margin-top: 1.5rem;
+		margin-inline: 3rem;
+	}
+
+	.safari-button-group-modal div {
+		font-size: var(--h3-font-size);
+		margin-block: 0.5rem 0.8rem;
+		cursor: pointer;
+		text-align: center;
+		width: 80%;
+	}
+
+	.quick-view-des .section-title {
+		font-size: var(--large-font-size);
+		text-align: start;
+	}
+
+	.safari-day-accom {
+		background-color: var(--first-color);
+		margin-block: 3rem 0rem;
+		display: grid;
+		padding: 2rem 3rem 1rem 3rem;
+	}
+
+	.price-grab {
+		display: flex;
+		column-gap: 0.5rem;
+		width: calc(300% + 1rem);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	.price-table-cont h1 {
+		font-size: var(--h1-font-size);
+	}
+
+	.accomo-sect-1 h2,
+	.price-table-cont h2 {
+		font-size: var(--h2-font-size);
+		opacity: 0.7;
+	}
+
+	.safari-price-table tbody td {
+		border: 1px solid var(--title-color);
+		padding: 0.25rem 1rem;
+	}
+
+	.safari-price-table thead td {
+		border: 1px solid var(--title-color);
+		padding: 0.8rem 1rem;
+		text-align: center;
+		font-size: var(--h3-font-size);
+	}
+
+	.accomodation-options {
+		display: flex;
+		justify-content: start;
+		column-gap: 0.5rem;
+	}
+
+	.accomodation-option {
+		background-color: rgb(145, 50, 12);
+		transform: skew(-20deg);
+		padding: 0.5rem 1.5rem;
+		color: var(--body-color);
+		font-weight: var(--font-bold);
+		font-size: var(--normal-font-size);
+		cursor: pointer;
+	}
+
+	.safari-not-included {
+		padding-inline: 3rem;
+		background-color: rgb(241, 230, 230);
+		padding-bottom: 0.5rem;
+	}
+
+	.safari-accomodation-sec {
+		font-weight: var(--font-semi-bold);
+		margin-top: 3rem;
+		background-image: linear-gradient(to bottom, white 10%, transparent),
+			url(../images/keyur-nandaniya-vu0gvM5he8o-unsplash.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		padding-inline: 3rem;
+		padding-bottom: 5rem;
+	}
+
+	.tour-breakdown li {
+		display: flex;
+		column-gap: 0.5rem;
+		align-items: center;
+		margin-bottom: 0.5rem;
+	}
+
+	.tour-col-2 {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.safari-accomodation-sec ul {
+		font-size: var(--h2-font-size);
+	}
+
+	.tour-breakdown li {
+		display: flex;
+		column-gap: 0.5rem;
+		align-items: center;
+		margin-bottom: 0.8rem;
+	}
+
+	.accomodation-list ul {
+		font-size: var(--normal-font-size);
 	}
 }

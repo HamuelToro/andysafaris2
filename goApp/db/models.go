@@ -5,6 +5,26 @@ type QandA struct {
 	Description string
 }
 
+type PriceStructure struct {
+	One   PricingSafari
+	Two   PricingSafari
+	Three PricingSafari
+	Four  PricingSafari
+	Extra PricingSafari
+}
+
+type PricingSafari struct {
+	Economy string
+	Comfort string
+	Luxury  string
+}
+
+type AccomodationSafari struct {
+	Economy []string
+	Comfort []string
+	Luxury  []string
+}
+
 type SafariBreakDown struct {
 	Day      int16
 	Title    string
@@ -13,13 +33,17 @@ type SafariBreakDown struct {
 }
 
 type Safari struct {
-	ID          int32
-	Title       string
-	Guide       string
-	Days        int16
-	Description string
-	Image       string
-	Breakdown   []SafariBreakDown
+	ID           int32
+	Title        string
+	Guide        string
+	Days         int16
+	Description  string
+	Image        string
+	LowestPrice  string
+	Prices       map[string]PriceStructure
+	Accomodation AccomodationSafari
+	TourIncludes []string
+	Breakdown    []SafariBreakDown
 }
 
 type Vehicle struct {
