@@ -80,6 +80,20 @@ h4 {
 	font-weight: var(--font-medium);
 }
 
+.main-container {
+	max-width: 1200px;
+	width: 100%;
+	/* background-color: #fff; */
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin: 0 auto;
+}
+
+.header-container {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
 .section {
 	padding-block: 5rem 2rem;
 }
@@ -315,6 +329,7 @@ table {
 		box-shadow: 0 8px 24px hsla(22, 100%, 8%, 0.2);
 	}
 
+	.service-nairobi-bg p,
 	.service-header-bg p {
 		font-size: 1.8rem;
 	}
@@ -597,7 +612,7 @@ table {
 
 	.quick-view-overlay {
 		position: fixed;
-		top: -50rem;
+		top: -80rem;
 		left: 0;
 		right: 0;
 		height: 100vh;
@@ -896,6 +911,7 @@ table {
 		box-shadow: 0 8px 24px hsla(22, 100%, 8%, 0.2);
 	}
 
+	.service-nairobi-bg p,
 	.service-header-bg p {
 		font-size: 1.8rem;
 	}
@@ -1238,7 +1254,7 @@ table {
 	.summary-col-2 {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		margin-bottom: 1rem;
+		/* margin-bottom: 1rem; */
 	}
 
 	.name-col-2 {
@@ -1301,7 +1317,7 @@ table {
 
 	.quick-view-overlay {
 		position: fixed;
-		top: -50rem;
+		top: -80rem;
 		left: 0;
 		right: 0;
 		height: 100vh;
@@ -1611,6 +1627,7 @@ table {
 		margin-bottom: auto;
 	} */
 
+	.service-nairobi-bg p,
 	.service-header-bg p {
 		font-size: 2.5rem;
 	}
@@ -1928,7 +1945,9 @@ table {
 		grid-area: right;
 	}
 	.summary-taxi-details {
+		/* position: sticky; */
 		grid-area: left;
+		/* top: 0; */
 	}
 
 	.summary-taxi-details-end {
@@ -1939,7 +1958,7 @@ table {
 	.summary-col-2 {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		margin-bottom: 1rem;
+		/* margin-bottom: 1rem; */
 	}
 
 	.name-col-2 {
@@ -2003,7 +2022,7 @@ table {
 
 	.quick-view-overlay {
 		position: fixed;
-		top: -50rem;
+		top: -80rem;
 		left: 0;
 		right: 0;
 		height: 100vh;

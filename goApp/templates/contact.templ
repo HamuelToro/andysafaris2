@@ -4,8 +4,8 @@ import "github.com/EmilioCliff/car-rental/db"
 import "fmt"
 
 templ EnquiryForm() {
-    <section class="taxi-header-bg" id="home">
-			<p class="animate-pop-in">CONTACT US</p>
+    <section class="contact-form" id="home">
+			// <p class="animate-pop-in">CONTACT US</p>
 		</section>
     <section
 			class="safari-intro"
@@ -186,8 +186,8 @@ templ EnquiryForm() {
 }
 
 templ CarHireForm(vehicle db.Vehicle) {
-    <section class="taxi-header-bg" id="home">
-			<p class="animate-pop-in">CONTACT US</p>
+    <section class="contact-form" id="home">
+			// <p class="animate-pop-in">CONTACT US</p>
 		</section>
     <section
     class="safari-intro"
@@ -360,8 +360,8 @@ templ CarHireForm(vehicle db.Vehicle) {
 }
 
 templ SafariForm(safari db.Safari) {
-    <section class="taxi-header-bg" id="home">
-			<p class="animate-pop-in">CONTACT US</p>
+    <section class="contact-form" id="home">
+			// <p class="animate-pop-in">CONTACT US</p>
 		</section>
 <section
     class="safari-intro"
@@ -414,57 +414,96 @@ templ SafariForm(safari db.Safari) {
             <div class="ride-details">
                 <p class="progress-title">SAFARI BOOKING FORM</p>
                 <form action="" class="ride-details-form">
-                    <div class="date-input-container">
-                        <label for=""> FIRST NAME <sup>&#x2217;</sup></label>
-                        <input
-                            type="text"
-                            name=""
-                            id=""
-                            placeholder="Enter First Name"
-                        />
-                    </div>
-                    <div class="date-input-container">
-                        <label for=""> LAST NAME <sup>&#x2217;</sup></label>
-                        <input
-                            type="text"
-                            name=""
-                            id=""
-                            placeholder="Enter Last Name"
-                        />
-                    </div>
-                    <div class="date-input-container">
-                        <label for=""> EMAIL ADDRESS <sup>&#x2217;</sup></label>
-                        <input
-                            type="email"
-                            name=""
-                            id=""
-                            placeholder="example@gmail.com"
-                        />
-                    </div>
-                    <div class="date-input-container">
-                        <label for=""> PHONE NUMBER <sup>&#x2217;</sup> </label>
-                        <input
-                            type="telephone"
-                            name=""
-                            id=""
-                            placeholder="Enter a Phone Number"
-                        />
-                    </div>
-                    <div class="date-input-container">
-                        <label for="">
-                            SAFARI DATE <sup>&#x2217;</sup>
-                        </label>
-                        <input
-                            type="date"
-                            name=""
-                            id=""
-                            placeholder="Enter pick up time"
-                        />
-                    </div>
-                    <div class="date-input-container">
-                        <label for="">ADDITIONAL MESSAGE</label>
-                        <textarea name="" id=""> </textarea>
-                    </div>
+                        <div class="summary-col-2">
+                            <div class="date-input-container">
+                                <label for=""> FIRST NAME <sup>&#x2217;</sup></label>
+                                <input
+                                    type="text"
+                                    name=""
+                                    id=""
+                                    placeholder="Enter First Name"
+                                />
+                            </div>
+                            <div class="date-input-container">
+                                <label for=""> LAST NAME <sup>&#x2217;</sup></label>
+                                <input
+                                    type="text"
+                                    name=""
+                                    id=""
+                                    placeholder="Enter Last Name"
+                                />
+                            </div>
+                        </div>
+                        <div class="date-input-container">
+                            <label for=""> EMAIL ADDRESS <sup>&#x2217;</sup></label>
+                            <input
+                                type="email"
+                                name=""
+                                id=""
+                                placeholder="example@gmail.com"
+                            />
+                        </div>
+                        <div class="date-input-container">
+                            <label for=""> PHONE NUMBER <sup>&#x2217;</sup> </label>
+                            <input
+                                type="telephone"
+                                name=""
+                                id=""
+                                placeholder="Enter a Phone Number"
+                            />
+                        </div>
+                        <div class="summary-col-2">
+                            <div class="date-input-container">
+                                <label for="">
+                                    SAFARI DATE <sup>&#x2217;</sup>
+                                </label>
+                                <input
+                                    type="date"
+                                    name=""
+                                    id=""
+                                    placeholder="Enter pick up time"
+                                />
+                            </div>
+                            <div class="date-input-container">
+                                <label for="">
+                                    ARRIVAL DATE
+                                </label>
+                                <input
+                                    type="date"
+                                    name=""
+                                    id=""
+                                    placeholder="Enter pick up time"
+                                />
+                            </div>
+                        </div>
+                        <div class="summary-col-2">
+                            <div class="date-input-container">
+                                <label for="">
+                                    NUMBER OF ADULTS
+                                </label>
+                                <input
+                                    type="number"
+                                    name=""
+                                    id=""
+                                    placeholder="0"
+                                />
+                            </div>
+                            <div class="date-input-container">
+                                <label for="">
+                                    NUMBER OF CHILDREN
+                                </label>
+                                <input
+                                    type="number"
+                                    name=""
+                                    id=""
+                                    placeholder="0"
+                                />
+                            </div>
+                        </div>
+                        <div class="date-input-container">
+                            <label for="">ADDITIONAL MESSAGE</label>
+                            <textarea name="" id=""> </textarea>
+                        </div>
                 </form>
             </div>
         </div>
@@ -518,6 +557,209 @@ templ SafariForm(safari db.Safari) {
         </div>
     </div>
 </section>
+}
+
+templ NairobiForm() {
+    <section class="contact-form" id="home">
+			// <p class="animate-pop-in">CONTACT US</p>
+	</section>
+    <section
+        class="safari-intro"
+        style="padding-bottom: 0rem; margin-bottom: 0"
+        >
+        <svg
+            class="section-animal-logo"
+            fill="var(--title-color)"
+            version="1.1"
+            id="Capa_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 505.087 505.087"
+            xml:space="preserve"
+            >
+            <path
+                d="M488.909,418.392c-34.84-27.219-3.266-93.632-3.266-93.632c63.147-161.134-46.108-242.307-64.788-252.887
+                c-38.033-21.541-128.497-42.648-174.166,15.319c-12.916,16.394-8.599,36.754-2.654,50.984
+                c15.302,36.618,56.436,69.544,91.693,73.388c10.054,1.123,17.377-1.182,22.336-6.958c15.761-18.347,7.451-66.618,2.909-83.672
+                c-1.233-4.644,1.531-9.416,6.184-10.658c1.341-0.356,2.664-0.3,3.938-0.041c3.142,0.637,5.842,2.909,6.72,6.225
+                c1.905,7.179,17.956,70.998-6.532,99.501c-5.401,6.286-15.004,13.286-30.97,13.286c-2.05,0-4.21-0.119-6.473-0.366
+                c-41.593-4.542-88.095-41.432-105.88-83.995c-4.475-10.708-6.707-21.065-6.948-30.835c-99.728,0-213.575,55.596-220.991,155.597
+                c-0.238,3.208,1.735,6.167,4.789,7.179c3.054,1.021,6.413-0.169,8.14-2.882c6.124-9.616,13.75-20.027,21.325-26.585
+                c1.087,15.749,5.871,30.796,14.136,44.532c16.552,27.508,25.39,59.098,25.39,91.198l0.158,59.253
+                c0.843,7.261,17.995,13.065,39.181,13.065c21.194,0,38.346-5.804,39.19-13.065l0.158-38.455c0-10.096,4.21-19.742,11.61-26.616
+                c7.4-6.873,17.316-9.628,27.413-9.628c6.263,0,19.079,0.009,19.828,0c9.688-0.101,19.019,4.337,25.899,11.159
+                c6.89,6.822,10.761,16.11,10.761,25.799l0.158,37.74c0.843,7.261,17.994,13.065,39.181,13.065c21.194,0,38.346-5.804,39.19-13.065
+                l0.158-33.215c0-98.599,72.254-142.598,80.839-147.814c42.606-25.886,23.68,52.557,23.68,52.557
+                c-28.307,88.188,37.017,128.472,37.017,128.472l0.293-0.339c0.204,0.208,0.262,0.544,0.498,0.722
+                c4.184,3.155,11.799,0.128,16.995-6.779c4.792-6.34,5.668-13.564,2.569-17.171L488.909,418.392z"
+            />
+        </svg>
+        <div class="section-subtitle">Nairobi Tour Contact Form</div>
+        <div
+            class="section-title"
+            style="font-size: var(--large-font-size); margin-bottom: 0"
+            >
+            Tour Nairobi City
+        </div>
+    </section>
+    <section
+        class="taxi-intro-sec"
+        style="padding-top: 0rem; margin-top: 0.5rem"
+        >
+        <div
+            class="booking-container grid booking-container-choose-vehicle"
+            style="margin-top: 2rem"
+        >
+            <div style="display: grid; row-gap: 2rem" class="contact-grid-swap">
+                <div class="ride-details">
+                    <p class="progress-title">NAIROBI TOUR BOOKING FORM</p>
+                    <form action="" class="ride-details-form">
+                        <div class="summary-col-2">
+                            <div class="date-input-container">
+                                <label for=""> FIRST NAME <sup>&#x2217;</sup></label>
+                                <input
+                                    type="text"
+                                    name=""
+                                    id=""
+                                    placeholder="Enter First Name"
+                                />
+                            </div>
+                            <div class="date-input-container">
+                                <label for=""> LAST NAME <sup>&#x2217;</sup></label>
+                                <input
+                                    type="text"
+                                    name=""
+                                    id=""
+                                    placeholder="Enter Last Name"
+                                />
+                            </div>
+                        </div>
+                        <div class="date-input-container">
+                            <label for=""> EMAIL ADDRESS <sup>&#x2217;</sup></label>
+                            <input
+                                type="email"
+                                name=""
+                                id=""
+                                placeholder="example@gmail.com"
+                            />
+                        </div>
+                        <div class="date-input-container">
+                            <label for=""> PHONE NUMBER <sup>&#x2217;</sup> </label>
+                            <input
+                                type="telephone"
+                                name=""
+                                id=""
+                                placeholder="Enter a Phone Number"
+                            />
+                        </div>
+                        <div class="summary-col-2">
+                            <div class="date-input-container">
+                                <label for="">
+                                    SAFARI DATE <sup>&#x2217;</sup>
+                                </label>
+                                <input
+                                    type="date"
+                                    name=""
+                                    id=""
+                                    placeholder="Enter pick up time"
+                                />
+                            </div>
+                            <div class="date-input-container">
+                                <label for="">
+                                    ARRIVAL DATE
+                                </label>
+                                <input
+                                    type="date"
+                                    name=""
+                                    id=""
+                                    placeholder="Enter pick up time"
+                                />
+                            </div>
+                        </div>
+                        <div class="summary-col-2">
+                            <div class="date-input-container">
+                                <label for="">
+                                    NUMBER OF ADULTS
+                                </label>
+                                <input
+                                    type="number"
+                                    name=""
+                                    id=""
+                                    placeholder="0"
+                                />
+                            </div>
+                            <div class="date-input-container">
+                                <label for="">
+                                    NUMBER OF CHILDREN
+                                </label>
+                                <input
+                                    type="number"
+                                    name=""
+                                    id=""
+                                    placeholder="0"
+                                />
+                            </div>
+                        </div>
+                        <div class="date-input-container">
+                            <label for="">ADDITIONAL MESSAGE</label>
+                            <textarea name="" id=""> </textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <div class="summary-taxi-details">
+                    <h3>Summary</h3>
+                    <h4>SERVICE TYPE</h4>
+                    <p>Nairobi Tour</p>
+                    <hr />
+                    // <h4>SAFARI NAME</h4>
+                    // <p>{ safari.Title }</p>
+                    // <hr />
+                    // <h4>SAFARI BY</h4>
+                    // <p>{ safari.Guide }</p>
+                    // <hr />
+                    <h4>TOUR DURATION</h4>
+                    <p>1 DAY</p>
+                    <hr />
+                    <h4>TOUR DESCRIPTION</h4>
+                    <p
+                        style="
+                            font-size: var(--normal-font-size);
+                            font-weight: var(--font-light);
+                        "
+                        >
+                        Nairobi, the bustling capital of Kenya, offers a mix of modern city life,
+                        rich cultural experiences, and stunning natural attractions. For a
+                        single-day tour of Nairobi, here's a detailed itinerary that includes key
+                        attractions, transport, and accommodation options.
+                    </p>
+                </div>
+                <div class="taxi-total-cal" style="margin-top: 1rem">
+                    <div class="summary-total">
+                        <p>Nairobi Tour</p>
+                        <p>$57.26</p>
+                    </div>
+                    <hr />
+                    <div class="summary-total">
+                        <p class="total-bold">Total</p>
+                        <p class="total-bold">$57.26</p>
+                    </div>
+                    <div class="summary-total">
+                        <p class="total-bold">To Pay <span>(30% deposit)</span></p>
+                        <p class="total-bold">$17.18</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-sections">
+            <div class="taxi-next-btn taxi-btn taxi-btn-right">
+                BOOK TOUR
+                // taxi-next-btn taxi-btn taxi-btn-right 
+                // <i class="ri-arrow-right-s-line"></i>
+            </div>
+        </div>
+    </section>
 }
 
 templ ContactUsPage(body templ.Component) {

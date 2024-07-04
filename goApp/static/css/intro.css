@@ -3,6 +3,7 @@
 	height: 100vh;
 	position: relative;
 	overflow: hidden;
+	max-width: 1200px;
 }
 
 .carousel .list .item {

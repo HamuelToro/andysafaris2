@@ -250,7 +250,7 @@ function showChooseTaxi() {
 
 					</div>
 				</div>
-				 <div>
+				 <div style="position: sticky; top: 0;">
 					<div class="summary-taxi-details">
 						<h3>Summary</h3>
 						<h4>SERVICE TYPE</h4>
@@ -277,21 +277,6 @@ function showChooseTaxi() {
 								<h4>TOTAL TIME</h4>
 								<p>81.8KM</p>
 							</div>
-						</div>
-					</div>
-					<div class="taxi-total-cal" style="margin-top: 1rem">
-						<div class="summary-total">
-							<p>Selected Vehicl</p>
-							<p>%57.26</p>
-						</div>
-						<hr />
-						<div class="summary-total">
-							<p class="total-bold">Total</p>
-							<p class="total-bold">$57.26</p>
-						</div>
-						<div class="summary-total">
-							<p class="total-bold">To Pay <span>(30% deposit)</span></p>
-							<p class="total-bold">$17.18</p>
 						</div>
 					</div>
 				</div>
@@ -808,50 +793,51 @@ function showContactDetails() {
 					</div>
 					</div>
 					<div>
-					<div class="summary-taxi-details">
-						<h3>Summary</h3>
-						<h4>SERVICE TYPE</h4>
-						<p>Distance</p>
-						<hr />
-						<h4>TRANSFER TYPE</h4>
-						<p>One Way</p>
-						<hr />
-						<h4>PICKUP LOCATION</h4>
-						<p>Kitengela, Kenya</p>
-						<hr />
-						<h4>PICKUP LOCATION</h4>
-						<p>Kitengela, Kenya</p>
-						<hr />
-						<h4>PICKUP DATE, TIME</h4>
-						<p>26-06-2024, 8:00</p>
-						<hr />
-						<div class="summary-col-2 name-col-2">
-							<div>
-								<h4>TOTAL DISTANCE</h4>
-								<p>81.8KM</p>
+						<div class="summary-taxi-details" style="position: sticky; top: 0;">
+							<h3>Summary</h3>
+							<h4>SERVICE TYPE</h4>
+							<p>Distance</p>
+							<hr />
+							<h4>TRANSFER TYPE</h4>
+							<p>One Way</p>
+							<hr />
+							<h4>PICKUP LOCATION</h4>
+							<p>Kitengela, Kenya</p>
+							<hr />
+							<h4>PICKUP LOCATION</h4>
+							<p>Kitengela, Kenya</p>
+							<hr />
+							<h4>PICKUP DATE, TIME</h4>
+							<p>26-06-2024, 8:00</p>
+							<hr />
+							<div class="summary-col-2 name-col-2">
+								<div>
+									<h4>TOTAL DISTANCE</h4>
+									<p>81.8KM</p>
+								</div>
+								<div>
+									<h4>TOTAL TIME</h4>
+									<p>81.8KM</p>
+								</div>
 							</div>
-							<div>
-								<h4>TOTAL TIME</h4>
-								<p>81.8KM</p>
+							<hr />
+							<h4>VEHICLE</h4>
+							<p>Mercedes Benz E220</p>
+						</div>
+						<div class="taxi-total-cal" style="margin-top: 1rem; position: sticky; top: 0;">
+							<div class="summary-total">
+								<p>Selected Vehicl</p>
+								<p>%57.26</p>
 							</div>
-						</div>
-						<hr />
-						<h4>VEHICLE</h4>
-						<p>Mercedes Benz E220</p>
-					</div>
-					<div class="taxi-total-cal" style="margin-top: 1rem">
-						<div class="summary-total">
-							<p>Selected Vehicl</p>
-							<p>%57.26</p>
-						</div>
-						<hr />
-						<div class="summary-total">
-							<p class="total-bold">Total</p>
-							<p class="total-bold">$57.26</p>
-						</div>
-						<div class="summary-total">
-							<p class="total-bold">To Pay <span>(30% deposit)</span></p>
-							<p class="total-bold">$17.18</p>
+							<hr />
+							<div class="summary-total">
+								<p class="total-bold">Total</p>
+								<p class="total-bold">$57.26</p>
+							</div>
+							<div class="summary-total">
+								<p class="total-bold">To Pay <span>(30% deposit)</span></p>
+								<p class="total-bold">$17.18</p>
+							</div>
 						</div>
 					</div>
     `;

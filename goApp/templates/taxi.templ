@@ -197,7 +197,7 @@ var Vehicles = []db.Vehicle{
 				Extras:        "Alloy Wheels, Bluetooth, Radio",
 			},
 		},
-	}
+}
 
 // var carHireQnA = []db.QandA{
 //         {
@@ -621,4 +621,5 @@ templ TaxiBody() {
 
 templ TaxiPage(body templ.Component) {
     @BaseTemplate([]string{"general", "nav", "service", "safaris", "safaris-num","footer", "taxi", "intro", "car"}, []string{"q&a", "nav", "taxi", "taxi-maps", "data/vehicle", "https://maps.googleapis.com/maps/api/js?key=&libraries=places"}, body)
+	// , "https://maps.googleapis.com/maps/api/js?key=&libraries=places" 
 }

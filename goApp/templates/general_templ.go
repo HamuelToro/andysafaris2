@@ -130,7 +130,7 @@ func header() templ.Component {
 			templ_7745c5c3_Var6 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<header class=\"header is-visible\"><nav class=\"nav__bar\"><a class=\"nav__logo\" href=\"/\">Andy Safaris</a><div class=\"nav__menu\" id=\"js-nav-menu\"><ul class=\"nav__list\"><li><a href=\"#\" class=\"nav__item\">HOME</a></li><li><a href=\"#\" class=\"nav__item\">ABOUT US</a></li><li><a href=\"#\" class=\"nav__item\">SERVICES</a></li><li><a href=\"#\" class=\"nav__item\">GALLERY</a></li><li><a href=\"/contact-us\" class=\"nav__item\">CONTACT US</a></li></ul><div class=\"nav__close\" id=\"js-close-btn\"><i class=\"ri-close-line\"></i></div></div><div class=\"contact__container\"><i class=\"ri-phone-fill phone__icon\" id=\"js-phone-icon\"></i> <a href=\"#\" class=\"nav__contact\">+254 000 000 000</a></div><div class=\"nav__toogle\" id=\"js-toogle-btn\"><i class=\"ri-apps-2-line\"></i></div></nav></header>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<header class=\"header is-visible\"><div class=\"header-container\"><nav class=\"nav__bar\"><a class=\"nav__logo\" href=\"/\">Andy Safaris</a><div class=\"nav__menu\" id=\"js-nav-menu\"><ul class=\"nav__list\"><li><a href=\"#\" class=\"nav__item\">HOME</a></li><li><a href=\"#\" class=\"nav__item\">ABOUT US</a></li><li><a href=\"#\" class=\"nav__item\">SERVICES</a></li><li><a href=\"#\" class=\"nav__item\">GALLERY</a></li><li><a href=\"/contact-us\" class=\"nav__item\">CONTACT US</a></li></ul><div class=\"nav__close\" id=\"js-close-btn\"><i class=\"ri-close-line\"></i></div></div><div class=\"contact__container\"><i class=\"ri-phone-fill phone__icon\" id=\"js-phone-icon\"></i> <a href=\"#\" class=\"nav__contact\">+254 000 000 000</a></div><div class=\"nav__toogle\" id=\"js-toogle-btn\"><i class=\"ri-apps-2-line\"></i></div></nav></div></header>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -189,7 +189,7 @@ func QandA(questions []db.QandA, title string) templ.Component {
 		var templ_7745c5c3_Var9 string
 		templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(title)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/general.templ`, Line: 191, Col: 45}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/general.templ`, Line: 193, Col: 45}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
 		if templ_7745c5c3_Err != nil {
@@ -207,7 +207,7 @@ func QandA(questions []db.QandA, title string) templ.Component {
 			var templ_7745c5c3_Var10 string
 			templ_7745c5c3_Var10, templ_7745c5c3_Err = templ.JoinStringErrs(question.Question)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/general.templ`, Line: 197, Col: 42}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/general.templ`, Line: 199, Col: 42}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var10))
 			if templ_7745c5c3_Err != nil {
@@ -220,7 +220,7 @@ func QandA(questions []db.QandA, title string) templ.Component {
 			var templ_7745c5c3_Var11 string
 			templ_7745c5c3_Var11, templ_7745c5c3_Err = templ.JoinStringErrs(question.Description)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/general.templ`, Line: 209, Col: 45}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/general.templ`, Line: 211, Col: 45}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var11))
 			if templ_7745c5c3_Err != nil {
@@ -265,7 +265,7 @@ func BaseTemplate(cssFileNames, jsFileNames []string, body templ.Component) temp
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</head><body>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</head><body><div class=\"main-container\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -281,7 +281,7 @@ func BaseTemplate(cssFileNames, jsFileNames []string, body templ.Component) temp
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<script>\r\n\t\t\tdocument.body.className += \"js-loading\";\r\n\t\t\twindow.addEventListener(\"load\", showPage, false);\r\n\t\t\tfunction showPage() {\r\n\t\t\t\tdocument.body.className = document.body.className.replace(\r\n\t\t\t\t\t\"js-loading\",\r\n\t\t\t\t\t\"\"\r\n\t\t\t\t);\r\n\t\t\t}\r\n\t\t</script>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><script>\r\n        document.body.className += \"js-loading\";\r\n        window.addEventListener(\"load\", showPage, false);\r\n        function showPage() {\r\n            document.body.className = document.body.className.replace(\r\n                \"js-loading\",\r\n                \"\"\r\n            );\r\n        }\r\n    </script>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

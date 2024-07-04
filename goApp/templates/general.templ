@@ -21,28 +21,30 @@ templ jsLoad(jsFileNames []string) {
 
 templ header() {
         <header class="header is-visible">
-			<nav class="nav__bar">
-				<a class="nav__logo" href="/">Andy Safaris</a>
-				<div class="nav__menu" id="js-nav-menu">
-					<ul class="nav__list">
-						<li><a href="#" class="nav__item">HOME</a></li>
-						<li><a href="#" class="nav__item">ABOUT US</a></li>
-						<li><a href="#" class="nav__item">SERVICES</a></li>
-						<li><a href="#" class="nav__item">GALLERY</a></li>
-						<li><a href="/contact-us" class="nav__item">CONTACT US</a></li>
-					</ul>
-					<div class="nav__close" id="js-close-btn">
-						<i class="ri-close-line"></i>
-					</div>
-				</div>
-				<div class="contact__container">
-					<i class="ri-phone-fill phone__icon" id="js-phone-icon"></i>
-					<a href="#" class="nav__contact">+254 000 000 000</a>
-				</div>
-				<div class="nav__toogle" id="js-toogle-btn">
-					<i class="ri-apps-2-line"></i>
-				</div>
-			</nav>
+            <div class="header-container">
+                <nav class="nav__bar">
+                    <a class="nav__logo" href="/">Andy Safaris</a>
+                    <div class="nav__menu" id="js-nav-menu">
+                        <ul class="nav__list">
+                            <li><a href="#" class="nav__item">HOME</a></li>
+                            <li><a href="#" class="nav__item">ABOUT US</a></li>
+                            <li><a href="#" class="nav__item">SERVICES</a></li>
+                            <li><a href="#" class="nav__item">GALLERY</a></li>
+                            <li><a href="/contact-us" class="nav__item">CONTACT US</a></li>
+                        </ul>
+                        <div class="nav__close" id="js-close-btn">
+                            <i class="ri-close-line"></i>
+                        </div>
+                    </div>
+                    <div class="contact__container">
+                        <i class="ri-phone-fill phone__icon" id="js-phone-icon"></i>
+                        <a href="#" class="nav__contact">+254 000 000 000</a>
+                    </div>
+                    <div class="nav__toogle" id="js-toogle-btn">
+                        <i class="ri-apps-2-line"></i>
+                    </div>
+                </nav>
+            </div>
 		</header>
 }
 
@@ -231,6 +233,7 @@ templ BaseTemplate(cssFileNames, jsFileNames []string, body templ.Component) {
 
 	</head>
 	<body>
+    <div class="main-container">
         
         // load the header
         @header()
@@ -240,20 +243,22 @@ templ BaseTemplate(cssFileNames, jsFileNames []string, body templ.Component) {
 
         // load the footer
         @footer()
-		<script>
-			document.body.className += "js-loading";
-			window.addEventListener("load", showPage, false);
-			function showPage() {
-				document.body.className = document.body.className.replace(
-					"js-loading",
-					""
-				);
-			}
-		</script>
 
-        // load required js
-        @jsLoad(jsFileNames)
-        <script src="https://unpkg.com/htmx.org@2.0.0" integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw" crossorigin="anonymous"></script>
+    </div>
+    <script>
+        document.body.className += "js-loading";
+        window.addEventListener("load", showPage, false);
+        function showPage() {
+            document.body.className = document.body.className.replace(
+                "js-loading",
+                ""
+            );
+        }
+    </script>
+
+    // load required js
+    @jsLoad(jsFileNames)
+    <script src="https://unpkg.com/htmx.org@2.0.0" integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw" crossorigin="anonymous"></script>
 	</body>
 </html>
 }

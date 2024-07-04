@@ -24,7 +24,7 @@
 .service-nairobi-bg::before {
 	animation: fade-slide-down 2s 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
 	background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8)),
-		url(../images/nairobi-image.jfif) no-repeat center;
+		url(../images/nairobi-image-2.jpg) no-repeat center;
 	background-size: cover;
 	content: "";
 	opacity: 0;

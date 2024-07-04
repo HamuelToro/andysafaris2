@@ -36,11 +36,12 @@ func (server *Server) setRoutes() {
 	router.GET("/", server.homePage)
 	router.GET("/safaris", server.safariPage)
 	router.GET("/safaris/:id", server.safariNumPage)
+	router.GET("/nairobi-tour", server.nairobiTourPage)
 	router.GET("/get-taxi", server.getTaxiPage)
 	router.GET("/car-hire", server.carHire)
 	router.GET("/safari/:id/contact-form", server.safariContact)
 	router.GET("/car-hire/:id/contact-form", server.carHireContact)
-	router.POST("/:service/contact", server.contactUs) // not used
+	router.GET("/nairobi-tour/contact-form", server.nairobiTourContact)
 	router.GET("/contact-us", server.contactUsPage)
 
 	server.router = router
@@ -50,9 +51,9 @@ func (server *Server)Start(address string) error {
 	return server.router.Run()
 }
 
-func (server *Server) errorResponse(err error) gin.H{
-	return gin.H{"error": err.Error()}
-}
+// func (server *Server) errorResponse(err error) gin.H{
+// 	return gin.H{"error": err.Error()}
+// }
 
 // func (server *Server) render(ctx *gin.Context, status int, template templ.Component) error {
 // 	ctx.Status(status)
