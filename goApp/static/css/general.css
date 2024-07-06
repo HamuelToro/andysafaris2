@@ -81,7 +81,7 @@ h4 {
 }
 
 .main-container {
-	max-width: 1200px;
+	max-width: 1440px;
 	width: 100%;
 	/* background-color: #fff; */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -89,7 +89,7 @@ h4 {
 }
 
 .header-container {
-	max-width: 1200px;
+	max-width: 1440px;
 	width: 100%;
 	margin: 0 auto;
 }
@@ -612,7 +612,7 @@ table {
 
 	.quick-view-overlay {
 		position: fixed;
-		top: -80rem;
+		top: -110rem;
 		left: 0;
 		right: 0;
 		height: 100vh;
@@ -1317,7 +1317,7 @@ table {
 
 	.quick-view-overlay {
 		position: fixed;
-		top: -80rem;
+		top: -110rem;
 		left: 0;
 		right: 0;
 		height: 100vh;
@@ -2022,7 +2022,7 @@ table {
 
 	.quick-view-overlay {
 		position: fixed;
-		top: -80rem;
+		top: -110rem;
 		left: 0;
 		right: 0;
 		height: 100vh;
