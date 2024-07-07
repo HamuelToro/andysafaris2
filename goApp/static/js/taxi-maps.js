@@ -1,5 +1,3 @@
-// `AIzaSyD8Ij4EZwonOnh4ck32fK2EMSHkYutFTL0`;
-
 let map,
 	directionsService,
 	directionsRenderer,
@@ -87,9 +85,10 @@ function calculateRoute() {
 					leg.distance.text;
 				document.getElementById("total-time").textContent = leg.duration.text;
 
-				savedState.directions = response;
-				savedState.totalDistance = totalDistance;
-				savedState.totalTime = totalTime;
+				// savedState.directions = response;
+				// savedState.totalDistance = totalDistance;
+				// savedState.totalTime = totalTime;
+				// console.log(savedState);
 			} else {
 				alert("Directions request failed due to " + status);
 			}
@@ -97,17 +96,17 @@ function calculateRoute() {
 	);
 }
 
-export function saveState() {
-	savedState = {
-		mapCenter: map.getCenter().toJSON(),
-		mapZoom: map.getZoom(),
-		pickupLocation: document.getElementById("pickup-location").innerText,
-		dropoffLocation: document.getElementById("dropoff-location").innerText,
-		directions: savedState.directions,
-		totalDistance: savedState.totalDistance,
-		totalTime: savedState.totalTime,
-	};
-}
+// export function saveState() {
+// 	savedState = {
+// 		mapCenter: map.getCenter().toJSON(),
+// 		mapZoom: map.getZoom(),
+// 		pickupLocation: document.getElementById("pickup-location").innerText,
+// 		dropoffLocation: document.getElementById("dropoff-location").innerText,
+// 		directions: savedState.directions,
+// 		totalDistance: savedState.totalDistance,
+// 		totalTime: savedState.totalTime,
+// 	};
+// }
 
 // Restore input values and trigger input event
 //  function restoreInputValue(elementId, value) {

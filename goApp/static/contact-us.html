@@ -46,7 +46,8 @@
 				</div>
 			</nav>
 		</header>
-		<section class="taxi-header-bg" id="home">
+		<section class="contact-form-page" id="home">
+			//
 			<p class="animate-pop-in">CONTACT US</p>
 		</section>
 		<section
@@ -54,7 +55,7 @@
 			style="padding-bottom: 0rem; margin-bottom: 0"
 		>
 			<img
-				src="./icons/icons8-contact-us-66.png"
+				src="/static/icons/icons8-contact-us-66.png"
 				style="width: 3rem; margin: 0 auto"
 				alt=""
 			/>
@@ -76,52 +77,64 @@
 			>
 				<div style="display: grid; row-gap: 2rem" class="contact-grid-swap">
 					<div class="ride-details">
-						<p class="progress-title">CAR-HIRE BOOKING FORM</p>
+						<p class="progress-title">ENQUIRY FORM</p>
 						<form action="" class="ride-details-form" autocomplete="off">
 							<div class="date-input-container">
-								<label for=""> FULL NAME <sup>&#x2217;</sup></label>
+								<label for="fullName"> FULL NAME <sup>&#x2217;</sup></label>
 								<input
 									type="text"
-									name=""
-									id=""
-									placeholder="Enter First Name"
+									name="fullName"
+									id="fullName"
+									placeholder="Enter fullName"
 								/>
+								<div class="error-message">
+									<p></p>
+								</div>
 							</div>
 							<div class="date-input-container">
-								<label for=""> EMAIL ADDRESS <sup>&#x2217;</sup></label>
+								<label for="email"> EMAIL ADDRESS <sup>&#x2217;</sup></label>
 								<input
 									type="email"
-									name=""
-									id=""
+									name="email"
+									id="email"
 									placeholder="example@gmail.com"
 								/>
+								<div class="error-message">
+									<p></p>
+								</div>
 							</div>
 							<div class="date-input-container">
-								<label for=""> PHONE NUMBER <sup>&#x2217;</sup> </label>
+								<label for="phoneNumber">
+									PHONE NUMBER <sup>&#x2217;</sup>
+								</label>
 								<input
 									type="telephone"
-									name=""
-									id=""
-									placeholder="Enter a Phone Number"
+									name="phoneNumber"
+									id="phoneNumber"
+									placeholder="Enter your Phone Number"
 								/>
+								<div class="error-message">
+									<p></p>
+								</div>
 							</div>
 							<div class="date-input-container inner-select">
-								<label for=""> SERVICE ENQUERY </label>
+								<label for="serviceEnguery"> SERVICE ENQUERY </label>
 								<select
 									class="select-options inner-select-option"
-									name=""
-									id=""
+									name="serviceEnguery"
+									id="serviceEnguery"
 									style="font-weight: var(--font-medium)"
 								>
 									<option value="0">SAFARIS</option>
-									<option value="0">GET A TAXI</option>
-									<option value="0">NAIROBI TOUR</option>
-									<option value="0">CAR HIRE</option>
+									<option value="1">GET A TAXI</option>
+									<option value="2">NAIROBI TOUR</option>
+									<option value="3">CAR HIRE</option>
 								</select>
 							</div>
 							<div class="date-input-container">
-								<label for="">ADDITIONAL MESSAGE</label>
-								<textarea name="" id=""> </textarea>
+								<label for="additionalMessage">ADDITIONAL MESSAGE</label>
+								<textarea name="additionalMessage" id="additionalMessage">
+								</textarea>
 							</div>
 						</form>
 					</div>
@@ -156,7 +169,7 @@
 								</svg>
 							</div>
 							<p>Email Address</p>
-							<p>+andysafaris@gmail.com</p>
+							<p>andysafaris@gmail.com</p>
 						</div>
 						<div class="enquery-socials">
 							<div class="enquiry-social-icon">
@@ -198,27 +211,59 @@
 				</div>
 			</div>
 			<div class="btn-sections">
-				<div class="taxi-next-btn taxi-btn taxi-btn-right">
-					BOOK CAR
-					<i class="ri-arrow-right-s-line"></i>
+				<div
+					class="taxi-next-btn taxi-btn taxi-btn-right"
+					id="contact-form-submit"
+				>
+					SEND ENQUIRY // <i class="ri-arrow-right-s-line"></i>
 				</div>
 			</div>
 			<div class="review-container">
 				<p class="progress-title">LEAVE A REVIEW</p>
-				<form action="" class="ride-details-form" autocomplete="off">
+				<form
+					action=""
+					class="ride-details-form review-cont"
+					autocomplete="off"
+				>
 					<div class="date-input-container">
-						<label for="">FULL NAME</label>
-						<input type="text" name="" id="" placeholder="Enter First Name" />
+						<label for="fullName">FULL NAME</label>
+						<input
+							type="text"
+							name="fullName"
+							id="fullName"
+							placeholder="Enter First Name"
+						/>
+						<div class="error-message">
+							<p></p>
+						</div>
 					</div>
 					<div class="date-input-container">
-						<label for="">EMAIL NAME</label>
-						<input type="email" name="" id="" placeholder="Enter Last Name" />
+						<label for="email">EMAIL NAME</label>
+						<input
+							type="email"
+							name="email"
+							id="email"
+							placeholder="example@gmail.com"
+						/>
+						<div class="error-message">
+							<p></p>
+						</div>
 					</div>
 					<div class="date-input-container">
-						<label for="">REVIEW</label>
-						<textarea name="" id=""> </textarea>
+						<label for="review">REVIEW</label>
+						<textarea name="review" id="review"> </textarea>
+						<div class="error-message">
+							<p></p>
+						</div>
 					</div>
 				</form>
+				<div
+					class="taxi-next-btn taxi-btn taxi-btn-right"
+					style="margin-top: 1rem; margin-inline: auto"
+					id="review-btn"
+				>
+					LEAVE A REVIEW // <i class="ri-arrow-right-s-line"></i>
+				</div>
 			</div>
 		</section>
 		<footer class="footer">
@@ -260,8 +305,10 @@
 		</footer>
 		<script src="./js/q&a.js"></script>
 		<script src="./js/nav.js"></script>
-		<script src="./js/taxi-maps.js" type="module"></script>
-		<script src="./js/taxi.js" type="module"></script>
+		<script src="./js/contact-us.js" type="module"></script>
+		<script src="./js/taxi-form.js" type="module"></script>
+		<!-- <script src="./js/taxi-maps.js" type="module"></script> -->
+		<!-- <script src="./js/taxi.js" type="module"></script> -->
 		<script>
 			document.body.classList.add("js-loading");
 

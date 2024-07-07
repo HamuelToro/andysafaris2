@@ -1,40 +1,90 @@
-import { initMap, saveState } from "./taxi-maps.js";
+import { initMap } from "./taxi-maps.js";
 import { vehicles } from "./data/vehicle.js";
+import { submitForm } from "./taxi-form.js";
 
 const today = new Date().toISOString().split("T")[0];
 document.getElementById("date").setAttribute("min", today);
 
+let currentProgress = 0;
+
+// after clicking the buttons change the next in small view and also in large view
 const bookingCont = document.querySelector(".select-options");
 const bookingContLarge = document.querySelectorAll(".progres-cont");
 bookingContLarge.forEach(function (btn) {
 	btn.addEventListener("click", function () {
-		const value = btn.dataset.progressNumber;
-		revielContent(value);
+		let value = btn.dataset.progressNumber;
 
-		document
-			.querySelector(".progress-larger-selected")
-			.classList.remove("progress-larger-selected");
-		btn.parentElement.classList.add("progress-larger-selected");
+		if (value !== currentProgress + 1) {
+			value = currentProgress + 1;
+		}
+
+		if (submitForm(String(currentProgress))) {
+			revielContent(value);
+
+			// document
+			// 	.querySelector(".progress-larger-selected")
+			// 	.classList.remove("progress-larger-selected");
+			// btn.parentElement.classList.add("progress-larger-selected");
+
+			// set the select in small screen values
+			changeProgress(value);
+		}
 	});
 });
 
+function changeProgress(value) {
+	const options = bookingCont.options;
+	for (let i = 0; i < options.length; i++) {
+		if (options[i].value === value) {
+			options[i].selected = true;
+			break;
+		}
+	}
+
+	for (let i = 0; i < bookingContLarge.length; i++) {
+		if (bookingContLarge[i].dataset.progressNumber === value) {
+			document
+				.querySelector(".progress-larger-selected")
+				.classList.remove("progress-larger-selected");
+			bookingContLarge[i].parentElement.classList.add(
+				"progress-larger-selected"
+			);
+			break;
+		}
+	}
+}
+
 bookingCont.addEventListener("change", function () {
 	const value = this.value;
-	revielContent(value);
+
+	if (submitForm(String(currentProgress))) {
+		changeProgress(value);
+		revielContent(value);
+	} else {
+		changeProgress(value);
+	}
 });
 
 function revielContent(value) {
 	switch (value) {
 		case "0":
+			currentProgress = 0;
+			changeProgress(String(currentProgress));
 			showRideDetails();
 			break;
 		case "1":
+			currentProgress = 1;
+			changeProgress(String(currentProgress));
 			showChooseTaxi();
 			break;
 		case "2":
+			currentProgress = 2;
+			changeProgress(String(currentProgress));
 			showContactDetails();
 			break;
 		case "3":
+			currentProgress = 3;
+			changeProgress(String(currentProgress));
 			showBookSummary();
 			break;
 	}
@@ -50,46 +100,58 @@ function showRideDetails() {
 					<p class="progress-title">RIDE DETAIL</p>
 					<form action="" class="ride-details-form">
 						<div class="date-input-container">
-							<label for="">
+							<label for="pickupDay">
 								PICKUP DATE
 								<i class="ri-question-fill"></i>
 							</label>
-							<input type="date" name="" id="" placeholder="Enter a date" />
+							<input type="date" name="pickupDay" id="date" placeholder="Enter a date" />
+							<div class="error-message">
+								<p></p>
+							</div>
 						</div>
 						<div class="date-input-container">
-							<label for="">
+							<label for="pickupTime">
 								PICKUP TIME
 								<i class="ri-question-fill"></i>
 							</label>
 							<input
 								type="time"
-								name=""
-								id=""
+								name="pickupTime"
+								id="pickupTime"
 								placeholder="Enter pick up time"
 							/>
+							<div class="error-message">
+								<p></p>
+							</div>
 						</div>
 						<div class="date-input-container">
-							<label for="">
+							<label for="pickupLocation">
 								PICKUP LOCATION
 								<i class="ri-question-fill"></i>
 							</label>
-							<input type="text" name="" id="pickup-location" placeholder="Enter a location" />
+							<input type="text" name="pickupLocation" id="pickup-location" placeholder="Enter a location" />
+							<div class="error-message">
+								<p></p>
+							</div>
 						</div>
 						<div class="date-input-container">
-							<label for="">
+							<label for="dropoffLocation">
 								DROP-OFF LOCATION
 								<i class="ri-question-fill"></i>
 							</label>
-							<input type="text" name="" id="dropoff-location" placeholder="Enter a location" />
+							<input type="text" name="dropoffLocation" id="dropoff-location" placeholder="Enter a location" />
+							<div class="error-message">
+								<p></p>
+							</div>
 						</div>
 						<div class="date-input-container inner-select">
-							<label for="">
+							<label for="transferType">
 								TRANSFER TYPE
 								<i class="ri-question-fill"></i>
 							</label>
-							<select class="select-options inner-select-option" name="" id="">
-								<option value="0">ONE WAY</option>
-								<option value="0">TWO WAY</option>
+							<select class="select-options inner-select-option" name="transferType" id="transferType">
+								<option value="one-way">ONE WAY</option>
+								<option value="two-way">TWO WAY</option>
 							</select>
 						</div>
 					</form>
@@ -169,10 +231,13 @@ function showRideDetails() {
 				<i class="ri-arrow-right-s-line"></i>
 		</div>
 	`;
-	// <div class="btn car-hire-book-now taxi-btn taxi-btn-right">
-	// 				CHOOSE A VEHICLE
-	// 				<i class="ri-arrow-right-s-line"></i>
-	// 			</div>
+
+	// addSubmitButtonEventListener();
+	document.querySelector(".taxi-next-btn").addEventListener("click", () => {
+		if (submitForm("0")) {
+			revielContent("1");
+		}
+	});
 }
 
 function showChooseTaxi() {
@@ -202,6 +267,9 @@ function showChooseTaxi() {
 									<option value="1">6</option>
 									<option value="1">7</option>
 								</select>
+								<div class="error-message">
+									<p></p>
+								</div>
 							</div>
 							<div class="date-input-container inner-select">
 								<label for="">
@@ -389,263 +457,6 @@ function showChooseTaxi() {
 		`;
 	});
 
-	/* 
-		<div class="taxi-container js-car-container-1">
-							<div class="taxi-sel-img">
-								<img src="/static/images/car1.jpg" alt="" />
-							</div>
-							<div class="taxi-name-select">
-								<p>Mercedes-Benz E220</p>
-								<div class="taxi-select-btn">
-									SELECT
-									<i class="ri-check-line"></i>
-								</div>
-							</div>
-							<p class="taxi-price">$4.47</p>
-							<div class="taxi-more-item">
-								<div class="taxi-more-details">
-									<p class="taxi-more-details-des">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Provident id sit dicta quisquam rem, velit explicabo
-										consequuntur sed nobis eos.
-									</p>
-									<div class="taxi-car-make">
-										<ul class="breakdown-list">
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-										</ul>
-										<ul class="breakdown-list">
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Extras</p>
-												<p class="extra-break_down">Alloy Wheels, Bluetooth, Radio</p>
-											</li>
-											<hr />
-										</ul>
-									</div>
-								</div>
-								<div class="taxi-group">
-									<div class="taxi-more-btn" data-car-more-info="1">
-										<i class="ri-arrow-down-s-line"></i>
-										<p>MORE INFO</p>
-									</div>
-									<div class="taxi-item">
-										<div class="taxi-pass">
-											<i class="ri-group-line"></i>
-											<p>4</p>
-										</div>
-										<div class="taxi-pass">
-											<i class="ri-suitcase-line"></i>
-											<p>4</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<hr class="taxi-line-divider" />
-						<div class="taxi-container js-car-container-2">
-							<div class="taxi-sel-img">
-								<img src="/static/images/car1.jpg" alt="" />
-							</div>
-							<div class="taxi-name-select">
-								<p>Mercedes-Benz E220</p>
-								<div class="taxi-select-btn">
-									SELECT
-									<i class="ri-check-line"></i>
-								</div>
-							</div>
-							<p class="taxi-price">$4.47</p>
-							<div class="taxi-more-item">
-								<div class="taxi-more-details">
-									<p class="taxi-more-details-des">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Provident id sit dicta quisquam rem, velit explicabo
-										consequuntur sed nobis eos.
-									</p>
-									<div class="taxi-car-make">
-										<ul class="breakdown-list">
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-										</ul>
-										<ul class="breakdown-list">
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Extras</p>
-												<p class="extra-break_down">Alloy Wheels, Bluetooth, Radio</p>
-											</li>
-											<hr />
-										</ul>
-									</div>
-								</div>
-								<div class="taxi-group">
-									<div class="taxi-more-btn"  data-car-more-info="2">
-										<i class="ri-arrow-down-s-line"></i>
-										<p>MORE INFO</p>
-									</div>
-									<div class="taxi-item">
-										<div class="taxi-pass">
-											<i class="ri-group-line"></i>
-											<p>4</p>
-										</div>
-										<div class="taxi-pass">
-											<i class="ri-suitcase-line"></i>
-											<p>4</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<hr class="taxi-line-divider" />
-						<div class="taxi-container js-car-container-3">
-							<div class="taxi-sel-img">
-								<img src="/static/images/car1.jpg" alt="" />
-							</div>
-							<div class="taxi-name-select">
-								<p>Mercedes-Benz E220</p>
-								<div class="taxi-select-btn">
-									SELECT
-									<i class="ri-check-line"></i>
-								</div>
-							</div>
-							<p class="taxi-price">$4.47</p>
-							<div class="taxi-more-item">
-								<div class="taxi-more-details">
-									<p class="taxi-more-details-des">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Provident id sit dicta quisquam rem, velit explicabo
-										consequuntur sed nobis eos.
-									</p>
-									<div class="taxi-car-make">
-										<ul class="breakdown-list">
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-										</ul>
-										<ul class="breakdown-list">
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Engine</p>
-												<p>2800</p>
-											</li>
-											<hr />
-											<li class="break_down">
-												<p>Extras</p>
-												<p class="extra-break_down">Alloy Wheels, Bluetooth, Radio</p>
-											</li>
-											<hr />
-										</ul>
-									</div>
-								</div>
-								<div class="taxi-group">
-									<div class="taxi-more-btn" data-car-more-info="3">
-										<i class="ri-arrow-down-s-line"></i>
-										<p>MORE INFO</p>
-									</div>
-									<div class="taxi-item">
-										<div class="taxi-pass">
-											<i class="ri-group-line"></i>
-											<p>4</p>
-										</div>
-										<div class="taxi-pass">
-											<i class="ri-suitcase-line"></i>
-											<p>4</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-	*/
-
 	showCarInfo();
 	selectCarEvents();
 }
@@ -661,44 +472,56 @@ function showContactDetails() {
 						<p class="progress-title">CONTACT NAME</p>
 						<form action="" class="ride-details-form">
 							<div class="date-input-container">
-								<label for=""> FIRST NAME <sup>&#x2217;</sup></label>
+								<label for="firstName"> FIRST NAME <sup>&#x2217;</sup></label>
 								<input
 									type="text"
-									name=""
-									id=""
+									name="firstName"
+									id="firstName"
 									placeholder="Enter First Name"
 								/>
+								<div class="error-message">
+									<p></p>
+								</div>
 							</div>
 							<div class="date-input-container">
-								<label for=""> LAST NAME <sup>&#x2217;</sup></label>
+								<label for="lastName"> LAST NAME <sup>&#x2217;</sup></label>
 								<input
 									type="text"
-									name=""
-									id=""
+									name="lastName"
+									id="lastName"
 									placeholder="Enter Last Name"
 								/>
+								<div class="error-message">
+									<p></p>
+								</div>
 							</div>
 							<div class="date-input-container">
-								<label for=""> EMAIL ADDRESS <sup>&#x2217;</sup></label>
+								<label for="email"> EMAIL ADDRESS <sup>&#x2217;</sup></label>
 								<input
 									type="email"
-									name=""
-									id=""
+									name="email"
+									id="email"
 									placeholder="examplegmail.com"
 								/>
+								<div class="error-message">
+									<p></p>
+								</div>
 							</div>
 							<div class="date-input-container">
-								<label for=""> PHONE NUMBER <sup>&#x2217;</sup> </label>
+								<label for="phoneNumber"> PHONE NUMBER <sup>&#x2217;</sup> </label>
 								<input
 									type="telephone"
-									name=""
-									id=""
+									name="phoneNumber"
+									id="phoneNumber"
 									placeholder="Enter a Phone Number"
 								/>
+								<div class="error-message">
+									<p></p>
+								</div>
 							</div>
 							<div class="date-input-container">
-								<label for=""> COMMENTS </label>
-								<textarea name="" id=""> </textarea>
+								<label for="comments"> COMMENTS </label>
+								<textarea name="comments" id="comments"> </textarea>
 							</div>
 						</form>
 					</div>
@@ -1028,3 +851,9 @@ function selectPaymentMethod() {
 		});
 	});
 }
+
+document.querySelector(".taxi-next-btn").addEventListener("click", () => {
+	// if (submitForm("0")) {
+	revielContent("1");
+	// }
+});

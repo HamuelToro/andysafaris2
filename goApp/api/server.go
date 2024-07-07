@@ -5,18 +5,21 @@ import (
 
 	"strings"
 
+	"github.com/EmilioCliff/car-rental/utils"
 	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 )
 
 type Server struct {
 	router *gin.Engine
+	sender utils.GmailSender
 }
 
-func NewServer() *Server {
+func NewServer(sender utils.GmailSender) *Server {
 	var server Server
 
 	server.setRoutes()
+	server.sender = sender
 
 	return &server
 }
@@ -43,6 +46,7 @@ func (server *Server) setRoutes() {
 	router.GET("/car-hire/:id/contact-form", server.carHireContact)
 	router.GET("/nairobi-tour/contact-form", server.nairobiTourContact)
 	router.GET("/contact-us", server.contactUsPage)
+	router.POST("/contact-form/:form", server.formHandlers)
 
 	server.router = router
 }
@@ -51,9 +55,9 @@ func (server *Server)Start(address string) error {
 	return server.router.Run()
 }
 
-// func (server *Server) errorResponse(err error) gin.H{
-// 	return gin.H{"error": err.Error()}
-// }
+func (server *Server) errorResponse(err error) gin.H{
+	return gin.H{"error": err.Error()}
+}
 
 // func (server *Server) render(ctx *gin.Context, status int, template templ.Component) error {
 // 	ctx.Status(status)

@@ -8,7 +8,8 @@ templ EnquiryForm() {
 			// <p class="animate-pop-in">CONTACT US</p>
 		</section>
     <section
-			class="safari-intro"
+			class="safari-intro js-form-title"
+            data-form-name="enquiry"
 			style="padding-bottom: 0rem; margin-bottom: 0"
 		>
 			<img
@@ -34,52 +35,64 @@ templ EnquiryForm() {
 			>
 				<div style="display: grid; row-gap: 2rem" class="contact-grid-swap">
 					<div class="ride-details">
-						<p class="progress-title">CAR-HIRE BOOKING FORM</p>
+						<p class="progress-title">ENQUIRY FORM</p>
 						<form action="" class="ride-details-form" autocomplete="off">
 							<div class="date-input-container">
-								<label for=""> FULL NAME <sup>&#x2217;</sup></label>
+								<label for="fullName"> FULL NAME <sup>&#x2217;</sup></label>
 								<input
 									type="text"
-									name=""
-									id=""
-									placeholder="Enter First Name"
+									name="fullName"
+									id="fullName"
+									placeholder="Enter fullName"
 								/>
+								<div class="error-message">
+									<p></p>
+								</div>
 							</div>
 							<div class="date-input-container">
-								<label for=""> EMAIL ADDRESS <sup>&#x2217;</sup></label>
+								<label for="email"> EMAIL ADDRESS <sup>&#x2217;</sup></label>
 								<input
 									type="email"
-									name=""
-									id=""
+									name="email"
+									id="email"
 									placeholder="example@gmail.com"
 								/>
+								<div class="error-message">
+									<p></p>
+								</div>
 							</div>
 							<div class="date-input-container">
-								<label for=""> PHONE NUMBER <sup>&#x2217;</sup> </label>
+								<label for="phoneNumber">
+									PHONE NUMBER <sup>&#x2217;</sup>
+								</label>
 								<input
 									type="telephone"
-									name=""
-									id=""
-									placeholder="Enter a Phone Number"
+									name="phoneNumber"
+									id="phoneNumber"
+									placeholder="Enter your Phone Number"
 								/>
+								<div class="error-message">
+									<p></p>
+								</div>
 							</div>
 							<div class="date-input-container inner-select">
-								<label for=""> SERVICE ENQUERY </label>
+								<label for="serviceEnguery"> SERVICE ENQUERY </label>
 								<select
 									class="select-options inner-select-option"
-									name=""
-									id=""
+									name="serviceEnguery"
+									id="serviceEnguery"
 									style="font-weight: var(--font-medium)"
 								>
 									<option value="0">SAFARIS</option>
-									<option value="0">GET A TAXI</option>
-									<option value="0">NAIROBI TOUR</option>
-									<option value="0">CAR HIRE</option>
+									<option value="1">GET A TAXI</option>
+									<option value="2">NAIROBI TOUR</option>
+									<option value="3">CAR HIRE</option>
 								</select>
 							</div>
 							<div class="date-input-container">
-								<label for="">ADDITIONAL MESSAGE</label>
-								<textarea name="" id=""> </textarea>
+								<label for="additionalMessage">ADDITIONAL MESSAGE</label>
+								<textarea name="additionalMessage" id="additionalMessage">
+								</textarea>
 							</div>
 						</form>
 					</div>
@@ -156,30 +169,58 @@ templ EnquiryForm() {
 				</div>
 			</div>
 			<div class="btn-sections">
-				<div class="taxi-next-btn taxi-btn taxi-btn-right">
-					SEND ENQUIRY
-					// <i class="ri-arrow-right-s-line"></i>
+				<div
+					class="taxi-next-btn taxi-btn taxi-btn-right"
+					id="contact-form-submit"
+				>
+					SEND ENQUIRY // <i class="ri-arrow-right-s-line"></i>
 				</div>
 			</div>
 			<div class="review-container">
 				<p class="progress-title">LEAVE A REVIEW</p>
-				<form action="" class="ride-details-form" autocomplete="off">
+				<form
+					action=""
+					class="ride-details-form review-cont"
+					autocomplete="off"
+				>
 					<div class="date-input-container">
-						<label for="">FULL NAME</label>
-						<input type="text" name="" id="" placeholder="Enter First Name" />
+						<label for="fullName">FULL NAME</label>
+						<input
+							type="text"
+							name="fullName"
+							id="fullName"
+							placeholder="Enter First Name"
+						/>
+						<div class="error-message">
+							<p></p>
+						</div>
 					</div>
 					<div class="date-input-container">
-						<label for="">EMAIL NAME</label>
-						<input type="email" name="" id="" placeholder="Enter Last Name" />
+						<label for="email">EMAIL NAME</label>
+						<input
+							type="email"
+							name="email"
+							id="email"
+							placeholder="example@gmail.com"
+						/>
+						<div class="error-message">
+							<p></p>
+						</div>
 					</div>
 					<div class="date-input-container">
-						<label for="">REVIEW</label>
-						<textarea name="" id=""> </textarea>
+						<label for="review">REVIEW</label>
+						<textarea name="review" id="review"> </textarea>
+						<div class="error-message">
+							<p></p>
+						</div>
 					</div>
 				</form>
-                <div class="taxi-next-btn taxi-btn taxi-btn-right" style="margin-top: 1rem; margin-inline: auto;">
-					LEAVE A REVIEW
-					// <i class="ri-arrow-right-s-line"></i>
+				<div
+					class="taxi-next-btn taxi-btn taxi-btn-right"
+					style="margin-top: 1rem; margin-inline: auto"
+					id="review-btn"
+				>
+					LEAVE A REVIEW // <i class="ri-arrow-right-s-line"></i>
 				</div>
 			</div>
 		</section>
@@ -230,7 +271,8 @@ templ CarHireForm(vehicle db.Vehicle) {
         </div>
 </section>
     <section
-        class="taxi-intro-sec"
+        class="taxi-intro-sec js-form-title"
+        data-form-name="hire"
         style="padding-top: 0rem; margin-top: 0.5rem"
         >
         <div
@@ -241,69 +283,90 @@ templ CarHireForm(vehicle db.Vehicle) {
                 <div class="ride-details">
                     <p class="progress-title">CAR-HIRE BOOKING FORM</p>
                     <form action="" class="ride-details-form">
-                        <div class="date-input-container">
-                            <label for=""> FIRST NAME <sup>&#x2217;</sup></label>
-                            <input
-                                type="text"
-                                name=""
-                                id=""
-                                placeholder="Enter First Name"
-                            />
-                        </div>
-                        <div class="date-input-container">
-                            <label for=""> LAST NAME <sup>&#x2217;</sup></label>
-                            <input
-                                type="text"
-                                name=""
-                                id=""
-                                placeholder="Enter Last Name"
-                            />
-                        </div>
-                        <div class="date-input-container">
-                            <label for=""> EMAIL ADDRESS <sup>&#x2217;</sup></label>
-                            <input
-                                type="email"
-                                name=""
-                                id=""
-                                placeholder="example@gmail.com"
-                            />
-                        </div>
-                        <div class="date-input-container">
-                            <label for=""> PHONE NUMBER <sup>&#x2217;</sup> </label>
-                            <input
-                                type="telephone"
-                                name=""
-                                id=""
-                                placeholder="Enter a Phone Number"
-                            />
-                        </div>
-                        <div class="date-input-container">
-                            <label for="">
-                                DURATION DAYS <sup>&#x2217;</sup>
-                            </label>
-                            <input
-                                type="number"
-                                name=""
-                                id=""
-                                placeholder="Enter Number of Days"
-                            />
-                        </div>
-                        <div class="date-input-container">
-                            <label for="">
-                                PICKUP DAY <sup>&#x2217;</sup>
-                            </label>
-                            <input
-                                type="date"
-                                name=""
-                                id=""
-                                placeholder="Enter pick up time"
-                            />
-                        </div>
-                        <div class="date-input-container">
-                            <label for="">ADDITIONAL MESSAGE</label>
-                            <textarea name="" id=""> </textarea>
-                        </div>
-                    </form>
+							<div class="summary-col-2">
+								<div class="date-input-container">
+									<label for="firstName"> FIRST NAME <sup>&#x2217;</sup></label>
+									<input
+										type="text"
+										name="firstName"
+										id="firstName"
+										placeholder="Enter First Name"
+									/>
+									<div class="error-message">
+										<p></p>
+									</div>
+								</div>
+								<div class="date-input-container">
+									<label for="lastName"> LAST NAME <sup>&#x2217;</sup></label>
+									<input
+										type="text"
+										name="lastName"
+										id="lastName"
+										placeholder="Enter Last Name"
+									/>
+									<div class="error-message">
+										<p></p>
+									</div>
+								</div>
+							</div>
+							<div class="date-input-container">
+								<label for="email"> EMAIL ADDRESS <sup>&#x2217;</sup></label>
+								<input
+									type="email"
+									name="email"
+									id="email"
+									placeholder="example@gmail.com"
+								/>
+								<div class="error-message">
+									<p></p>
+								</div>
+							</div>
+							<div class="date-input-container">
+								<label for="phoneNumber">
+									PHONE NUMBER <sup>&#x2217;</sup>
+								</label>
+								<input
+									type="telephone"
+									name="phoneNumber"
+									id="phoneNumber"
+									placeholder="Enter a Phone Number"
+								/>
+								<div class="error-message">
+									<p></p>
+								</div>
+							</div>
+							<div class="date-input-container">
+								<label for="duration">
+									DURATION DAYS <sup>&#x2217;</sup>
+								</label>
+								<input
+									type="number"
+									name="duration"
+									id="duration"
+									placeholder="Enter Number of Days"
+								/>
+								<div class="error-message">
+									<p></p>
+								</div>
+							</div>
+							<div class="date-input-container">
+								<label for="pickupDay"> PICKUP DAY <sup>&#x2217;</sup> </label>
+								<input
+									type="date"
+									name="pickupDay"
+									id="pickupDay"
+									placeholder="Enter pick up time"
+								/>
+								<div class="error-message">
+									<p></p>
+								</div>
+							</div>
+							<div class="date-input-container">
+								<label for="additionalMessage">ADDITIONAL MESSAGE</label>
+								<textarea name="additionalMessage" id="additionalMessage">
+								</textarea>
+							</div>
+						</form>
                 </div>
             </div>
             <div>
@@ -350,7 +413,7 @@ templ CarHireForm(vehicle db.Vehicle) {
             </div>
         </div>
         <div class="btn-sections">
-            <div class="taxi-next-btn taxi-btn taxi-btn-right">
+            <div class="taxi-next-btn taxi-btn taxi-btn-right" id="contact-form-submit">
                 BOOK CAR
                 // <i class="ri-arrow-right-s-line"></i>
             </div>
@@ -403,7 +466,8 @@ templ SafariForm(safari db.Safari) {
     </div>
 </section>
 <section
-    class="taxi-intro-sec"
+    class="taxi-intro-sec js-form-title"
+    data-form-name="safari"
     style="padding-top: 0rem; margin-top: 0.5rem"
 >
     <div
@@ -413,98 +477,105 @@ templ SafariForm(safari db.Safari) {
         <div style="display: grid; row-gap: 2rem" class="contact-grid-swap">
             <div class="ride-details">
                 <p class="progress-title">SAFARI BOOKING FORM</p>
-                <form action="" class="ride-details-form">
-                        <div class="summary-col-2">
-                            <div class="date-input-container">
-                                <label for=""> FIRST NAME <sup>&#x2217;</sup></label>
-                                <input
-                                    type="text"
-                                    name=""
-                                    id=""
-                                    placeholder="Enter First Name"
-                                />
-                            </div>
-                            <div class="date-input-container">
-                                <label for=""> LAST NAME <sup>&#x2217;</sup></label>
-                                <input
-                                    type="text"
-                                    name=""
-                                    id=""
-                                    placeholder="Enter Last Name"
-                                />
-                            </div>
-                        </div>
-                        <div class="date-input-container">
-                            <label for=""> EMAIL ADDRESS <sup>&#x2217;</sup></label>
-                            <input
-                                type="email"
-                                name=""
-                                id=""
-                                placeholder="example@gmail.com"
-                            />
-                        </div>
-                        <div class="date-input-container">
-                            <label for=""> PHONE NUMBER <sup>&#x2217;</sup> </label>
-                            <input
-                                type="telephone"
-                                name=""
-                                id=""
-                                placeholder="Enter a Phone Number"
-                            />
-                        </div>
-                        <div class="summary-col-2">
-                            <div class="date-input-container">
-                                <label for="">
-                                    SAFARI DATE <sup>&#x2217;</sup>
-                                </label>
-                                <input
-                                    type="date"
-                                    name=""
-                                    id=""
-                                    placeholder="Enter pick up time"
-                                />
-                            </div>
-                            <div class="date-input-container">
-                                <label for="">
-                                    ARRIVAL DATE
-                                </label>
-                                <input
-                                    type="date"
-                                    name=""
-                                    id=""
-                                    placeholder="Enter pick up time"
-                                />
-                            </div>
-                        </div>
-                        <div class="summary-col-2">
-                            <div class="date-input-container">
-                                <label for="">
-                                    NUMBER OF ADULTS
-                                </label>
-                                <input
-                                    type="number"
-                                    name=""
-                                    id=""
-                                    placeholder="0"
-                                />
-                            </div>
-                            <div class="date-input-container">
-                                <label for="">
-                                    NUMBER OF CHILDREN
-                                </label>
-                                <input
-                                    type="number"
-                                    name=""
-                                    id=""
-                                    placeholder="0"
-                                />
-                            </div>
-                        </div>
-                        <div class="date-input-container">
-                            <label for="">ADDITIONAL MESSAGE</label>
-                            <textarea name="" id=""> </textarea>
-                        </div>
-                </form>
+                    <form action="" class="ride-details-form">
+							<div class="summary-col-2">
+								<div class="date-input-container">
+									<label for="firstName"> FIRST NAME <sup>&#x2217;</sup></label>
+									<input
+										type="text"
+										name="firstName"
+										id="firstName"
+										placeholder="Enter First Name"
+									/>
+									<div class="error-message">
+										<p></p>
+									</div>
+								</div>
+								<div class="date-input-container">
+									<label for="lastName"> LAST NAME <sup>&#x2217;</sup></label>
+									<input
+										type="text"
+										name="lastName"
+										id="lastName"
+										placeholder="Enter Last Name"
+									/>
+									<div class="error-message">
+										<p></p>
+									</div>
+								</div>
+							</div>
+							<div class="date-input-container">
+								<label for="email"> EMAIL ADDRESS <sup>&#x2217;</sup></label>
+								<input
+									type="email"
+									name="email"
+									id="email"
+									placeholder="example@gmail.com"
+								/>
+								<div class="error-message">
+									<p></p>
+								</div>
+							</div>
+							<div class="date-input-container">
+								<label for="phoneNumber">
+									PHONE NUMBER <sup>&#x2217;</sup>
+								</label>
+								<input
+									type="telephone"
+									name="phoneNumber"
+									id="phoneNumber"
+									placeholder="Enter a Phone Number"
+								/>
+								<div class="error-message">
+									<p></p>
+								</div>
+							</div>
+							<div class="summary-col-2">
+								<div class="date-input-container">
+									<label for="safariDate">
+										SAFARI DATE <sup>&#x2217;</sup>
+									</label>
+									<input type="date" name="safariDate" id="safariDate" />
+									<div class="error-message">
+										<p></p>
+									</div>
+								</div>
+								<div class="date-input-container">
+									<label for="arrivalDate"> ARRIVAL DATE </label>
+									<input
+										type="date"
+										name="arrivalDate"
+										id="arrivalDate"
+										placeholder="Enter pick up time"
+									/>
+								</div>
+							</div>
+							<div class="summary-col-2">
+								<div class="date-input-container">
+									<label for="noOfAdults"> NUMBER OF ADULTS </label>
+									<input
+										type="number"
+										name="noOfAdults"
+										id="noOfAdults"
+										placeholder="0"
+									/>
+								</div>
+								<div class="date-input-container">
+									<label for="noOfChildren"> NUMBER OF CHILDREN </label>
+									<input
+										type="number"
+										name="noOfChildren"
+										id="noOfChildren"
+										placeholder="0"
+									/>
+								</div>
+							</div>
+							<div class="date-input-container">
+								<label for="additionalMessage">ADDITIONAL MESSAGE</label>
+								<textarea name="additionalMessage" id="additionalMessage">
+								</textarea>
+							</div>
+					</form>
             </div>
         </div>
         <div>
@@ -550,7 +621,7 @@ templ SafariForm(safari db.Safari) {
         </div>
     </div>
     <div class="btn-sections">
-        <div class="taxi-next-btn taxi-btn taxi-btn-right">
+        <div class="taxi-next-btn taxi-btn taxi-btn-right" id="contact-form-submit">
             BOOK SAFARI
             // taxi-next-btn taxi-btn taxi-btn-right 
             // <i class="ri-arrow-right-s-line"></i>
@@ -564,7 +635,8 @@ templ NairobiForm() {
 			// <p class="animate-pop-in">CONTACT US</p>
 	</section>
     <section
-        class="safari-intro"
+        class="safari-intro js-form-title"
+        data-form-name="nairobi"
         style="padding-bottom: 0rem; margin-bottom: 0"
         >
         <svg
@@ -614,97 +686,104 @@ templ NairobiForm() {
                 <div class="ride-details">
                     <p class="progress-title">NAIROBI TOUR BOOKING FORM</p>
                     <form action="" class="ride-details-form">
-                        <div class="summary-col-2">
-                            <div class="date-input-container">
-                                <label for=""> FIRST NAME <sup>&#x2217;</sup></label>
-                                <input
-                                    type="text"
-                                    name=""
-                                    id=""
-                                    placeholder="Enter First Name"
-                                />
-                            </div>
-                            <div class="date-input-container">
-                                <label for=""> LAST NAME <sup>&#x2217;</sup></label>
-                                <input
-                                    type="text"
-                                    name=""
-                                    id=""
-                                    placeholder="Enter Last Name"
-                                />
-                            </div>
-                        </div>
-                        <div class="date-input-container">
-                            <label for=""> EMAIL ADDRESS <sup>&#x2217;</sup></label>
-                            <input
-                                type="email"
-                                name=""
-                                id=""
-                                placeholder="example@gmail.com"
-                            />
-                        </div>
-                        <div class="date-input-container">
-                            <label for=""> PHONE NUMBER <sup>&#x2217;</sup> </label>
-                            <input
-                                type="telephone"
-                                name=""
-                                id=""
-                                placeholder="Enter a Phone Number"
-                            />
-                        </div>
-                        <div class="summary-col-2">
-                            <div class="date-input-container">
-                                <label for="">
-                                    SAFARI DATE <sup>&#x2217;</sup>
-                                </label>
-                                <input
-                                    type="date"
-                                    name=""
-                                    id=""
-                                    placeholder="Enter pick up time"
-                                />
-                            </div>
-                            <div class="date-input-container">
-                                <label for="">
-                                    ARRIVAL DATE
-                                </label>
-                                <input
-                                    type="date"
-                                    name=""
-                                    id=""
-                                    placeholder="Enter pick up time"
-                                />
-                            </div>
-                        </div>
-                        <div class="summary-col-2">
-                            <div class="date-input-container">
-                                <label for="">
-                                    NUMBER OF ADULTS
-                                </label>
-                                <input
-                                    type="number"
-                                    name=""
-                                    id=""
-                                    placeholder="0"
-                                />
-                            </div>
-                            <div class="date-input-container">
-                                <label for="">
-                                    NUMBER OF CHILDREN
-                                </label>
-                                <input
-                                    type="number"
-                                    name=""
-                                    id=""
-                                    placeholder="0"
-                                />
-                            </div>
-                        </div>
-                        <div class="date-input-container">
-                            <label for="">ADDITIONAL MESSAGE</label>
-                            <textarea name="" id=""> </textarea>
-                        </div>
-                    </form>
+							<div class="summary-col-2">
+								<div class="date-input-container">
+									<label for="firstName"> FIRST NAME <sup>&#x2217;</sup></label>
+									<input
+										type="text"
+										name="firstName"
+										id="firstName"
+										placeholder="Enter First Name"
+									/>
+									<div class="error-message">
+										<p></p>
+									</div>
+								</div>
+								<div class="date-input-container">
+									<label for="lastName"> LAST NAME <sup>&#x2217;</sup></label>
+									<input
+										type="text"
+										name="lastName"
+										id="lastName"
+										placeholder="Enter Last Name"
+									/>
+									<div class="error-message">
+										<p></p>
+									</div>
+								</div>
+							</div>
+							<div class="date-input-container">
+								<label for="email"> EMAIL ADDRESS <sup>&#x2217;</sup></label>
+								<input
+									type="email"
+									name="email"
+									id="email"
+									placeholder="example@gmail.com"
+								/>
+								<div class="error-message">
+									<p></p>
+								</div>
+							</div>
+							<div class="date-input-container">
+								<label for="phoneNumber">
+									PHONE NUMBER <sup>&#x2217;</sup>
+								</label>
+								<input
+									type="telephone"
+									name="phoneNumber"
+									id="phoneNumber"
+									placeholder="Enter a Phone Number"
+								/>
+								<div class="error-message">
+									<p></p>
+								</div>
+							</div>
+							<div class="summary-col-2">
+								<div class="date-input-container">
+									<label for="safariDate">
+										SAFARI DATE <sup>&#x2217;</sup>
+									</label>
+									<input type="date" name="safariDate" id="safariDate" />
+									<div class="error-message">
+										<p></p>
+									</div>
+								</div>
+								<div class="date-input-container">
+									<label for="arrivalDate"> ARRIVAL DATE </label>
+									<input
+										type="date"
+										name="arrivalDate"
+										id="arrivalDate"
+										placeholder="Enter pick up time"
+									/>
+								</div>
+							</div>
+							<div class="summary-col-2">
+								<div class="date-input-container">
+									<label for="noOfAdults"> NUMBER OF ADULTS </label>
+									<input
+										type="number"
+										name="noOfAdults"
+										id="noOfAdults"
+										placeholder="0"
+									/>
+								</div>
+								<div class="date-input-container">
+									<label for="noOfChildren"> NUMBER OF CHILDREN </label>
+									<input
+										type="number"
+										name="noOfChildren"
+										id="noOfChildren"
+										placeholder="0"
+									/>
+								</div>
+							</div>
+							<div class="date-input-container">
+								<label for="additionalMessage">ADDITIONAL MESSAGE</label>
+								<textarea name="additionalMessage" id="additionalMessage">
+								</textarea>
+							</div>
+					</form>
                 </div>
             </div>
             <div>
@@ -753,7 +832,7 @@ templ NairobiForm() {
             </div>
         </div>
         <div class="btn-sections">
-            <div class="taxi-next-btn taxi-btn taxi-btn-right">
+            <div class="taxi-next-btn taxi-btn taxi-btn-right" id="contact-form-submit">
                 BOOK TOUR
                 // taxi-next-btn taxi-btn taxi-btn-right 
                 // <i class="ri-arrow-right-s-line"></i>
@@ -763,5 +842,5 @@ templ NairobiForm() {
 }
 
 templ ContactUsPage(body templ.Component) {
-    @BaseTemplate([]string{"general", "nav", "service", "footer", "safaris", "intro", "safaris-num", "taxi", "contact"}, []string{"q&a", "nav"}, body)
+    @BaseTemplate([]string{"general", "nav", "service", "footer", "safaris", "intro", "safaris-num", "taxi", "contact"}, []string{"q&a", "nav", "contact-us", "taxi-form"}, body)
 }

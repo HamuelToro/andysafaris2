@@ -201,6 +201,33 @@ select {
 	top: 0.5rem;
 }
 
+.error-message {
+	background: rgba(0, 0, 0, 0.7);
+	color: var(--body-color);
+	border-radius: 0.1em;
+	font-weight: var(--font-semi-bold);
+	font-size: 0.7em;
+	padding: 0.25em 0.5em;
+	position: absolute;
+	top: -2.5em;
+	left: calc(50% -8em);
+	/* width: 16em; */
+	z-index: 20;
+	display: none;
+}
+
+.error-message::after {
+	content: "";
+	border-style: solid;
+	border-color: var(--title-color) transparent;
+	border-radius: 0;
+	border-width: 8px 8px 0 8px;
+	position: absolute;
+	bottom: -8px;
+	/* left: calc(50% - 5px); */
+	width: 0;
+}
+
 .date-input-container label i {
 	font-size: var(--normal-font-size);
 }
