@@ -42,7 +42,11 @@ export async function initMap() {
 			savedState.dropoffLocation;
 	}
 
-	destinationAutocomplete.addListener("place_changed", calculateRoute);
+	destinationAutocomplete.addListener("place_changed", () => {
+		const origin = document.getElementById("pickup-location").value;
+		const destination = document.getElementById("dropoff-location").value;
+		calculateRoute(origin, destination);
+	});
 
 	if (savedState.directions) {
 		directionsRenderer.setDirections(savedState.directions);
@@ -52,15 +56,15 @@ export async function initMap() {
 	}
 }
 
-function getKenyaBounds() {
+export function getKenyaBounds() {
 	const southwest = new google.maps.LatLng(-4.89952, 33.909015);
 	const northeast = new google.maps.LatLng(4.62, 41.899578);
 	return new google.maps.LatLngBounds(southwest, northeast);
 }
 
-function calculateRoute() {
-	const origin = document.getElementById("pickup-location").value;
-	const destination = document.getElementById("dropoff-location").value;
+export function calculateRoute(origin, destination) {
+	// const origin = document.getElementById("pickup-location").value;
+	// const destination = document.getElementById("dropoff-location").value;
 
 	if (!origin || !destination) {
 		return;
@@ -74,7 +78,6 @@ function calculateRoute() {
 		},
 		(response, status) => {
 			if (status === "OK") {
-				console.log(response);
 				directionsRenderer.setDirections(response);
 
 				const route = response.routes[0];

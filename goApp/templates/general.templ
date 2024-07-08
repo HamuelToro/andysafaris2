@@ -26,9 +26,17 @@ templ header() {
                     <a class="nav__logo" href="/">Andy Safaris</a>
                     <div class="nav__menu" id="js-nav-menu">
                         <ul class="nav__list">
-                            <li><a href="#" class="nav__item">HOME</a></li>
                             <li><a href="#" class="nav__item">ABOUT US</a></li>
-                            <li><a href="#" class="nav__item">SERVICES</a></li>
+                            <li class="service-cont">
+								<a href="#" class="nav__item">SERVICES +</a>
+								<!-- <i class="ri-arrow-drop-down-line"></i> -->
+								<ul class="service-nav-breakdown">
+									<li><a href="/safaris">SAFARIS</a></li>
+									<li><a href="/nairobi-tour">NAIROBI-TOUR</a></li>
+									<li><a href="/get-taxi">GET A TAXI</a></li>
+									<li><a href="/car-hire">CAR HIRE</a></li>
+								</ul>
+							</li>
                             <li><a href="#" class="nav__item">GALLERY</a></li>
                             <li><a href="/contact-us" class="nav__item">CONTACT US</a></li>
                         </ul>
@@ -59,8 +67,7 @@ templ footer() {
 				<div class="footer_about-us">
 					<p class="section-title footer-title">ABOUT US</p>
 					<p class="footer-about-us">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-						nam velit cum alias magni laboriosam eaque doloremque, doloribus non
+						Welcome to Andy Safaris, your ultimate partner for unforgettable adventures and seamless travel experiences in Kenya. We specialize in thrilling safari tours, reliable airport and hotel transfers, exciting Nairobi city tours, and convenient car hire services. Our dedicated team is committed to providing exceptional service, ensuring your journey through Kenya is comfortable, memorable, and full of incredible moments. Join us and discover the beauty, culture, and wildlife of Kenya with the experts!
 					</p>
 					<div class="footer-socials">
 						<i class="ri-twitter-x-fill"></i>
@@ -75,11 +82,11 @@ templ footer() {
 					<p class="footer-address"><span>Address: </span>Some Address</p>
 					<div class="footer-contacts">
 						<i class="ri-phone-fill"></i>
-						254718750145
+						254700000000
 					</div>
 					<div class="footer-contacts">
 						<i class="ri-mail-fill"></i>
-						emiliocliff@gmail.com
+						example@gmail.com
 					</div>
 				</div>
 			</div>

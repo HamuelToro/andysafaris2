@@ -58,24 +58,12 @@ var carRealHireQnA = []db.QandA{
 
 func carHireFormScript() templ.ComponentScript {
 	return templ.ComponentScript{
-		Name: `__templ_carHireFormScript_fa4a`,
-		Function: `function __templ_carHireFormScript_fa4a(){let id = document.querySelector(".car-image").dataset.carSelectedId;
+		Name: `__templ_carHireFormScript_7771`,
+		Function: `function __templ_carHireFormScript_7771(){let id = document.querySelector(".car-image").dataset.carSelectedId;
     window.location.href=` + "`" + `/car-hire/${id}/contact-form` + "`" + `
-    // fetch("/car-hire/contact", {
-    //     method: "POST",
-    //     body: JSON.stringify({
-    //         id: Number(id),
-    //     }),
-    //     headers: {
-    //         "Content-Type": "application/json; charset=UTF-8"
-    //     }
-    // })
-    // .catch((error) => {
-    //     console.log(error)
-    // })
 }`,
-		Call:       templ.SafeScript(`__templ_carHireFormScript_fa4a`),
-		CallInline: templ.SafeScriptInline(`__templ_carHireFormScript_fa4a`),
+		Call:       templ.SafeScript(`__templ_carHireFormScript_7771`),
+		CallInline: templ.SafeScriptInline(`__templ_carHireFormScript_7771`),
 	}
 }
 
@@ -104,7 +92,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var2 string
 		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(Vehicles[0].Name)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 173, Col: 42}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 161, Col: 42}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
@@ -117,7 +105,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var3 string
 		templ_7745c5c3_Var3, templ_7745c5c3_Err = templ.JoinStringErrs(Vehicles[0].Images[0])
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 177, Col: 66}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 165, Col: 66}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var3))
 		if templ_7745c5c3_Err != nil {
@@ -130,7 +118,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var4 string
 		templ_7745c5c3_Var4, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprintf("%d", Vehicles[0].ID))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 177, Col: 125}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 165, Col: 125}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var4))
 		if templ_7745c5c3_Err != nil {
@@ -143,7 +131,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var5 string
 		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(Vehicles[0].Images[0])
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 184, Col: 97}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 172, Col: 97}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 		if templ_7745c5c3_Err != nil {
@@ -156,7 +144,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var6 string
 		templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprintf("%d", Vehicles[0].ID))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 184, Col: 151}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 172, Col: 151}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
 		if templ_7745c5c3_Err != nil {
@@ -174,7 +162,7 @@ func CarHireBody() templ.Component {
 			var templ_7745c5c3_Var7 string
 			templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(Vehicles[i].Images[0])
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 186, Col: 78}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 174, Col: 78}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 			if templ_7745c5c3_Err != nil {
@@ -187,7 +175,7 @@ func CarHireBody() templ.Component {
 			var templ_7745c5c3_Var8 string
 			templ_7745c5c3_Var8, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprintf("%d", Vehicles[i].ID))
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 186, Col: 132}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 174, Col: 132}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var8))
 			if templ_7745c5c3_Err != nil {
@@ -205,7 +193,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var9 string
 		templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprintf("%d", Vehicles[0].Passengers))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 207, Col: 66}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 195, Col: 66}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
 		if templ_7745c5c3_Err != nil {
@@ -218,7 +206,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var10 string
 		templ_7745c5c3_Var10, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprintf("%d", Vehicles[0].Suitcases))
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 213, Col: 65}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 201, Col: 65}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var10))
 		if templ_7745c5c3_Err != nil {
@@ -231,7 +219,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var11 string
 		templ_7745c5c3_Var11, templ_7745c5c3_Err = templ.JoinStringErrs(Vehicles[0].Make.Engine)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 220, Col: 52}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 208, Col: 52}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var11))
 		if templ_7745c5c3_Err != nil {
@@ -244,7 +232,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var12 string
 		templ_7745c5c3_Var12, templ_7745c5c3_Err = templ.JoinStringErrs(Vehicles[0].Make.InteriorColor)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 225, Col: 59}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 213, Col: 59}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var12))
 		if templ_7745c5c3_Err != nil {
@@ -257,7 +245,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var13 string
 		templ_7745c5c3_Var13, templ_7745c5c3_Err = templ.JoinStringErrs(Vehicles[0].Make.Power)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 230, Col: 51}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 218, Col: 51}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var13))
 		if templ_7745c5c3_Err != nil {
@@ -270,7 +258,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var14 string
 		templ_7745c5c3_Var14, templ_7745c5c3_Err = templ.JoinStringErrs(Vehicles[0].Make.FuelType)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 235, Col: 54}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 223, Col: 54}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var14))
 		if templ_7745c5c3_Err != nil {
@@ -283,7 +271,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var15 string
 		templ_7745c5c3_Var15, templ_7745c5c3_Err = templ.JoinStringErrs(Vehicles[0].Make.Length)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 240, Col: 52}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 228, Col: 52}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var15))
 		if templ_7745c5c3_Err != nil {
@@ -296,7 +284,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var16 string
 		templ_7745c5c3_Var16, templ_7745c5c3_Err = templ.JoinStringErrs(Vehicles[0].Make.ExteriorColor)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 245, Col: 59}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 233, Col: 59}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var16))
 		if templ_7745c5c3_Err != nil {
@@ -309,7 +297,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var17 string
 		templ_7745c5c3_Var17, templ_7745c5c3_Err = templ.JoinStringErrs(Vehicles[0].Make.Transmission)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 250, Col: 58}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 238, Col: 58}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var17))
 		if templ_7745c5c3_Err != nil {
@@ -322,7 +310,7 @@ func CarHireBody() templ.Component {
 		var templ_7745c5c3_Var18 string
 		templ_7745c5c3_Var18, templ_7745c5c3_Err = templ.JoinStringErrs(Vehicles[0].Make.Extras)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 255, Col: 77}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 243, Col: 77}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var18))
 		if templ_7745c5c3_Err != nil {
@@ -357,7 +345,7 @@ func CarHireBody() templ.Component {
 			var templ_7745c5c3_Var20 string
 			templ_7745c5c3_Var20, templ_7745c5c3_Err = templ.JoinStringErrs(vehicle.Name)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 381, Col: 42}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 369, Col: 42}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var20))
 			if templ_7745c5c3_Err != nil {
@@ -370,7 +358,7 @@ func CarHireBody() templ.Component {
 			var templ_7745c5c3_Var21 string
 			templ_7745c5c3_Var21, templ_7745c5c3_Err = templ.JoinStringErrs(vehicle.PricePerMonth)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 383, Col: 51}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 371, Col: 51}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var21))
 			if templ_7745c5c3_Err != nil {
@@ -393,7 +381,7 @@ func CarHireBody() templ.Component {
 			var templ_7745c5c3_Var22 string
 			templ_7745c5c3_Var22, templ_7745c5c3_Err = templ.JoinStringErrs(vehicle.Name)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 408, Col: 42}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 396, Col: 42}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var22))
 			if templ_7745c5c3_Err != nil {
@@ -406,7 +394,7 @@ func CarHireBody() templ.Component {
 			var templ_7745c5c3_Var23 string
 			templ_7745c5c3_Var23, templ_7745c5c3_Err = templ.JoinStringErrs(vehicle.PricePerMothWithDriver)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 410, Col: 60}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 398, Col: 60}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var23))
 			if templ_7745c5c3_Err != nil {
@@ -429,7 +417,7 @@ func CarHireBody() templ.Component {
 			var templ_7745c5c3_Var24 string
 			templ_7745c5c3_Var24, templ_7745c5c3_Err = templ.JoinStringErrs(vehicle.Name)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 435, Col: 42}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 423, Col: 42}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var24))
 			if templ_7745c5c3_Err != nil {
@@ -442,7 +430,7 @@ func CarHireBody() templ.Component {
 			var templ_7745c5c3_Var25 string
 			templ_7745c5c3_Var25, templ_7745c5c3_Err = templ.JoinStringErrs(vehicle.PriceMonthsContract)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 437, Col: 57}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/car-hire.templ`, Line: 425, Col: 57}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var25))
 			if templ_7745c5c3_Err != nil {

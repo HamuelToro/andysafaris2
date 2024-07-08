@@ -48,6 +48,27 @@ window.addEventListener("scroll", handleScroll);
 
 onScroll();
 
+// const serviceCont = document.querySelector(".service-cont");
+// const serviceNavBreakdown = document.querySelector(".service-nav-breakdown");
+
+// serviceCont.addEventListener("mouseenter", function () {
+// 	serviceNavBreakdown.style.display = "block";
+// });
+
+// serviceCont.addEventListener("mouseleave", function (event) {
+// 	if (!serviceCont.contains(event.relatedTarget)) {
+// 		serviceNavBreakdown.style.display = "none";
+// 	}
+// });
+
+// serviceNavBreakdown.addEventListener("mouseenter", function () {
+// 	this.style.display = "block";
+// });
+
+// serviceNavBreakdown.addEventListener("mouseleave", function () {
+// 	this.style.display = "none";
+// });
+
 /*
 	let getTaxi = document.querySelector(".js-active");
 function loop() {

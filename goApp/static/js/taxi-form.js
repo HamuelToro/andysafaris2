@@ -1,10 +1,11 @@
+let taxiForm = {};
+
 function saveToLocalStorage(values) {
 	localStorage.setItem("values", JSON.stringify(values));
 }
 
-function getFromLocalStorage() {
-	const values = JSON.parse(localStorage.getItem());
-	console.log(values);
+export function getFromLocalStorage() {
+	return JSON.parse(localStorage.getItem("values"));
 }
 
 export function submitForm(currentProgress) {
@@ -14,17 +15,24 @@ export function submitForm(currentProgress) {
 		case "0":
 			values = collectFormValues();
 			errors = validateRideDetailsForm(values);
-			// saveToLocalStorage(values);
 			displayFormErrors(errors);
 
 			if (errors.length === 0) {
+				values["totalDistance"] =
+					document.getElementById("total-distance").innerText;
+				values["totalTime"] = document.getElementById("total-time").innerText;
+				taxiForm["rideDetails"] = values;
+				saveToLocalStorage(taxiForm);
 				return true;
 			}
 
-			// return false;
-			return true;
+			return false;
 		case "1":
 			if (document.querySelector(".taxi-select-btn-selected")) {
+				taxiForm["taxiSelected"] = document.querySelector(
+					".taxi-select-btn-selected"
+				).dataset.carId;
+				saveToLocalStorage(taxiForm);
 				return true;
 			}
 
@@ -33,15 +41,32 @@ export function submitForm(currentProgress) {
 		case "2":
 			values = collectFormValues();
 			errors = validateContactDetailsForm(values);
-			console.log(errors);
-			saveToLocalStorage(values);
 			displayFormErrors(errors);
+			if (!document.querySelector(".payment-method-clicked")) {
+				errors.push("choose payent method");
+				let error = document.querySelector(
+					".payment-methods-taxi .error-message"
+				);
+				if (error !== undefined) {
+					console.log(error);
+					error.style.display = "block";
+					error.querySelector("p").innerText = "Please select payment method";
+				}
+
+				setTimeout(() => {
+					error.style.display = "none";
+				}, 3000);
+			}
 
 			if (errors.length === 0) {
+				values["paymentMethod"] = document.querySelector(
+					".payment-method-clicked"
+				).dataset.paymentValue;
+				taxiForm["contactDetails"] = values;
+				saveToLocalStorage(taxiForm);
 				return true;
 			}
 
-			// return true;
 			return false;
 		case "3":
 			return true;

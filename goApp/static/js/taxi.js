@@ -1,35 +1,48 @@
-import { initMap } from "./taxi-maps.js";
+import { initMap, calculateRoute } from "./taxi-maps.js";
 import { vehicles } from "./data/vehicle.js";
-import { submitForm } from "./taxi-form.js";
+import { submitForm, getFromLocalStorage } from "./taxi-form.js";
+// import { sendContactForm } from "./contact-us.js";
 
 const today = new Date().toISOString().split("T")[0];
 document.getElementById("date").setAttribute("min", today);
 
-let currentProgress = 0;
+let previousValue = "0";
 
-// after clicking the buttons change the next in small view and also in large view
-const bookingCont = document.querySelector(".select-options");
 const bookingContLarge = document.querySelectorAll(".progres-cont");
 bookingContLarge.forEach(function (btn) {
 	btn.addEventListener("click", function () {
 		let value = btn.dataset.progressNumber;
 
-		if (value !== currentProgress + 1) {
-			value = currentProgress + 1;
-		}
-
-		if (submitForm(String(currentProgress))) {
+		if (value > previousValue) {
+			if (submitForm(previousValue)) {
+				revielContent(value);
+			}
+		} else {
 			revielContent(value);
-
-			// document
-			// 	.querySelector(".progress-larger-selected")
-			// 	.classList.remove("progress-larger-selected");
-			// btn.parentElement.classList.add("progress-larger-selected");
-
-			// set the select in small screen values
-			changeProgress(value);
 		}
 	});
+});
+
+const bookingCont = document.querySelector(".select-options");
+bookingCont.addEventListener("change", function () {
+	const currentValue = this.value;
+
+	if (currentValue > previousValue) {
+		if (submitForm(previousValue)) {
+			revielContent(currentValue);
+		} else {
+			// if fails return to previous state
+			const options = bookingCont.options;
+			for (let i = 0; i < options.length; i++) {
+				if (options[i].value === previousValue) {
+					options[i].selected = true;
+					break;
+				}
+			}
+		}
+	} else {
+		revielContent(currentValue);
+	}
 });
 
 function changeProgress(value) {
@@ -54,37 +67,30 @@ function changeProgress(value) {
 	}
 }
 
-bookingCont.addEventListener("change", function () {
-	const value = this.value;
-
-	if (submitForm(String(currentProgress))) {
-		changeProgress(value);
-		revielContent(value);
-	} else {
-		changeProgress(value);
-	}
-});
-
 function revielContent(value) {
 	switch (value) {
 		case "0":
-			currentProgress = 0;
-			changeProgress(String(currentProgress));
+			// currentProgress = 0;
+			previousValue = value;
+			changeProgress("0");
 			showRideDetails();
 			break;
 		case "1":
-			currentProgress = 1;
-			changeProgress(String(currentProgress));
+			// currentProgress = 1;
+			previousValue = value;
+			changeProgress("1");
 			showChooseTaxi();
 			break;
 		case "2":
-			currentProgress = 2;
-			changeProgress(String(currentProgress));
+			// currentProgress = 2;
+			previousValue = value;
+			changeProgress("2");
 			showContactDetails();
 			break;
 		case "3":
-			currentProgress = 3;
-			changeProgress(String(currentProgress));
+			// currentProgress = 3;
+			previousValue = value;
+			changeProgress("3");
 			showBookSummary();
 			break;
 	}
@@ -238,12 +244,32 @@ function showRideDetails() {
 			revielContent("1");
 		}
 	});
+
+	// auto-fill form if it is available
+	const savedData = getFromLocalStorage();
+	if (savedData.rideDetails) {
+		document.getElementById("date").value = savedData.rideDetails.pickupDay;
+		document.getElementById("pickupTime").value =
+			savedData.rideDetails.pickupTime;
+		document.getElementById("pickup-location").value =
+			savedData.rideDetails.pickupLocation;
+		document.getElementById("dropoff-location").value =
+			savedData.rideDetails.dropoffLocation;
+		document.getElementById("transferType").value =
+			savedData.rideDetails.transferType;
+
+		const origin = document.getElementById("pickup-location").value;
+		const destination = document.getElementById("dropoff-location").value;
+
+		calculateRoute(origin, destination);
+	}
 }
 
 function showChooseTaxi() {
 	// saveState();
 	dataDetailsCont.classList.remove("summary-large-col");
 	dataDetailsCont.classList.add("booking-container-choose-vehicle");
+	const savedData = getFromLocalStorage();
 	dataDetailsCont.innerHTML = `
         		<div class="booking-car-sect">
 					<div class="ride-details">
@@ -325,25 +351,25 @@ function showChooseTaxi() {
 						<p>Distance</p>
 						<hr />
 						<h4>TRANSFER TYPE</h4>
-						<p>One Way</p>
+						<p>${savedData.rideDetails.transferType}</p>
 						<hr />
 						<h4>PICKUP LOCATION</h4>
-						<p>Kitengela, Kenya</p>
+						<p>${savedData.rideDetails.pickupLocation}</p>
 						<hr />
-						<h4>PICKUP LOCATION</h4>
-						<p>Kitengela, Kenya</p>
+						<h4>DROPOFF LOCATION</h4>
+						<p>${savedData.rideDetails.dropoffLocation}</p>
 						<hr />
 						<h4>PICKUP DATE, TIME</h4>
-						<p>26-06-2024, 8:00</p>
+						<p>${savedData.rideDetails.pickupDay}, ${savedData.rideDetails.pickupTime}</p>
 						<hr />
 						<div class="summary-col-2">
 							<div>
 								<h4>TOTAL DISTANCE</h4>
-								<p>81.8KM</p>
+								<p>${savedData.rideDetails.totalDistance}</p>
 							</div>
 							<div>
 								<h4>TOTAL TIME</h4>
-								<p>81.8KM</p>
+								<p>${savedData.rideDetails.totalTime}</p>
 							</div>
 						</div>
 					</div>
@@ -364,6 +390,22 @@ function showChooseTaxi() {
 				</div>
 	`;
 
+	// submit the form and reviel the next slide
+	document
+		.querySelector(".taxi-next-btn:nth-child(1)")
+		.addEventListener("click", () => {
+			if (submitForm("1")) {
+				revielContent("2");
+			}
+		});
+
+	// move back to the previous slide and autofill the forms
+	document
+		.querySelector(".taxi-next-btn:nth-child(2)")
+		.addEventListener("click", () => {
+			revielContent("0");
+		});
+
 	let carShowContainer = document.querySelector(".taxi-car-select");
 	carShowContainer.innerHTML = "";
 
@@ -375,7 +417,7 @@ function showChooseTaxi() {
 							</div>
 							<div class="taxi-name-select">
 								<p>${vehicle.Name}</p>
-								<div class="taxi-select-btn" data-car-id="${vehicle.ID}">
+								<div class="taxi-select-btn js-car-select-${vehicle.ID}" data-car-id="${vehicle.ID}">
 									SELECT
 									<i class="ri-check-line"></i>
 								</div>
@@ -459,12 +501,27 @@ function showChooseTaxi() {
 
 	showCarInfo();
 	selectCarEvents();
+
+	// const savedData = getFromLocalStorage();
+	if (savedData.taxiSelected) {
+		document
+			.querySelector(`.js-car-select-${savedData.taxiSelected}`)
+			.classList.add("taxi-select-btn-selected");
+	}
 }
 
 function showContactDetails() {
 	// saveState();
 	dataDetailsCont.classList.remove("summary-large-col");
 	dataDetailsCont.classList.add("booking-container-choose-vehicle");
+	const savedData = getFromLocalStorage();
+	const vehicle = vehicles.find(
+		(vehicle) => vehicle.ID === Number(savedData.taxiSelected)
+	);
+	const { totalPrice, depositPrice } = calculatePrices(
+		vehicle.PricePerKM,
+		savedData.rideDetails.totalDistance
+	);
 	// dataDetailsCont.classList.remove("booking-container-choose-vehicle");
 	dataDetailsCont.innerHTML = `
         <div style="display: grid; row-gap: 2rem" class="contact-grid-swap">
@@ -526,9 +583,12 @@ function showContactDetails() {
 						</form>
 					</div>
 					<div class="payment-taxi-details">
-						<p>Coose Payment Method</p>
+						<p>Choose Payment Method</p>
 						<div class="payment-methods-taxi grid">
-							<div class="payment-method">
+							<div class="error-message">
+								<p></p>
+							</div>
+							<div class="payment-method" data-payment-value="0">
 								<svg
 									height="800px"
 									width="800px"
@@ -584,7 +644,7 @@ function showContactDetails() {
 									></path>
 								</svg>
 							</div>
-							<div class="payment-method">
+							<div class="payment-method" data-payment-value="1">
 								<img src="/static/icons/cashPaymnet.png" alt="" />
 								<p>CASH</p>
 								<svg
@@ -598,7 +658,7 @@ function showContactDetails() {
 									></path>
 								</svg>
 							</div>
-							<div class="payment-method">
+							<div class="payment-method" data-payment-value="2">
 								<img src="/static/icons/mpesa-logo.svg.png" alt="" />
 								<p>MPESA</p>
 								<svg
@@ -616,50 +676,50 @@ function showContactDetails() {
 					</div>
 					</div>
 					<div>
-						<div class="summary-taxi-details" style="position: sticky; top: 0;">
+						<div class="summary-taxi-details">
 							<h3>Summary</h3>
 							<h4>SERVICE TYPE</h4>
 							<p>Distance</p>
 							<hr />
 							<h4>TRANSFER TYPE</h4>
-							<p>One Way</p>
+							<p>${savedData.rideDetails.transferType}</p>
 							<hr />
 							<h4>PICKUP LOCATION</h4>
-							<p>Kitengela, Kenya</p>
+							<p>${savedData.rideDetails.pickupLocation}</p>
 							<hr />
-							<h4>PICKUP LOCATION</h4>
-							<p>Kitengela, Kenya</p>
+							<h4>DROPOFF LOCATION</h4>
+							<p>${savedData.rideDetails.dropoffLocation}</p>
 							<hr />
 							<h4>PICKUP DATE, TIME</h4>
-							<p>26-06-2024, 8:00</p>
+							<p>${savedData.rideDetails.pickupDay}, ${savedData.rideDetails.pickupTime}</p>
 							<hr />
 							<div class="summary-col-2 name-col-2">
 								<div>
 									<h4>TOTAL DISTANCE</h4>
-									<p>81.8KM</p>
+									<p>${savedData.rideDetails.totalDistance}</p>
 								</div>
 								<div>
 									<h4>TOTAL TIME</h4>
-									<p>81.8KM</p>
+									<p>${savedData.rideDetails.totalTime}</p>
 								</div>
 							</div>
 							<hr />
 							<h4>VEHICLE</h4>
-							<p>Mercedes Benz E220</p>
+							<p>${vehicle.Name}</p>
 						</div>
 						<div class="taxi-total-cal" style="margin-top: 1rem; position: sticky; top: 0;">
 							<div class="summary-total">
-								<p>Selected Vehicl</p>
-								<p>%57.26</p>
+								<p>Selected Vehicle</p>
+								<p>${vehicle.PricePerKM}</p>
 							</div>
 							<hr />
 							<div class="summary-total">
 								<p class="total-bold">Total</p>
-								<p class="total-bold">$57.26</p>
+								<p class="total-bold">$${totalPrice}</p>
 							</div>
 							<div class="summary-total">
 								<p class="total-bold">To Pay <span>(30% deposit)</span></p>
-								<p class="total-bold">$17.18</p>
+								<p class="total-bold">$${depositPrice}</p>
 							</div>
 						</div>
 					</div>
@@ -678,44 +738,96 @@ function showContactDetails() {
 				</div>
 	`;
 
+	document
+		.querySelector(".taxi-next-btn:nth-child(1)")
+		.addEventListener("click", () => {
+			if (submitForm("2")) {
+				revielContent("3");
+			}
+		});
+
+	// move back to the previous slide and autofill the forms
+	document
+		.querySelector(".taxi-next-btn:nth-child(2)")
+		.addEventListener("click", () => {
+			revielContent("1");
+		});
+
 	selectPaymentMethod();
+
+	// auto-fill form if it is available
+	// const savedData = getFromLocalStorage();
+	if (savedData.contactDetails) {
+		document.getElementById("firstName").value =
+			savedData.contactDetails.firstName;
+		document.getElementById("lastName").value =
+			savedData.contactDetails.lastName;
+		document.getElementById("email").value = savedData.contactDetails.email;
+		document.getElementById("phoneNumber").value =
+			savedData.contactDetails.phoneNumber;
+		document.getElementById("comments").value =
+			savedData.contactDetails.comments;
+
+		document
+			.querySelectorAll(".payment-method")
+			[Number(savedData.contactDetails.paymentMethod)].classList.add(
+				"payment-method-clicked"
+			);
+	}
 }
 
 function showBookSummary() {
 	// saveState();
 	dataDetailsCont.classList.remove("booking-container-choose-vehicle");
 	dataDetailsCont.classList.add("summary-large-col");
+	const savedData = getFromLocalStorage();
+	let payment;
+	if (savedData.contactDetails.paymentMethod === "1") {
+		payment = "Cash";
+	} else if (savedData.contactDetails.paymentMethod === "2") {
+		payment = "M-PESA";
+	} else {
+		payment = "Card";
+	}
+	const vehicle = vehicles.find(
+		(vehicle) => vehicle.ID === Number(savedData.taxiSelected)
+	);
+	const { totalPrice, depositPrice } = calculatePrices(
+		vehicle.PricePerKM,
+		savedData.rideDetails.totalDistance
+	);
+
 	dataDetailsCont.innerHTML = `
         <div class="taxi-booking-summary-end grid">
 					<div class="summary-taxi-details-end">
 						<div class="summary-taxi-edit">
 							<h3>Contact & Billing Info</h3>
-							<div class="taxi-edit-btn">Edit</div>
+							<div class="taxi-edit-btn" id="contact-edit-back">Edit</div>
 						</div>
 						<div class="summary-col-2 name-col-2">
 							<div>
 								<h4>FIRST NAME</h4>
-								<p>Emilio</p>
+								<p>${savedData.contactDetails.firstName}</p>
 							</div>
 							<div>
 								<h4>LAST NAME</h4>
-								<p>Cliff</p>
+								<p>${savedData.contactDetails.lastName}</p>
 							</div>
 						</div>
 						<hr />
 						<h4>EMAIL ADDRESS</h4>
-						<p>example@gmail.com</p>
+						<p>${savedData.contactDetails.email}</p>
 						<hr />
 						<h4>Phone Number</h4>
-						<p>254718750145</p>
+						<p>${savedData.contactDetails.phoneNumber}</p>
 					</div>
 					<div class="summary-taxi-details-end">
 						<div class="summary-taxi-edit">
-							<h3>Payment Method</h3>
-							<div class="taxi-edit-btn">Edit</div>
+							<h3>Payment</h3>
+							<div class="taxi-edit-btn" id="payment-edit-back">Edit</div>
 						</div>
 						<h4>Your Choice</h4>
-						<p>Cash</p>
+						<p>${payment}</p>
 					</div>
 				</div>
 				<div>
@@ -723,57 +835,57 @@ function showBookSummary() {
 					<div class="summary-taxi-details-end">
 						<div class="summary-taxi-edit">
 							<h3>Ride Details</h3>
-							<div class="taxi-edit-btn">Edit</div>
+							<div class="taxi-edit-btn" id="ride-details-edit-back">Edit</div>
 						</div>
 						<h4>TRANSFER TYPE</h4>
-						<p>One Way</p>
+						<p>${savedData.rideDetails.transferType}</p>
 						<hr />
 						<h4>PICKUP LOCATION</h4>
-						<p>Kitengela, Kenya</p>
+						<p>${savedData.rideDetails.pickupLocation}</p>
 						<hr />
 						<h4>DROP-OFF LOCATION</h4>
-						<p>Kitengela, Kenya</p>
+						<p>${savedData.rideDetails.dropoffLocation}</p>
 						<hr />
 						<h4>PICKUP DATE, TIME</h4>
-						<p>26-06-2024, 8:00</p>
+						<p>${savedData.rideDetails.pickupDay}, ${savedData.rideDetails.pickupTime}</p>
 						<hr />
 						<div class="summary-col-2 name-col-2">
 							<div>
 								<h4>TOTAL DISTANCE</h4>
-								<p>81.8KM</p>
+								<p id="total-distance">${savedData.rideDetails.totalDistance}</p>
 							</div>
 							<div>
 								<h4>TOTAL TIME</h4>
-								<p>81.8KM</p>
+								<p id="total-time">${savedData.rideDetails.totalTime}</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="booking-car-sect-end">
 					<div class="taxi-sel-img">
-						<img src="/static/images/car1.jpg" alt="" />
+						<img src="${vehicle.Images[0]}" alt="" />
 					</div>
 					<div class="summary-taxi-details-end vehicle-summary">
 						<div class="summary-taxi-edit">
 							<h3>Vehicle Info</h3>
-							<div class="taxi-edit-btn">Edit</div>
+							<div class="taxi-edit-btn" id="vehicle-edit-back">Edit</div>
 						</div>
 						<h4>VEHICLE</h4>
-						<p>Mercedes-Benz E220</p>
+						<p>${vehicle.Name}</p>
 					</div>
 					<div class="taxi-total-cal taxi-total-cal-end" style="margin-top: 2rem">
 						<div class="summary-total">
-							<p>Selected Vehicl</p>
-							<p>%57.26</p>
+							<p>Selected Vehicle</p>
+							<p>${vehicle.PricePerKM}</p>
 						</div>
 						<hr />
 						<div class="summary-total">
 							<p class="total-bold">Total</p>
-							<p class="total-bold">$57.26</p>
+							<p class="total-bold">${totalPrice}</p>
 						</div>
 						<div class="summary-total">
 							<p class="total-bold">To Pay <span>(30% deposit)</span></p>
-							<p class="total-bold">$17.18</p>
+							<p class="total-bold">${depositPrice}</p>
 						</div>
 					</div>
 				</div>
@@ -785,6 +897,75 @@ function showBookSummary() {
 				<i class="ri-arrow-right-s-line"></i>
 			</div>
 	`;
+
+	document.querySelector(".taxi-next-btn").addEventListener("click", () => {
+		const body = {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(savedData),
+		};
+		fetch("/contact-form/taxi", body)
+			.then((response) => response.json())
+			.then((data) => {
+				console.log("parsed data is: " + data);
+				localStorage.clear();
+				// inform user submition was successfull
+
+				// window.location.href = "/";
+			})
+			.catch((error) => {
+				console.error("There was an error!", error);
+			});
+	});
+
+	document.getElementById("contact-edit-back").addEventListener("click", () => {
+		revielContent("2");
+	});
+
+	document.getElementById("payment-edit-back").addEventListener("click", () => {
+		revielContent("2");
+	});
+
+	document
+		.getElementById("ride-details-edit-back")
+		.addEventListener("click", () => {
+			revielContent("0");
+		});
+
+	document.getElementById("vehicle-edit-back").addEventListener("click", () => {
+		revielContent("1");
+	});
+
+	// mapInit();
+
+	// calculateRoute(
+	// 	savedData.rideDetails.pickupLocation,
+	// 	savedData.rideDetails.dropoffLocation
+	// );
+}
+
+async function mapInit() {
+	map = new google.maps.Map(document.getElementById("map"), {
+		center: { lat: -1.2832533, lng: 36.8172449 },
+		zoom: 13,
+	});
+
+	console.log(map);
+	// let directionsService = new google.maps.DirectionsService();
+	let directionsRenderer = new google.maps.DirectionsRenderer();
+	directionsRenderer.setMap(map);
+}
+
+function calculatePrices(pricePerKM, distance) {
+	const price = parseFloat(pricePerKM.replace("$", ""));
+	const distanceInKM = parseFloat(distance.replace(" km", ""));
+
+	const totalPrice = price * distanceInKM;
+	const depositPrice = (totalPrice * 0.3).toFixed(2);
+
+	return { totalPrice: totalPrice.toFixed(2), depositPrice };
 }
 
 function showCarInfo() {
@@ -852,8 +1033,9 @@ function selectPaymentMethod() {
 	});
 }
 
+// initialize the first taxi button
 document.querySelector(".taxi-next-btn").addEventListener("click", () => {
-	// if (submitForm("0")) {
-	revielContent("1");
-	// }
+	if (submitForm("0")) {
+		revielContent("1");
+	}
 });

@@ -130,7 +130,7 @@ func header() templ.Component {
 			templ_7745c5c3_Var6 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<header class=\"header is-visible\"><div class=\"header-container\"><nav class=\"nav__bar\"><a class=\"nav__logo\" href=\"/\">Andy Safaris</a><div class=\"nav__menu\" id=\"js-nav-menu\"><ul class=\"nav__list\"><li><a href=\"#\" class=\"nav__item\">HOME</a></li><li><a href=\"#\" class=\"nav__item\">ABOUT US</a></li><li><a href=\"#\" class=\"nav__item\">SERVICES</a></li><li><a href=\"#\" class=\"nav__item\">GALLERY</a></li><li><a href=\"/contact-us\" class=\"nav__item\">CONTACT US</a></li></ul><div class=\"nav__close\" id=\"js-close-btn\"><i class=\"ri-close-line\"></i></div></div><div class=\"contact__container\"><i class=\"ri-phone-fill phone__icon\" id=\"js-phone-icon\"></i> <a href=\"#\" class=\"nav__contact\">+254 000 000 000</a></div><div class=\"nav__toogle\" id=\"js-toogle-btn\"><i class=\"ri-apps-2-line\"></i></div></nav></div></header>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<header class=\"header is-visible\"><div class=\"header-container\"><nav class=\"nav__bar\"><a class=\"nav__logo\" href=\"/\">Andy Safaris</a><div class=\"nav__menu\" id=\"js-nav-menu\"><ul class=\"nav__list\"><li><a href=\"#\" class=\"nav__item\">ABOUT US</a></li><li class=\"service-cont\"><a href=\"#\" class=\"nav__item\">SERVICES +</a><!-- <i class=\"ri-arrow-drop-down-line\"></i> --><ul class=\"service-nav-breakdown\"><li><a href=\"/safaris\">SAFARIS</a></li><li><a href=\"/nairobi-tour\">NAIROBI-TOUR</a></li><li><a href=\"/get-taxi\">GET A TAXI</a></li><li><a href=\"/car-hire\">CAR HIRE</a></li></ul></li><li><a href=\"#\" class=\"nav__item\">GALLERY</a></li><li><a href=\"/contact-us\" class=\"nav__item\">CONTACT US</a></li></ul><div class=\"nav__close\" id=\"js-close-btn\"><i class=\"ri-close-line\"></i></div></div><div class=\"contact__container\"><i class=\"ri-phone-fill phone__icon\" id=\"js-phone-icon\"></i> <a href=\"#\" class=\"nav__contact\">+254 000 000 000</a></div><div class=\"nav__toogle\" id=\"js-toogle-btn\"><i class=\"ri-apps-2-line\"></i></div></nav></div></header>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -156,7 +156,7 @@ func footer() templ.Component {
 			templ_7745c5c3_Var7 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<footer class=\"footer\"><a href=\"#home\" class=\"back-top\"><div><i class=\"ri-arrow-up-s-line\"></i></div></a><div class=\"footer-content\"><div class=\"footer_about-us\"><p class=\"section-title footer-title\">ABOUT US</p><p class=\"footer-about-us\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nam velit cum alias magni laboriosam eaque doloremque, doloribus non</p><div class=\"footer-socials\"><i class=\"ri-twitter-x-fill\"></i> <i class=\"ri-facebook-fill\"></i> <i class=\"ri-instagram-line\"></i> <i class=\"ri-whatsapp-line\"></i></div></div><!-- <div class=\"footer_explore\"></div> --><div class=\"footer_contact-info\"><p class=\"section-title footer-title\">CONTACT US</p><p class=\"footer-address\"><span>Address: </span>Some Address</p><div class=\"footer-contacts\"><i class=\"ri-phone-fill\"></i> 254718750145</div><div class=\"footer-contacts\"><i class=\"ri-mail-fill\"></i> emiliocliff@gmail.com</div></div></div><div class=\"footer_rights\">Copyright @2024 By <span>TOUR</span> All Rights Reserved</div></footer>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<footer class=\"footer\"><a href=\"#home\" class=\"back-top\"><div><i class=\"ri-arrow-up-s-line\"></i></div></a><div class=\"footer-content\"><div class=\"footer_about-us\"><p class=\"section-title footer-title\">ABOUT US</p><p class=\"footer-about-us\">Welcome to Andy Safaris, your ultimate partner for unforgettable adventures and seamless travel experiences in Kenya. We specialize in thrilling safari tours, reliable airport and hotel transfers, exciting Nairobi city tours, and convenient car hire services. Our dedicated team is committed to providing exceptional service, ensuring your journey through Kenya is comfortable, memorable, and full of incredible moments. Join us and discover the beauty, culture, and wildlife of Kenya with the experts!</p><div class=\"footer-socials\"><i class=\"ri-twitter-x-fill\"></i> <i class=\"ri-facebook-fill\"></i> <i class=\"ri-instagram-line\"></i> <i class=\"ri-whatsapp-line\"></i></div></div><!-- <div class=\"footer_explore\"></div> --><div class=\"footer_contact-info\"><p class=\"section-title footer-title\">CONTACT US</p><p class=\"footer-address\"><span>Address: </span>Some Address</p><div class=\"footer-contacts\"><i class=\"ri-phone-fill\"></i> 254700000000</div><div class=\"footer-contacts\"><i class=\"ri-mail-fill\"></i> example@gmail.com</div></div></div><div class=\"footer_rights\">Copyright @2024 By <span>TOUR</span> All Rights Reserved</div></footer>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -189,7 +189,7 @@ func QandA(questions []db.QandA, title string) templ.Component {
 		var templ_7745c5c3_Var9 string
 		templ_7745c5c3_Var9, templ_7745c5c3_Err = templ.JoinStringErrs(title)
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/general.templ`, Line: 193, Col: 45}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/general.templ`, Line: 200, Col: 45}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var9))
 		if templ_7745c5c3_Err != nil {
@@ -207,7 +207,7 @@ func QandA(questions []db.QandA, title string) templ.Component {
 			var templ_7745c5c3_Var10 string
 			templ_7745c5c3_Var10, templ_7745c5c3_Err = templ.JoinStringErrs(question.Question)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/general.templ`, Line: 199, Col: 42}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/general.templ`, Line: 206, Col: 42}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var10))
 			if templ_7745c5c3_Err != nil {
@@ -220,7 +220,7 @@ func QandA(questions []db.QandA, title string) templ.Component {
 			var templ_7745c5c3_Var11 string
 			templ_7745c5c3_Var11, templ_7745c5c3_Err = templ.JoinStringErrs(question.Description)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/general.templ`, Line: 211, Col: 45}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `templates/general.templ`, Line: 218, Col: 45}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var11))
 			if templ_7745c5c3_Err != nil {

@@ -1,11 +1,11 @@
 package templates
 
 type EnqueryFormPost struct {
-	fullName string
-	email string
-	phoneNumber string
-	serviceEnguery string
-	additionalMessage string
+	FullName string	`json:"fullName"`
+	Email string	`json:"email"`
+	PhoneNumber string	`json:"phoneNumber"`
+	ServiceEnguery string	`json:"serviceEnguery"`
+	AdditionalMessage string	`json:"additionalMessage"`
 }
 
 type SafariFormPost struct {
@@ -21,25 +21,71 @@ type SafariFormPost struct {
 }
 
 type CarHireFormPost struct {
-	firstName string
-	lastName string
-	email string
-	phoneNumber string
-	duration string
-	pickupDay string
-	additionalMessage string
+	FirstName string `json:"firstName"`
+	LastName string `json:"lastName"`
+	Email string `json:"email"`
+	PhoneNumber string `json:"phoneNumber"`
+	Duration string `json:"duration"`
+	PickupDay string `json:"pickupDay"`
+	AdditionalMessage string `json:"additionalMessage"`
 }
 
 type ReviewFormPost struct {
-	fullName string
-	email string
-	review string
+	FullName string `json:"fullName"`
+	Email string	`json:"email"`
+	Review string `json:"review"`
 }
 
-templ SafariFormComponent(details SafariFormPost) {
+type TaxiFormPost struct {
+    RideDetails RideDetailsHelper `json:"rideDetails"`
+    TaxiSelected string `json:"taxiSelected"`
+    ContactDetails ContactDetailsHelper `json:"contactDetails"`
+}
+
+type RideDetailsHelper struct {
+    PickupDay string `json:"pickupDay"`
+    PickupTime string `json:"pickupTime"`
+    PickupLocation string `json:"pickupLocation"`
+    DropoffLocation string `json:"dropoffLocation"`
+    TransferType string `json:"transferType"`
+    TotalDistance string `json:"totalDistance"`
+    TotalTime string `json:"totalTime"`
+}
+
+type ContactDetailsHelper struct{
+    FirstName string `json:"firstName"`
+    LastName string `json:lastName"`
+    Email string `json:"email"`
+    PhoneNumber string `json:"phoneNumber"`
+    Comments string `json:"comments"`
+    PaymentMethod string `json:"paymentMethod"`
+}
+
+templ TaxiBookingFormComponent(details TaxiFormPost) {
+    <h1>Taxi Booking Confirmation</h1>
+    <p>Dear { details.ContactDetails.FirstName } { details.ContactDetails.LastName },</p>
+    <p>Thank you for booking with us. Here are the details of your booking:</p>
+    <ul>
+        <li><strong>Email:</strong> { details.ContactDetails.Email }</li>
+        <li><strong>Phone Number:</strong> { details.ContactDetails.PhoneNumber }</li>
+        <li><strong>Pickup Day and Time:</strong> { details.RideDetails.PickupDay },  { details.RideDetails.PickupTime }</li>
+        <li><strong>Pickup Location:</strong> { details.RideDetails.PickupLocation }</li>
+        <li><strong>Dropoff Location:</strong> { details.RideDetails.DropoffLocation }</li>
+        <li><strong>TransferType:</strong> { details.RideDetails.TransferType }</li>
+        <li><strong>Total Distance:</strong> { details.RideDetails.TotalDistance }</li>
+        <li><strong>TotalTime:</strong> { details.RideDetails.TotalTime }</li>
+        <li><strong>Payment Method:</strong> { details.ContactDetails.PaymentMethod  }</li>
+        <li><strong>Additional Message:</strong> { details.ContactDetails.Comments }</li>
+    </ul>
+    <p>We look forward to providing you with an unforgettable experience.</p>
+    <p>Best regards,</p>
+    <p>The Andy Safari</p>
+}
+
+templ SafariFormComponent(details SafariFormPost, service string) {
     <h1>Safari Booking Confirmation</h1>
     <p>Dear { details.FirstName } { details.LastName },</p>
-    <p>Thank you for booking your safari with us. Here are the details of your booking:</p>
+    <p>Thank you for booking your { service } with us. Here are the details of your booking:</p>
     <ul>
         <li><strong>Email:</strong> { details.Email }</li>
         <li><strong>Phone Number:</strong> { details.PhoneNumber }</li>
@@ -47,6 +93,37 @@ templ SafariFormComponent(details SafariFormPost) {
         <li><strong>Arrival Date:</strong> { details.ArrivalDate  }</li>
         <li><strong>Number of Adults:</strong> { details.NoOfAdults  }</li>
         <li><strong>Number of Children:</strong> { details.NoOfChildren }</li>
+        <li><strong>Additional Message:</strong> { details.AdditionalMessage }</li>
+    </ul>
+    <p>We look forward to providing you with an unforgettable experience.</p>
+    <p>Best regards,</p>
+    <p>The Safari Team</p>
+}
+
+templ EnqueryFormComponent(details EnqueryFormPost) {
+	<h1>Enquery Confirmation</h1>
+    <p>Dear { details.FullName },</p>
+    <p>Thank you for showing interest with our safaris and services here is your enquiry data:</p>
+    <ul>
+        <li><strong>Email:</strong> { details.Email }</li>
+        <li><strong>Phone Number:</strong> { details.PhoneNumber }</li>
+        <li><strong>Service Enquery:</strong> { details.ServiceEnguery }</li>
+        <li><strong>Additional Message:</strong> { details.AdditionalMessage }</li>
+    </ul>
+    <p>We look forward to providing you with an unforgettable safari experience.</p>
+    <p>Best regards,</p>
+    <p>The Safari Team</p>
+}
+
+templ CarHireFormComponent(details CarHireFormPost) {
+	<h1>Car Booking Confirmation</h1>
+    <p>Dear { details.FirstName } { details.LastName },</p>
+    <p>Thank you for hiring your dream car with us. Here are the details of your booking:</p>
+    <ul>
+        <li><strong>Email:</strong> { details.Email }</li>
+        <li><strong>Phone Number:</strong> { details.PhoneNumber }</li>
+		<li><strong>Duration:</strong> { details.Duration }</li>
+		<li><strong>Pickup Day:</strong> { details.PickupDay }</li>
         <li><strong>Additional Message:</strong> { details.AdditionalMessage }</li>
     </ul>
     <p>We look forward to providing you with an unforgettable safari experience.</p>

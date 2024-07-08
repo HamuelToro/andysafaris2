@@ -1,3 +1,5 @@
+import { getKenyaBounds } from "./taxi-maps.js";
+
 let nextDom = document.getElementById("next");
 let prevDom = document.getElementById("prev");
 let carouselDom = document.querySelector(".carousel");
@@ -63,6 +65,38 @@ carContainers.forEach((carContainer) => {
 		carContainer.classList.add("js-active");
 	});
 });
+let sourceAutocomplete, destinationAutocomplete;
+export async function initIndexMap() {
+	sourceAutocomplete = new google.maps.places.Autocomplete(
+		document.getElementById("pickup-address"),
+		{ bounds: getKenyaBounds(), componentRestrictions: { country: "KE" } }
+	);
+
+	destinationAutocomplete = new google.maps.places.Autocomplete(
+		document.getElementById("dropoff-address"),
+		{ bounds: getKenyaBounds(), componentRestrictions: { country: "KE" } }
+	);
+
+	// if (savedState.pickupLocation) {
+	// 	document.getElementById("pickup-location").innerText =
+	// 		savedState.pickupLocation;
+	// }
+	// if (savedState.dropoffLocation) {
+	// 	document.getElementById("dropoff-location").innerText =
+	// 		savedState.dropoffLocation;
+	// }
+
+	// destinationAutocomplete.addListener("place_changed", calculateRoute);
+
+	// if (savedState.directions) {
+	// 	directionsRenderer.setDirections(savedState.directions);
+	// 	document.getElementById("total-distance").textContent =
+	// 		savedState.totalDistance;
+	// 	document.getElementById("total-time").textContent = savedState.totalTime;
+	// }
+}
+
+initIndexMap();
 
 // ============================= SERVICE ==========================
 let servicesBtn = document.querySelectorAll(".service-button");

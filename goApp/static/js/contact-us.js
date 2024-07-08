@@ -83,7 +83,7 @@ function initContact(form) {
 
 initContact(document.querySelector(".js-form-title").dataset.formName);
 
-function sendContactForm(entries, url) {
+export function sendContactForm(entries, url) {
 	if (entries.serviceEnguery) {
 		switch (entries.serviceEnguery) {
 			case "0":
@@ -101,8 +101,6 @@ function sendContactForm(entries, url) {
 		}
 	}
 
-	console.log(entries + " : " + JSON.stringify(entries));
-
 	const body = {
 		method: "POST",
 		headers: {
@@ -114,7 +112,9 @@ function sendContactForm(entries, url) {
 		.then((response) => response.json())
 		.then((data) => {
 			console.log("parsed data is: " + data);
-			window.location.href = "/";
+			// inform user submition was successfull
+
+			// window.location.href = "/";
 		})
 		.catch((error) => {
 			console.error("There was an error!", error);

@@ -23,7 +23,7 @@ var Vehicles = []db.Vehicle{
 			PricePerMonth: "$1,600",
 			PricePerMothWithDriver: "$2,500",
 			PriceMonthsContract: "$3,400",
-			Images:     []string{"/static/images/car1.jpg"},
+			Images:     []string{"/static/images/cars/mercedes-benz-e220.jpg"},
 			ComesWith:  []string{},
 			Make: db.VehicleMake{
 				Engine:        "3000",
@@ -46,7 +46,7 @@ var Vehicles = []db.Vehicle{
 			PricePerMonth: "$1,200",
 			PricePerMothWithDriver: "$2,200",
 			PriceMonthsContract: "$4,200",
-			Images:     []string{"/static/images/car1.jpg", "/static/images/car1.jpg"},
+			Images:     []string{"/static/images/cars/toyota-hiace.jpg"},
 			ComesWith:  []string{},
 			Make: db.VehicleMake{
 				Engine:        "3500",
@@ -61,15 +61,38 @@ var Vehicles = []db.Vehicle{
 		},
 		{
 			ID:         3,
-			Name:       "Ford Transit",
-			Passengers: 12,
-			Suitcases:  15,
+			Name:       "Tourist Van",
+			Passengers: 7,
+			Suitcases:  8,
+			Type:       "Noah",
+			PricePerKM: "$4.50",
+			PricePerMonth: "$2,000",
+			PricePerMothWithDriver: "$3,400",
+			PriceMonthsContract: "$5,000",
+			Images:     []string{"/static/images/cars/tourist-van-1.jpg"},
+			ComesWith:  []string{},
+			Make: db.VehicleMake{
+				Engine:        "2000",
+				InteriorColor: "Beige",
+				Power:         "150",
+				FuelType:      "Petrol",
+				Length:        "4.7 meters",
+				ExteriorColor: "Silver",
+				Transmission:  "Automatic",
+				Extras:        "Alloy Wheels, Bluetooth, Radio",
+			},
+		},
+		{
+			ID:         4,
+			Name:       "Toyota Vanguard",
+			Passengers: 4,
+			Suitcases:  4,
 			Type:       "Van",
 			PricePerKM: "$6.00",
 			PricePerMonth: "$700",
 			PricePerMothWithDriver: "$1,200",
 			PriceMonthsContract: "$3,200",
-			Images:     []string{"/static/images/car1.jpg"},
+			Images:     []string{"/static/images/cars/toyota-vanguard.jpg"},
 			ComesWith:  []string{},
 			Make: db.VehicleMake{
 				Engine:        "4000",
@@ -83,7 +106,30 @@ var Vehicles = []db.Vehicle{
 			},
 		},
 		{
-			ID:         4,
+			ID:         5,
+			Name:       "Toyota Noah",
+			Passengers: 7,
+			Suitcases:  8,
+			Type:       "Noah",
+			PricePerKM: "$4.50",
+			PricePerMonth: "$2,000",
+			PricePerMothWithDriver: "$3,400",
+			PriceMonthsContract: "$5,000",
+			Images:     []string{"/static/images/cars/toyota-noah.jpg"},
+			ComesWith:  []string{},
+			Make: db.VehicleMake{
+				Engine:        "2000",
+				InteriorColor: "Beige",
+				Power:         "150",
+				FuelType:      "Petrol",
+				Length:        "4.7 meters",
+				ExteriorColor: "Silver",
+				Transmission:  "Automatic",
+				Extras:        "Alloy Wheels, Bluetooth, Radio",
+			},
+		},
+		{
+			ID:         6,
 			Name:       "Toyota Land Cruiser",
 			Passengers: 5,
 			Suitcases:  5,
@@ -92,7 +138,7 @@ var Vehicles = []db.Vehicle{
 			PricePerMonth: "$1,900",
 			PricePerMothWithDriver: "$3,200",
 			PriceMonthsContract: "$4,500",
-			Images:     []string{"/static/images/car1.jpg"},
+			Images:     []string{"/static/images/cars/toyota-land-cruiser.jpg"},
 			ComesWith:  []string{},
 			Make: db.VehicleMake{
 				Engine:        "3000",
@@ -106,7 +152,7 @@ var Vehicles = []db.Vehicle{
 			},
 		},
 		{
-			ID:         5,
+			ID:         7,
 			Name:       "Mercedes-Benz E350",
 			Passengers: 4,
 			Suitcases:  4,
@@ -115,7 +161,7 @@ var Vehicles = []db.Vehicle{
 			PricePerMonth: "$500",
 			PricePerMothWithDriver: "$1,300",
 			PriceMonthsContract: "$2,500",
-			Images:     []string{"/static/images/car1.jpg"},
+			Images:     []string{"/static/images/cars/mercedes-benz-e350.jpg"},
 			ComesWith:  []string{},
 			Make: db.VehicleMake{
 				Engine:        "3000",
@@ -129,7 +175,7 @@ var Vehicles = []db.Vehicle{
 			},
 		},
 		{
-			ID:         6,
+			ID:         8,
 			Name:       "Toyota Fielder",
 			Passengers: 5,
 			Suitcases:  6,
@@ -138,7 +184,7 @@ var Vehicles = []db.Vehicle{
 			PricePerMonth: "$900",
 			PricePerMothWithDriver: "$1,200",
 			PriceMonthsContract: "$4,000",
-			Images:     []string{"/static/images/car1.jpg"},
+			Images:     []string{"/static/images/cars/toyota-fielder.jpg"},
 			ComesWith:  []string{},
 			Make: db.VehicleMake{
 				Engine:        "1800",
@@ -152,8 +198,8 @@ var Vehicles = []db.Vehicle{
 			},
 		},
 		{
-			ID:         7,
-			Name:       "Toyota Corolla Altis",
+			ID:         9,
+			Name:       "Toyota Corolla Axio",
 			Passengers: 4,
 			Suitcases:  4,
 			Type:       "toyota-corolla",
@@ -161,7 +207,7 @@ var Vehicles = []db.Vehicle{
 			PricePerMonth: "$1,750",
 			PricePerMothWithDriver: "$3,000",
 			PriceMonthsContract: "$4,500",
-			Images:     []string{"/static/images/car1.jpg"},
+			Images:     []string{"/static/images/cars/toyota-corolla-axio.jpg"},
 			ComesWith:  []string{},
 			Make: db.VehicleMake{
 				Engine:        "1600",
@@ -172,29 +218,6 @@ var Vehicles = []db.Vehicle{
 				ExteriorColor: "Silver",
 				Transmission:  "Manual",
 				Extras:        "Radio, Bluetooth",
-			},
-		},
-		{
-			ID:         8,
-			Name:       "Toyota Noah",
-			Passengers: 7,
-			Suitcases:  8,
-			Type:       "Noah",
-			PricePerKM: "$4.50",
-			PricePerMonth: "$2,000",
-			PricePerMothWithDriver: "$3,400",
-			PriceMonthsContract: "$5,000",
-			Images:     []string{"/static/images/car1.jpg"},
-			ComesWith:  []string{},
-			Make: db.VehicleMake{
-				Engine:        "2000",
-				InteriorColor: "Beige",
-				Power:         "150",
-				FuelType:      "Petrol",
-				Length:        "4.7 meters",
-				ExteriorColor: "Silver",
-				Transmission:  "Automatic",
-				Extras:        "Alloy Wheels, Bluetooth, Radio",
 			},
 		},
 }
@@ -329,6 +352,9 @@ templ TaxiBody() {
 								<i class="ri-question-fill"></i>
 							</label>
 							<input type="date" name="pickupDay" id="date" placeholder="Enter a date" />
+							<div class="error-message">
+								<p></p>
+							</div>
 						</div>
 						<div class="date-input-container">
 							<label for="pickupTime">
@@ -341,6 +367,9 @@ templ TaxiBody() {
 								id="pickupTime"
 								placeholder="Enter pick up time"
 							/>
+							<div class="error-message">
+								<p></p>
+							</div>
 						</div>
 						<div class="date-input-container">
 							<label for="pickupLocation">
@@ -348,6 +377,9 @@ templ TaxiBody() {
 								<i class="ri-question-fill"></i>
 							</label>
 							<input type="text" name="pickupLocation" id="pickup-location" placeholder="Enter a location" />
+							<div class="error-message">
+								<p></p>
+							</div>
 						</div>
 						<div class="date-input-container">
 							<label for="dropoffLocation">
@@ -355,6 +387,9 @@ templ TaxiBody() {
 								<i class="ri-question-fill"></i>
 							</label>
 							<input type="text" name="dropoffLocation" id="dropoff-location" placeholder="Enter a location" />
+							<div class="error-message">
+								<p></p>
+							</div>
 						</div>
 						<div class="date-input-container inner-select">
 							<label for="transferType">
@@ -367,116 +402,6 @@ templ TaxiBody() {
 							</select>
 						</div>
 					</form>
-					// <form action="" class="ride-details-form">
-					// 	<div class="date-input-container">
-					// 		<label for="">
-					// 			PICKUP DATE
-					// 			<i class="ri-question-fill"></i>
-					// 		</label>
-					// 		<input type="date" name="" id="date" placeholder="Enter a date" />
-					// 	</div>
-					// 	<div class="date-input-container">
-					// 		<label for="">
-					// 			PICKUP TIME
-					// 			<i class="ri-question-fill"></i>
-					// 		</label>
-					// 		<input
-					// 			type="time"
-					// 			name=""
-					// 			id=""
-					// 			placeholder="Enter pick up time"
-					// 		/>
-					// 	</div>
-					// 	<div class="date-input-container">
-					// 		<label for="">
-					// 			PICKUP LOCATION
-					// 			<i class="ri-question-fill"></i>
-					// 		</label>
-					// 		<input
-					// 			type="text"
-					// 			name=""
-					// 			id="pickup-location"
-					// 			placeholder="Enter a location"
-					// 		/>
-					// 	</div>
-					// 	<div class="date-input-container">
-					// 		<label for="">
-					// 			DROP-OFF LOCATION
-					// 			<i class="ri-question-fill"></i>
-					// 		</label>
-					// 		<input
-					// 			type="text"
-					// 			name=""
-					// 			id="dropoff-location"
-					// 			placeholder="Enter a location"
-					// 			required
-					// 		/>
-					// 	</div>
-
-
-						// <div class="radio-input-container" style="display: flex; flex-direction: column;">
-						// 	<div class="radio-input-label">
-						// 			DIRECTION
-						// 			<i class="ri-question-fill"></i>
-						// 	</div>
-						// 	<div>
-						// 		<input
-						// 			type="radio"
-						// 			name="direction"
-						// 			id="one-way"
-						// 			placeholder="Enter a location"
-						// 		/>
-						// 		<label for="one-way">
-						// 			One Way
-						// 			// <i class="ri-question-fill"></i>
-						// 		</label>
-						// 	</div>
-						// 	<div>
-						// 		<input
-						// 			type="radio"
-						// 			name="direction"
-						// 			id="two-way"
-						// 			placeholder="Enter a location"
-						// 		/>
-						// 		<label for="two-way">
-						// 			Two Way
-						// 			// <i class="ri-question-fill"></i>
-						// 		</label>
-						// 	</div>
-						// </div>
-
-						// here
-						// <div class="date-input-container inner-select">
-						// 	<label for="">
-						// 		TRANSFER TYPE
-						// 		<i class="ri-question-fill"></i>
-						// 	</label>
-						// 	<select class="select-options inner-select-option" name="" id="">
-						// 		<option value="0">ONE WAY</option>
-						// 		<option value="0">TWO WAY</option>
-						// 	</select>
-						// </div>
-
-						<!-- <p class="progress-title">EXTRA OPTIONS</p>
-						<div class="date-input-container inner-select">
-							<label for="">
-								EXTRA TIME
-								<i class="ri-question-fill"></i>
-							</label>
-							<select class="select-options inner-select-option" name="" id="">
-								<option value="0">0 hour(s)</option>
-								<option value="0">1 hour(s)</option>
-								<option value="0">1 hour(s)</option>
-								<option value="0">1 hour(s)</option>
-								<option value="0">1 hour(s)</option>
-								<option value="0">1 hour(s)</option>
-								<option value="0">1 hour(s)</option>
-								<option value="0">1 hour(s)</option>
-								<option value="0">1 hour(s)</option>
-							</select>
-						</div> -->
-
-					// </form>
 				</div>
 				<div>
 					<div class="map" id="map"></div>
@@ -670,6 +595,6 @@ templ TaxiBody() {
 }
 
 templ TaxiPage(body templ.Component) {
-    @BaseTemplate([]string{"general", "nav", "service", "safaris", "safaris-num","footer", "taxi", "intro", "car"}, []string{"q&a", "nav", "taxi", "taxi-maps", "data/vehicle"}, body)
+    @BaseTemplate([]string{"general", "nav", "service", "safaris", "safaris-num","footer", "taxi", "intro", "car"}, []string{"q&a", "nav", "taxi", "taxi-maps", "data/vehicle", "https://maps.googleapis.com/maps/api/js?key=AIzaSyD8Ij4EZwonOnh4ck32fK2EMSHkYutFTL0&libraries=places" }, body)
 	// , "https://maps.googleapis.com/maps/api/js?key=&libraries=places" 
 }

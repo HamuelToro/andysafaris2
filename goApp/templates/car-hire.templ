@@ -51,18 +51,6 @@ var carRealHireQnA = []db.QandA{
 script carHireFormScript() {
     let id = document.querySelector(".car-image").dataset.carSelectedId;
     window.location.href=`/car-hire/${id}/contact-form`
-    // fetch("/car-hire/contact", {
-    //     method: "POST",
-    //     body: JSON.stringify({
-    //         id: Number(id),
-    //     }),
-    //     headers: {
-    //         "Content-Type": "application/json; charset=UTF-8"
-    //     }
-    // })
-    // .catch((error) => {
-    //     console.log(error)
-    // })
 }
 
 templ CarHireBody() {
